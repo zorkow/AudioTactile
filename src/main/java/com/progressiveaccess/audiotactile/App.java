@@ -51,6 +51,9 @@ public final class App {
    */
   public static void main(final String[] args) throws Exception {
     Cli.init(args);
+    Logger.start();
+    Logger.logging("Running in verbose mode...");
+    Logger.error("Running in debug mode...");
     Iterator<String> iter = Cli.getFiles().iterator();
     while (iter.hasNext()) {
       final String svg = iter.next();

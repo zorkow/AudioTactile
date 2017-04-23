@@ -55,6 +55,7 @@ import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
+import org.w3c.dom.Element;
 
 /**
  * Utility class for handling CML files and other chem file formats.
@@ -131,12 +132,45 @@ public final class FileHandler {
    * 
    * @return The XML document as a string.
    */
-  private static String toString(final Document document) {
+  public static String toString(final Document document) {
     final StreamResult result = new StreamResult(new StringWriter());
-    return FileHandler.toStream(document, result) ? result.getWriter().toString() : "";
+    return FileHandler.toStream(document, result) ?
+      result.getWriter().toString() : "";
+  }
+
+  public static String toString(final Element document) {
+    final StreamResult result = new StreamResult(new StringWriter());
+    return FileHandler.toStream(document, result) ?
+      result.getWriter().toString() : "";
   }
 
   private static Boolean toStream(final Document document,
+                                  final StreamResult stream) {
+    //
+    // prepare the transformer
+    final DOMSource domSource = new DOMSource(document);
+    final TransformerFactory transformerFactory = TransformerFactory
+        .newInstance();
+    try {
+      final Transformer transformer = transformerFactory.newTransformer();
+      // set the output configuration
+      transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+      transformer.setOutputProperty(OutputKeys.ENCODING, "utf-8");
+      transformer.setOutputProperty(
+          "{http://xml.apache.org/xslt}indent-amount", "2");
+      // write the XML to the file
+      transformer.transform(domSource, stream);
+
+      return true;
+    } catch (final TransformerConfigurationException ex) {
+      Logger.error("Can't configure XML transformation: " + ex.getMessage() + "\n");
+    } catch (final TransformerException ex) {
+      Logger.error("Can't transform XML document: " + ex.getMessage() + "\n");
+    }
+    return false;
+  }
+  
+  private static Boolean toStream(final Element document,
                                   final StreamResult stream) {
     //
     // prepare the transformer
@@ -196,6 +230,10 @@ public final class FileHandler {
    *          The base filename.
    */
   public static void printXml(final Document doc) {
+    System.out.println(FileHandler.toString(doc));
+  }
+
+  public static void printXml(final Element doc) {
     System.out.println(FileHandler.toString(doc));
   }
 

@@ -66,7 +66,8 @@ public final class Logger {
    */
   public static void error(final Object str) {
     if (Logger.debug) {
-      Logger.errFile.print(str);
+      Logger.errFile.println(str);
+      Logger.errFile.flush();
     }
   }
 
@@ -79,7 +80,8 @@ public final class Logger {
    */
   public static void logging(final Object str) {
     if (Logger.verbose) {
-      Logger.logFile.print(str);
+      Logger.logFile.println(str);
+      Logger.logFile.flush();
     }
   }
 }

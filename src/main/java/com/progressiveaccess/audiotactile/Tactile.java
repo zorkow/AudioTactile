@@ -1,4 +1,4 @@
-// Copyright 2015 Volker Sorge
+// Copyright 2017 Volker Sorge
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -28,23 +28,10 @@
 
 package com.progressiveaccess.audiotactile;
 
-// import com.progressiveaccess.cmlspeech.analysis.RichStructureHelper;
-// import com.progressiveaccess.cmlspeech.analysis.SizeComparator;
-// import com.progressiveaccess.cmlspeech.speech.Language;
-// import com.progressiveaccess.cmlspeech.speech.Languages;
-// import com.progressiveaccess.cmlspeech.sre.SreAnnotations;
-// import com.progressiveaccess.cmlspeech.sre.SreElement;
-// import com.progressiveaccess.cmlspeech.structure.RichAtom;
-// import com.progressiveaccess.cmlspeech.structure.RichAtomSet;
-// import com.progressiveaccess.cmlspeech.structure.RichBond;
-// import com.progressiveaccess.cmlspeech.structure.RichSetType;
-
 import com.google.common.base.Joiner;
-import org.apache.commons.io.FilenameUtils;
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.w3c.dom.Text;
 import org.w3c.dom.svg.SVGAnimatedLength;
 import org.w3c.dom.svg.SVGDocument;
 import org.w3c.dom.svg.SVGLineElement;
@@ -55,13 +42,16 @@ import org.w3c.dom.svg.SVGRectElement;
 import org.w3c.dom.svg.SVGSVGElement;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
 import javax.vecmath.Point2d;
-import org.w3c.dom.Document;
-import java.io.IOException;
 import javax.xml.XMLConstants;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 
 
 /**
@@ -72,16 +62,26 @@ public final class Tactile {
 
   private static String daisyUri = "http://www.daisy.org/z3986/2005/";
   private static String iveoUri = "http://viewplus.com/iveo";
+  private static String sreUri = "http://www.chemaccess.org/sre-schema";
   // Magic numbers should be parameterisable.
   private static final Double MIN_DIFF = 5.0;
   private static final Double INV_ATOM_SIZE = 10.0;
 
   private SVGDocument svg = null;
-  private Document annotation = null;
+  private Document xml = null;
   private SVGSVGElement root = null;
   private String uri = null;
+  private final List<Element> annotations = new ArrayList<>();
+  private final Map<String, String> messages = new HashMap<>();
 
-  /** Constructor. */
+  private final XPath xpath = XPathFactory.newInstance().newXPath();
+
+  /**
+   * Constructor.
+   *
+   * @param svgFile The SVG file.
+   * @param xmlFile The XML annotation file.
+   */
   public Tactile(final String svgFile, final String xmlFile) {
     try {
       this.svg = FileHandler.loadSvg(svgFile);
@@ -90,11 +90,13 @@ public final class Tactile {
       return;
     }
     try {
-      this.annotation = FileHandler.loadXml(xmlFile);
+      this.xml = FileHandler.loadXml(xmlFile);
     } catch (Exception e) {
       Logger.error("Can't load XML file " + xmlFile + "\n");
       return;
     }
+    this.annotations();
+    this.messages();
     this.enrich();
     // Output
     if (Cli.hasOption("o")) {
@@ -104,6 +106,58 @@ public final class Tactile {
     }
   }
 
+  /** 
+   * Initialises the list of annotation elements. 
+   */
+  public void annotations() {
+    final NodeList annotations = this.xml.getElementsByTagName("sre:annotation");
+    for (Integer i = 0; i < annotations.getLength(); i++) {
+      final Element item = (Element) annotations.item(i);
+      Logger.logging(FileHandler.toString(item));
+      this.annotations.add(item);
+    }
+  }
+
+  /** 
+   * Initialises the mapping of messages for the given language. Default is
+   * English.
+   */
+  public void messages() {
+    String lang = "en";
+    if (Cli.hasOption("language")) {
+      lang = Cli.getOptionValue("language");
+    }
+    NodeList messages = null;
+    try {
+      final XPathExpression expr =
+        this.xpath.compile(// 1. Pick all message elements.
+                           "//*[local-name()='messages']/" +
+                           // 2. Get the contained language element.
+                           "*[local-name()='language'" +
+                           // 3. Check if it is the language we want.
+                           " and text()='" + lang + "']/" +
+                           // 4. Then backup and take all message elements.
+                           "../*[local-name()='message']");
+      messages = (NodeList) expr.evaluate(this.xml, XPathConstants.NODESET);
+    }
+    catch (XPathExpressionException e) {
+      Logger.error("Illegal Xpath Expression " + e.getMessage());
+      return;
+    }
+    if (messages == null || messages.getLength() == 0) {
+      Logger.error("Language " + lang + " does not exist.");
+      return;
+    }
+    for (Integer i = 0; i < messages.getLength(); i++) {
+      final Element item = (Element) messages.item(i);
+      Logger.logging(FileHandler.toString(item));
+      this.messages.put(item.getAttribute("sre:msg"), item.getTextContent());
+    }
+  }
+
+  /** 
+   * Folds the XML annotations into the SVG.
+   */  
   public void enrich() {
     this.root = this.svg.getRootElement();
     this.uri = this.root.getNamespaceURI();
@@ -626,18 +680,18 @@ public final class Tactile {
     Boolean swap = false;
     if (heightValue < 0.71 * widthValue) {
       finalHeight = 0.71 * widthValue;
-    } 
+    }
     if (0.7 * widthValue < heightValue && heightValue < widthValue) {
       finalWidth = heightValue / 0.71;
-    } 
+    }
     if (widthValue < heightValue && heightValue < 1.31 * widthValue) {
       finalHeight = 1.31 * widthValue;
       swap = true;
-    } 
+    }
     if (heightValue > 1.31 * widthValue) {
       finalWidth = heightValue / 1.31;
       swap = true;
-    } 
+    }
 
     this.root.setAttribute("width", finalWidth.toString());
     this.root.setAttribute("height", finalHeight.toString());
@@ -705,7 +759,7 @@ public final class Tactile {
     }
     return buttonY;
   }
-  
+
   private void addCircle(Double x, Double y, Double r, String fill, String name, String id) {
     Element circle = svg.createElementNS(this.uri, "circle");
     circle.setAttribute("cx", x.toString());
@@ -734,9 +788,9 @@ public final class Tactile {
       this.collisionY = y;
     }
   }
-  
+
   private void collisionDetection() {
-    // 
+    //
     // For all points from lines, rectangles, polygons
     // Remove point if less than (left of) min x value
     // Remove point if less than (above from) min y value
@@ -782,35 +836,33 @@ public final class Tactile {
     xs.add(Tactile.getValue(line.getX2()));
     ys.add(Tactile.getValue(line.getY2()));
   }
-  
-  private void coordinatesFromRectangle
-    (SVGRectElement rectangle, List<Double> xs, List<Double> ys) {
+
+  private void coordinatesFromRectangle(SVGRectElement rectangle,
+                                        List<Double> xs, List<Double> ys) {
     Double x = Tactile.getValue(rectangle.getX());
     Double y = Tactile.getValue(rectangle.getY());
-    Double w = Tactile.getValue(rectangle.getWidth());
     Double h = Tactile.getValue(rectangle.getHeight());
-    xs.add(x); ys.add(y);
-    xs.add(x); ys.add(y + h);
-    xs.add(x + w); ys.add(y);
+    Double w = Tactile.getValue(rectangle.getWidth());
     xs.add(x + w); ys.add(y + h);
+    xs.add(x + w); ys.add(y);
+    xs.add(x); ys.add(y + h);
+    xs.add(x); ys.add(y);
   }
-  
-  private void coordinatesFromPolygon
-    (SVGPolygonElement polygon, List<Double> xs, List<Double> ys) {
+
+  private void coordinatesFromPolygon(SVGPolygonElement polygon,
+                                      List<Double> xs, List<Double> ys) {
     SVGPointList points = polygon.getPoints();
     for (Integer j = 0; j < points.getNumberOfItems(); j++) {
       SVGPoint point = points.getItem(j);
       Double x = Tactile.getValue(point.getX());
       Double y = Tactile.getValue(point.getY());
-      xs.add(x);
-      ys.add(y);
+      xs.add(x); ys.add(y);
     }
   }
 
-  private Element polygonFromCoordinates
-    (List<Double> xs, List<Double> ys) {
-    List<Point2d> convexHull = GrahamScan.getConvexHull(xs.toArray(new Double[xs.size()]),
-                                                        ys.toArray(new Double[ys.size()]));
+  private Element polygonFromCoordinates(List<Double> xs, List<Double> ys) {
+    List<Point2d> convexHull = GrahamScan.getConvexHull
+        (xs.toArray(new Double[xs.size()]), ys.toArray(new Double[ys.size()]));
     Element poly = svg.createElementNS(this.uri, "polygon");
     List<String> points = new ArrayList<>();
     for (Point2d p : convexHull) {
@@ -822,10 +874,10 @@ public final class Tactile {
     return poly;
   }
 
-  /** 
+  /**
    * Inserts a maximal convex polygon around all the visible points in the
    * SVG.
-   */    
+   */
   private void maxPolygon() {
     NodeList lines = this.svg.getElementsByTagNameNS(this.uri, "line");
     NodeList rectangles = this.svg.getElementsByTagNameNS(this.uri, "rect");
@@ -833,15 +885,15 @@ public final class Tactile {
     List<Double> xs = new ArrayList<>();
     List<Double> ys = new ArrayList<>();
     for (Integer i = 0; i < lines.getLength(); i++) {
-      this.coordinatesFromLine((SVGLineElement)lines.item(i), xs, ys);
+      this.coordinatesFromLine((SVGLineElement) lines.item(i), xs, ys);
     }
     for (Integer i = 0; i < rectangles.getLength(); i++) {
-      this.coordinatesFromRectangle((SVGRectElement)rectangles.item(i), xs, ys);
+      this.coordinatesFromRectangle((SVGRectElement) rectangles.item(i), xs, ys);
     }
     for (Integer i = 0; i < polygons.getLength(); i++) {
-      this.coordinatesFromPolygon((SVGPolygonElement)polygons.item(i), xs, ys);
+      this.coordinatesFromPolygon((SVGPolygonElement) polygons.item(i), xs, ys);
     }
     this.root.appendChild(this.polygonFromCoordinates(xs, ys));
   }
-  
+
 }
