@@ -61,6 +61,7 @@ import java.util.Set;
 import javax.vecmath.Point2d;
 import org.w3c.dom.Document;
 import java.io.IOException;
+import javax.xml.XMLConstants;
 
 
 /**
@@ -97,7 +98,7 @@ public final class Tactile {
     this.enrich();
     // Output
     if (Cli.hasOption("o")) {
-      FileHandler.writeSvg(this.svg, Cli.getOptionValue("o"));
+      this.writeSvg(Cli.getOptionValue("o"));
     } else {
       FileHandler.printXml(this.svg);
     }
@@ -111,23 +112,22 @@ public final class Tactile {
       this.addIveoAnnotations();
     };
     // Tactile.maxPolygon();
-    // this.writeSvg(fileName);
   }
 
-  // /**
-  //  * Converts and writes the SVG to a file.
-  //  */
-  // private static void writeSvg(String fileName) {
-  //   if (!Cli.hasOption("iveo")) {
-  //     FileHandler.writeSvg(this.svg, fileName, "enr");
-  //     return;
-  //   }
-  //   nu.xom.Document xomSVG = nu.xom.converters.DOMConverter.convert(this.svg);
-  //   nu.xom.Element root = xomSVG.getRootElement();
-  //   root.addNamespaceDeclaration("iveo", Tactile.iveoUri);
-  //   root.addNamespaceDeclaration("daisy", Tactile.daisyUri);
-  //   FileHandler.writeSvg(xomSVG, fileName, "iveo");
-  // }
+  /**
+   * Converts and writes the SVG to a file.
+   */
+  private void writeSvg(String fileName) {
+    if (!Cli.hasOption("iveo")) {
+      FileHandler.writeSvg(this.svg, fileName);
+      return;
+    }
+    this.root.setAttributeNS(XMLConstants.XMLNS_ATTRIBUTE_NS_URI,
+                             "xmlns:iveo", Tactile.iveoUri);
+    this.root.setAttributeNS(XMLConstants.XMLNS_ATTRIBUTE_NS_URI,
+                             "xmlns:daisy", Tactile.daisyUri);
+    FileHandler.writeSvg(this.svg, fileName);
+  }
 
   // private static void addBaseTitles() {
   //   Language.reset("en");
