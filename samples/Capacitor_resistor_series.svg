@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+   width="524.40942"
+   height="372.04724"
+   id="svg2"
+   version="1.0">
+  <g
+     id="layer1">
+    <path
+       id="aboveAmpere"
+       d="M 227.91634,236.89335 C 227.91634,271.0977 227.91634,271.0977 227.91634,271.0977"
+       
+       stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+    <path
+       id="belowAmpere"
+       d="M 227.91634,271.0977 C 227.91634,352.38952 227.91634,352.38952 227.91634,352.38952"
+       
+       stroke="rgb(0, 0, 0)" stroke-width="1.0" />
+    <path
+       id="belowCapacitor"
+       d="M 227.91634,174.84419 C 227.91634,236.89335 227.91634,236.89335 227.91634,236.89335"
+       
+       stroke="rgb(0, 0, 0)" stroke-width="1.0" />
+    <path
+       d="M 227.91634,60.844187 C 227.91634,86.777775 227.91634,86.777775 227.91634,86.777775"
+       id="belowSwitch"  stroke="rgb(0, 0, 0)" stroke-width="1.0" />
+    <path
+       d="M 227.91634,86.777775 C 227.91634,157.0977 227.91634,157.0977 227.91634,157.0977"
+       id="aboveCapacitor"  stroke="rgb(0, 0, 0)" stroke-width="1.0" />
+    <path
+       id="bottomLeft"
+       d="M 47.790546,175.9387 C 47.790546,291.6424 47.790546,353.09259 47.790546,353.09259 L 227.91634,353.09259"
+       style="fill:none;fill-rule:evenodd;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" stroke="rgb(0, 0, 0)" />
+    <path
+       id="topRight"
+       d="M 451.95721,353.09259 C 451.95721,23.938696 451.95721,21.938696 451.95721,21.938696 L 241.38186,21.938696"
+       style="fill:none;fill-rule:evenodd;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" stroke="rgb(0, 0, 0)" />
+    <path
+       id="bottomRight"
+       d="M 451.95721,353.09259 L 227.91634,352.38952"
+       style="fill:none;fill-rule:evenodd;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" stroke="rgb(0, 0, 0)" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 47.790546,159.09259 C 47.790546,43.388887 47.790546,21.938696 47.790546,21.938696 L 211.95721,21.938696" stroke="rgb(0, 0, 0)"
+       id="topleftWire"/>
+    <g
+       id="source"
+       transform="translate(-34,0)">
+      <path
+         id="rect2383"
+         d="M 56.355682,174.55299 L 106.72669,174.55299 L 106.72669,175.55044 L 56.355682,175.55044 L 56.355682,174.55299 z"
+         style="stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1" stroke="rgb(0, 0, 0)" />
+      <path
+         id="rect2385"
+         d="M 75.556511,159.62196 L 87.525859,159.62196 L 87.525859,160.61941 L 75.556511,160.61941 L 75.556511,159.62196 z"
+         style="stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1" stroke="rgb(0, 0, 0)" />
+    </g>
+    <g id="capacitor">
+      <path
+          style="fill:#000000;fill-opacity:1;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+          d="M 197.9256,156.10025 L 255.77745,156.10025 L 255.77745,158.59386 L 197.9256,158.59386 L 197.9256,156.10025 z"
+          id="rect2393" stroke="rgb(0, 0, 0)" />
+      <path
+          style="fill:#000000;fill-opacity:1;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+          d="M 197.9256,172.10025 L 255.77745,172.10025 L 255.77745,174.59386 L 197.9256,174.59386 L 197.9256,172.10025 z"
+          id="rect2395" stroke="rgb(0, 0, 0)" />
+    </g>
+    <g id="switch">
+      <path
+          id="path2406"
+          d="M 215.59148,21.851849 C 215.59148,23.916297 213.91598,25.591791 211.85153,25.591791 C 209.78709,25.591791 208.11158,23.916297 208.11158,21.851849 C 208.11158,19.787401 209.78709,18.111907 211.85153,18.111907 C 213.91598,18.111907 215.59148,19.787401 215.59148,21.851849 z"
+          style="fill:#ffffff;fill-opacity:1;stroke-width:2.4996798;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" stroke="rgb(0, 0, 0)" />
+      <path
+          style="fill:#ffffff;fill-opacity:1;stroke-width:2.4996798;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+          d="M 245.59148,21.851849 C 245.59148,23.916297 243.91598,25.591791 241.85153,25.591791 C 239.78709,25.591791 238.11158,23.916297 238.11158,21.851849 C 238.11158,19.787401 239.78709,18.111907 241.85153,18.111907 C 243.91598,18.111907 245.59148,19.787401 245.59148,21.851849 z"
+          id="path3178" stroke="rgb(0, 0, 0)" />
+      <path
+          style="fill:none;fill-rule:evenodd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+          d="M 219.36302,20.946359 C 226.84387,57.85185 227.3426,58.350573 227.3426,58.350573"
+          id="path3180" stroke="rgb(0, 0, 0)" />
+      <path
+          id="path3184"
+          d="M 231.59148,61.851849 C 231.59148,63.916297 229.91598,65.591791 227.85153,65.591791 C 225.78709,65.591791 224.11158,63.916297 224.11158,61.851849 C 224.11158,59.787401 225.78709,58.111907 227.85153,58.111907 C 229.91598,58.111907 231.59148,59.787401 231.59148,61.851849 z"
+          style="fill:#ffffff;fill-opacity:1;stroke-width:2.4996798;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" stroke="rgb(0, 0, 0)" />
+    </g>
+    <g id="ampere">
+      <path
+          style="fill:#ffffff;fill-opacity:1;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+          d="M 267.99616,298.74617 C 267.99616,320.35683 250.45708,337.89591 228.84642,337.89591 C 207.23576,337.89591 189.69668,320.35683 189.69668,298.74617 C 189.69668,277.13551 207.23576,259.59643 228.84642,259.59643 C 250.45708,259.59643 267.99616,277.13551 267.99616,298.74617 z"
+          id="path3198" stroke="rgb(0, 0, 0)" />
+      <path
+          
+          d="M 228.84641,282.20041 L 220.56598,304.65429 L 237.15708,304.65429 L 228.84641,282.20041 M 225.40127,276.18652 L 232.32179,276.18652 L 249.51728,321.30581 L 243.17097,321.30581 L 239.06097,309.73134 L 218.72254,309.73134 L 214.61255,321.30581 L 208.17556,321.30581 L 225.40127,276.18652"
+          id="flowRoot3200" stroke="rgb(0, 0, 0)" />
+    </g>
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+       d="M 434.89142,122.68582 L 468.80457,122.68582 L 468.80457,236.89335 L 434.89142,236.89335 L 434.89142,122.68582 z"
+       id="resistor"   stroke="rgb(0, 0, 0)"/>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 227.41762,86.777775 C 354.59194,86.777775 355.58939,86.777775 355.58939,86.777775 L 355.58939,136.89335"
+       id="aboveVoltmeter" stroke="rgb(0, 0, 0)" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 355.58939,186.89335 C 355.58939,236.89335 355.58939,236.89335 355.58939,236.89335 L 228.41506,236.89335"
+       id="belowVoltmeter" stroke="rgb(0, 0, 0)" />
+    <g id="volt">
+      <path
+          style="fill:#ffffff;fill-opacity:1;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+          d="M 394.9885,168.27299 C 394.9885,189.88365 377.44942,207.42273 355.83876,207.42273 C 334.2281,207.42273 316.68902,189.88365 316.68902,168.27299 C 316.68902,146.66233 334.2281,129.12325 355.83876,129.12325 C 377.44942,129.12325 394.9885,146.66233 394.9885,168.27299 z"
+       id="path3188" stroke="rgb(0, 0, 0)" />
+      <path
+          
+          d="M 352.39361,190.83263 L 335.1679,145.71334 L 341.54443,145.71334 L 355.83875,183.70058 L 370.16331,145.71334 L 376.50962,145.71334 L 359.31413,190.83263 L 352.39361,190.83263"
+          id="flowRoot3190" stroke="rgb(0, 0, 0)" />
+    </g>
+  </g>
+</svg>
