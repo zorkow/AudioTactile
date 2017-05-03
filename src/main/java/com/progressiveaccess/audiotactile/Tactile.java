@@ -106,8 +106,8 @@ public final class Tactile {
     }
   }
 
-  /** 
-   * Initialises the list of annotation elements. 
+  /**
+   * Initialises the list of annotation elements.
    */
   public void annotations() {
     final NodeList annotations = this.xml.getElementsByTagName("sre:annotation");
@@ -118,7 +118,7 @@ public final class Tactile {
     }
   }
 
-  /** 
+  /**
    * Initialises the mapping of messages for the given language. Default is
    * English.
    */
@@ -130,14 +130,14 @@ public final class Tactile {
     NodeList messages = null;
     try {
       final XPathExpression expr =
-        this.xpath.compile(// 1. Pick all message elements.
-                           "//*[local-name()='messages']/" +
-                           // 2. Get the contained language element.
-                           "*[local-name()='language'" +
-                           // 3. Check if it is the language we want.
-                           " and text()='" + lang + "']/" +
-                           // 4. Then backup and take all message elements.
-                           "../*[local-name()='message']");
+          this.xpath.compile(// 1. Pick all message elements.
+                             "//*[local-name()='messages']/" +
+                             // 2. Get the contained language element.
+                             "*[local-name()='language'" +
+                             // 3. Check if it is the language we want.
+                             " and text()='" + lang + "']/" +
+                             // 4. Then backup and take all message elements.
+                             "../*[local-name()='message']");
       messages = (NodeList) expr.evaluate(this.xml, XPathConstants.NODESET);
     }
     catch (XPathExpressionException e) {
@@ -155,9 +155,9 @@ public final class Tactile {
     }
   }
 
-  /** 
+  /**
    * Folds the XML annotations into the SVG.
-   */  
+   */
   public void enrich() {
     this.root = this.svg.getRootElement();
     this.uri = this.root.getNamespaceURI();
@@ -783,7 +783,9 @@ public final class Tactile {
   private Double collisionY = null;
 
   private void updateCollision(Double x, Double y) {
-    if (x < this.topX || y < this.topY) return;
+    if (x < this.topX || y < this.topY) {
+      return;
+    }
     if (this.collisionY == null || y > this.collisionY) {
       this.collisionY = y;
     }
@@ -828,9 +830,8 @@ public final class Tactile {
     }
   }
 
-
-  private void coordinatesFromLine
-    (SVGLineElement line, List<Double> xs, List<Double> ys) {
+  private void coordinatesFromLine (SVGLineElement line,
+                                    List<Double> xs, List<Double> ys) {
     xs.add(Tactile.getValue(line.getX1()));
     ys.add(Tactile.getValue(line.getY1()));
     xs.add(Tactile.getValue(line.getX2()));
