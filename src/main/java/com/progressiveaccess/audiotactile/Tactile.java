@@ -52,6 +52,7 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
+import org.w3c.dom.Attr;
 
 
 /**
@@ -71,9 +72,9 @@ public final class Tactile {
   private Document xml = null;
   private SVGSVGElement root = null;
   private String uri = null;
+  private boolean useSpeechAttr = false;
   private final List<Element> annotations = new ArrayList<>();
   private final Map<String, String> messages = new HashMap<>();
-
   private final XPath xpath = XPathFactory.newInstance().newXPath();
 
   /**
@@ -116,6 +117,7 @@ public final class Tactile {
       Logger.logging(FileHandler.toString(item));
       this.annotations.add(item);
     }
+    System.out.println(this.annotations.size());
   }
 
   /**
@@ -123,29 +125,23 @@ public final class Tactile {
    * English.
    */
   public void messages() {
-    String lang = "en";
-    if (Cli.hasOption("language")) {
-      lang = Cli.getOptionValue("language");
-    }
     NodeList messages = null;
-    try {
-      final XPathExpression expr =
-          this.xpath.compile(// 1. Pick all message elements.
-                             "//*[local-name()='messages']/" +
-                             // 2. Get the contained language element.
-                             "*[local-name()='language'" +
-                             // 3. Check if it is the language we want.
-                             " and text()='" + lang + "']/" +
-                             // 4. Then backup and take all message elements.
-                             "../*[local-name()='message']");
-      messages = (NodeList) expr.evaluate(this.xml, XPathConstants.NODESET);
-    }
-    catch (XPathExpressionException e) {
-      Logger.error("Illegal Xpath Expression " + e.getMessage());
-      return;
+    boolean hasLang = Cli.hasOption("language");
+    String lang = "en";
+    if (hasLang) {
+      lang = Cli.getOptionValue("language");
+      messages = this.getMessages(lang);
     }
     if (messages == null || messages.getLength() == 0) {
-      Logger.error("Language " + lang + " does not exist.");
+      if (hasLang) {
+        Logger.error("Language " + lang + " does not exist. " +
+                     "Attempting English as default." );
+      }
+      messages = this.getMessages("en");
+    }
+    if (messages == null || messages.getLength() == 0) {
+      Logger.error("No localisation found. Using attribute values directly.");
+      this.useSpeechAttr = true;
       return;
     }
     for (Integer i = 0; i < messages.getLength(); i++) {
@@ -155,13 +151,35 @@ public final class Tactile {
     }
   }
 
+
+  private NodeList getMessages(String language) {
+    NodeList messages = null;
+    try {
+      final XPathExpression expr =
+          this.xpath.compile(// 1. Pick all message elements.
+                             "//*[local-name()='messages']/" +
+                             // 2. Get the contained language element.
+                             "*[local-name()='language'" +
+                             // 3. Check if it is the language we want.
+                             " and text()='" + language + "']/" +
+                             // 4. Then backup and take all message elements.
+                             "../*[local-name()='message']");
+      messages = (NodeList) expr.evaluate(this.xml, XPathConstants.NODESET);
+    }
+    catch (XPathExpressionException e) {
+      Logger.error("Illegal Xpath Expression " + e.getMessage());
+      return null;
+    }
+    return messages;
+  }
+
   /**
    * Folds the XML annotations into the SVG.
    */
   public void enrich() {
     this.root = this.svg.getRootElement();
     this.uri = this.root.getNamespaceURI();
-    // this.addBaseTitles();
+    this.addBaseTitles();
     if (Cli.hasOption("iveo")) {
       this.addIveoAnnotations();
     };
@@ -183,6 +201,26 @@ public final class Tactile {
     FileHandler.writeSvg(this.svg, fileName);
   }
 
+  private void addBaseTitles() {
+    for (final Element element : this.annotations) {
+      System.out.println(this.getTitle(element));
+      System.out.println(this.getDescr(element));
+    }
+  }
+
+  private String getTitle(Element annotation) {
+    return this.getSpeech(annotation, "sre:speech");
+  }
+  
+  private String getDescr(Element annotation) {
+    return this.getSpeech(annotation, "sre:speech2");
+  }
+  
+  private String getSpeech(Element annotation, String attribute) {
+    String speech = annotation.getAttribute(attribute);
+    return this.useSpeechAttr ? speech : this.messages.get(speech);
+  }
+  
   // private static void addBaseTitles() {
   //   Language.reset("en");
   //   for (final RichBond bond : RichStructureHelper.getBonds()) {
