@@ -1,21 +1,18 @@
 <svg contentScriptType="text/ecmascript" width="188.5664180997322" zoomAndPan="magnify" contentStyleType="text/css" height="247.0220077106492" preserveAspectRatio="xMidYMid meet" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:iveo="http://viewplus.com/iveo" xmlns:daisy="http://www.daisy.org/z3986/2005/">
-    <g class="atomset" opacity="0.0" id="as2">
-        <rect x="12.14209" onmouseover="speakIt(evt)" y="18.326172" width="53.81157300000001" visibility="visible" height="73.346969" id="as2r" onmousedown="speakIt(evt)">
-            <title>Functional group Carboxylic acid.</title>
-            <desc>Functional group C O O H.</desc>
-        </rect>
+    <g id="as2" class="atomset" opacity="0.0">
+        <polygon points="53.333546,18.326172 65.953663,18.326172 65.953663,31.673828 64.64360400000001,69.99954 37.857910000000004,91.673141 12.14209,91.673141 12.14209,78.325485 53.333546,18.326172" onmouseover="speakIt(evt)" visibility="visible" id="as2r" opacity="0.0" onmousedown="speakIt(evt)"/>
+        <title>Functional group Carboxylic acid.</title>
+        <desc>Functional group C O O H.</desc>
     </g>
-    <g class="atomset" opacity="0.0" id="as3">
-        <rect x="18.689941" onmouseover="speakIt(evt)" y="118.49887" width="92.77857399999999" visibility="visible" height="95.672896" id="as3r" onmousedown="speakIt(evt)">
-            <title>Functional group Ester.</title>
-            <desc>Functional group C O C O C H3.</desc>
-        </rect>
+    <g id="as3" class="atomset" opacity="0.0">
+        <polygon points="91.88127,118.49887 101.88127,118.49887 111.468515,195.82411 111.468515,214.171766 77.09791,214.171766 18.689941,211.671766 18.689941,198.32411 53.333546,138.3248 91.88127,118.49887" onmouseover="speakIt(evt)" visibility="visible" id="as3r" opacity="0.0" onmousedown="speakIt(evt)"/>
+        <title>Functional group Ester.</title>
+        <desc>Functional group C O C O C H3.</desc>
     </g>
-    <g class="atomset" opacity="0.0" id="as1">
-        <rect x="91.88128" onmouseover="speakIt(evt)" y="59.99954" width="74.08697000000001" visibility="visible" height="89.99909" id="as1r" onmousedown="speakIt(evt)">
-            <title>Benzene ring Substitutions at positions 1 and 2.</title>
-            <desc>Ring with 6 elements double bond between positions 4 and 5 double bond between positions 2 and 3 double bond between positions 1 and 6 Substitutions at positions 1 and 2.</desc>
-        </rect>
+    <g id="as1" class="atomset" opacity="0.0">
+        <polygon points="123.92282,59.99954 133.92282,59.99954 165.96826,81.4993 165.96826,128.49887 133.92282,149.99863 123.92282,149.99863 91.88127,128.49887 91.88127,81.4993 123.92282,59.99954" onmouseover="speakIt(evt)" visibility="visible" id="as1r" opacity="0.0" onmousedown="speakIt(evt)"/>
+        <title>Benzene ring Substitutions at positions 1 and 2.</title>
+        <desc>Ring with 6 elements double bond between positions 4 and 5 double bond between positions 2 and 3 double bond between positions 1 and 6 Substitutions at positions 1 and 2.</desc>
     </g>
     <title>Aspirin.</title>
     <desc>Molecule consisting of Ring with 6 elements and Functional group C O C O C H3 and Functional group C O O H.</desc>
@@ -23,14 +20,14 @@
         <g>
             <g class="bond" id="b1">
                 <line x1="94.2832090498661" x2="59.643604502100935" y1="204.99794510963423" y2="184.99817343078598" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
-                <polygon id="b1r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="57.643604,182.99817 61.643604,182.99817 96.28321,202.99794 96.28321,206.99794 92.28321,206.99794 57.643604,186.99817 57.643604,182.99817" opacity="0.0">
+                <polygon id="b1r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="57.643604,182.99817 61.643604,182.99817 96.2832,202.99796 96.2832,206.99796 92.2832,206.99796 57.643604,186.99817 57.643604,182.99817" opacity="0.0">
                     <title>single bond.</title>
                 </polygon>
             </g>
             <g id="b2">
                 <line x1="163.5664180997322" x2="163.5664180997322" y1="84.99931503654474" y2="124.99885839424124" class="bond" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
                 <line x1="158.37007742213385" x2="158.37007742213385" y1="121.998892642414" y2="87.99928078837198" class="bond" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
-                <polygon id="b2r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="163.56642,84.99931 163.56642,124.998856 158.37007,121.99889 158.37007,87.99928 163.56642,84.99931" opacity="0.0">
+                <polygon id="b2r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="163.56642,84.99931 163.56642,124.998856 158.37009,121.99889 158.37009,87.99928 163.56642,84.99931" opacity="0.0">
                     <title>double bond.</title>
                 </polygon>
             </g>
@@ -49,21 +46,21 @@
             <g id="b5">
                 <line x1="128.92281359763126" x2="94.2832090498661" y1="64.9995433576965" y2="84.99931503654474" class="bond" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
                 <line x1="99.47934972974767" x2="128.92301359534804" y1="87.99928078837198" y2="70.99947486135098" class="bond" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
-                <polygon id="b5r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="128.92282,64.99954 128.92302,70.99947 99.47935,87.99928 94.28321,84.99931 128.92282,64.99954" opacity="0.0">
+                <polygon id="b5r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="128.92282,64.99954 128.92302,70.99947 99.47935,87.99928 94.2832,84.99931 128.92282,64.99954" opacity="0.0">
                     <title>double bond.</title>
                 </polygon>
             </g>
             <g id="b6">
                 <line x1="128.92281359763126" x2="94.2832090498661" y1="144.9986300730895" y2="124.99885839424124" class="bond" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
                 <line x1="99.47934972974767" x2="128.92301359534804" y1="121.998892642414" y2="138.99869856943502" class="bond" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
-                <polygon id="b6r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="99.47935,121.99889 128.92302,138.9987 128.92282,144.99863 94.28321,124.998856 99.47935,121.99889" opacity="0.0">
+                <polygon id="b6r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="99.47935,121.99889 128.92302,138.9987 128.92282,144.99863 94.2832,124.998856 99.47935,121.99889" opacity="0.0">
                     <title>double bond.</title>
                 </polygon>
             </g>
             <g id="b7">
                 <line x1="60.64353990336097" x2="25.999935401260046" y1="186.7302615328486" y2="206.73003321169688" class="bond" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
                 <line x1="58.6436691008409" x2="24.000064598739968" y1="183.26608532872336" y2="203.26585700757158" class="bond" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
-                <polygon id="b7r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="58.64367,183.26608 60.64354,186.73026 25.999935,206.73004 24.000065,203.26585 58.64367,183.26608" opacity="0.0">
+                <polygon id="b7r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="58.643665,183.26608 60.64354,186.73026 25.999935,206.73003 24.000065,203.26585 58.643665,183.26608" opacity="0.0">
                     <title>double bond.</title>
                 </polygon>
             </g>
@@ -75,19 +72,19 @@
             </g>
             <g class="bond" id="b9">
                 <line x1="94.2832090498661" x2="94.2832090498661" y1="84.99931503654474" y2="124.99885839424124" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
-                <polygon id="b9r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="92.28321,82.99931 96.28321,82.99931 96.28321,126.998856 92.28321,126.998856 92.28321,82.99931" opacity="0.0">
+                <polygon id="b9r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="92.2832,82.99931 96.2832,82.99931 96.2832,126.998856 92.2832,126.998856 92.2832,82.99931" opacity="0.0">
                     <title>single bond.</title>
                 </polygon>
             </g>
             <g class="bond" id="b10">
                 <line x1="94.2832090498661" x2="59.643604502100935" y1="84.99931503654474" y2="64.9995433576965" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
-                <polygon id="b10r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="57.643604,62.999539999999996 61.643604,62.999539999999996 96.28321,82.99931 96.28321,86.99931 92.28321,86.99931 57.643604,66.99954 57.643604,62.999539999999996" opacity="0.0">
+                <polygon id="b10r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="57.643604,62.999539999999996 61.643604,62.999539999999996 96.2832,82.99931 96.2832,86.99931 92.2832,86.99931 57.643604,66.99954 57.643604,62.999539999999996" opacity="0.0">
                     <title>single bond.</title>
                 </polygon>
             </g>
             <g class="bond" id="b11">
                 <line x1="94.2832090498661" x2="59.643604502100935" y1="124.99885839424124" y2="144.9986300730895" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
-                <polygon id="b11r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="92.28321,122.998856 96.28321,122.998856 96.28321,126.998856 61.643604,146.99863 57.643604,146.99863 57.643604,142.99863 92.28321,122.998856" opacity="0.0">
+                <polygon id="b11r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="92.2832,122.998856 96.2832,122.998856 96.2832,126.998856 61.643604,146.99863 57.643604,146.99863 57.643604,142.99863 92.2832,122.998856" opacity="0.0">
                     <title>single bond.</title>
                 </polygon>
             </g>
@@ -145,43 +142,43 @@
             </g>
         </g>
     </g>
-    <g class="atom" opacity="0.0" id="a2">
-        <rect x="155.968245" y="81.49929499999999" onmouseover="speakIt(evt)" width="10.0" height="10.0" id="a2r" onmousedown="speakIt(evt)">
+    <g id="a2" class="atom" opacity="0.0">
+        <rect x="155.968255" onmouseover="speakIt(evt)" y="81.49929499999999" width="10.0" height="10.0" id="a2r" onmousedown="speakIt(evt)">
             <title>Carbon 4 bonded to 1 hydrogen.</title>
         </rect>
     </g>
-    <g class="atom" opacity="0.0" id="a3">
-        <rect x="155.968245" y="118.498873" onmouseover="speakIt(evt)" width="10.0" height="10.0" id="a3r" onmousedown="speakIt(evt)">
+    <g id="a3" class="atom" opacity="0.0">
+        <rect x="155.968255" onmouseover="speakIt(evt)" y="118.498873" width="10.0" height="10.0" id="a3r" onmousedown="speakIt(evt)">
             <title>Carbon 5 bonded to 1 hydrogen.</title>
         </rect>
     </g>
-    <g class="atom" opacity="0.0" id="a4">
-        <rect x="123.92282" y="59.999539999999996" onmouseover="speakIt(evt)" width="10.0" height="10.0" id="a4r" onmousedown="speakIt(evt)">
+    <g id="a4" class="atom" opacity="0.0">
+        <rect x="123.92282" onmouseover="speakIt(evt)" y="59.999539999999996" width="10.0" height="10.0" id="a4r" onmousedown="speakIt(evt)">
             <title>Carbon 3 bonded to 1 hydrogen.</title>
         </rect>
     </g>
-    <g class="atom" opacity="0.0" id="a5">
-        <rect x="123.92282" y="139.99863" onmouseover="speakIt(evt)" width="10.0" height="10.0" id="a5r" onmousedown="speakIt(evt)">
+    <g id="a5" class="atom" opacity="0.0">
+        <rect x="123.92282" onmouseover="speakIt(evt)" y="139.99863" width="10.0" height="10.0" id="a5r" onmousedown="speakIt(evt)">
             <title>Carbon 6 bonded to 1 hydrogen.</title>
         </rect>
     </g>
-    <g class="atom" opacity="0.0" id="a6">
-        <rect x="54.643604" y="179.99817" onmouseover="speakIt(evt)" width="10.0" height="10.0" id="a6r" onmousedown="speakIt(evt)">
+    <g id="a6" class="atom" opacity="0.0">
+        <rect x="54.643604" onmouseover="speakIt(evt)" y="179.99817" width="10.0" height="10.0" id="a6r" onmousedown="speakIt(evt)">
             <title>Carbon 3.</title>
         </rect>
     </g>
-    <g class="atom" opacity="0.0" id="a7">
-        <rect x="91.88128" y="81.49929499999999" onmouseover="speakIt(evt)" width="10.0" height="10.0" id="a7r" onmousedown="speakIt(evt)">
+    <g id="a7" class="atom" opacity="0.0">
+        <rect x="91.88127499999999" onmouseover="speakIt(evt)" y="81.49929499999999" width="10.0" height="10.0" id="a7r" onmousedown="speakIt(evt)">
             <title>Carbon 2.</title>
         </rect>
     </g>
-    <g class="atom" opacity="0.0" id="a8">
-        <rect x="91.88128" y="118.498873" onmouseover="speakIt(evt)" width="10.0" height="10.0" id="a8r" onmousedown="speakIt(evt)">
+    <g id="a8" class="atom" opacity="0.0">
+        <rect x="91.88127499999999" onmouseover="speakIt(evt)" y="118.498873" width="10.0" height="10.0" id="a8r" onmousedown="speakIt(evt)">
             <title>Carbon 1.</title>
         </rect>
     </g>
-    <g class="atom" opacity="0.0" id="a9">
-        <rect x="54.643604" y="59.999539999999996" onmouseover="speakIt(evt)" width="10.0" height="10.0" id="a9r" onmousedown="speakIt(evt)">
+    <g id="a9" class="atom" opacity="0.0">
+        <rect x="54.643604" onmouseover="speakIt(evt)" y="59.999539999999996" width="10.0" height="10.0" id="a9r" onmousedown="speakIt(evt)">
             <title>Carbon 1.</title>
         </rect>
     </g>

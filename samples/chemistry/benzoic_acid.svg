@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="text/ecmascript" width="190.00205338603715" zoomAndPan="magnify" contentStyleType="text/css" height="119.28101613274754" preserveAspectRatio="xMidYMid meet" version="1.0">
+  <g>
+    <g>
+      <g id="b1">
+        <line x1="24.999999999999986" x2="45.000293340862456" y1="59.64050806637377" y2="94.28101613274754" class="bond" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+        <line x1="48.00033734199182" x2="31.000088002258735" y1="89.08493992279148" y2="59.64050806637377" class="bond" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+      </g>
+      <line x1="24.999999999999986" x2="45.000293340862456" y1="59.64050806637377" y2="25.0" class="bond" id="b2" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+      <line x1="45.000293340862456" x2="85.00088002258735" y1="94.28101613274754" y2="94.28101613274754" class="bond" id="b3" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+      <g id="b4">
+        <line x1="45.000293340862456" x2="85.00088002258735" y1="25.0" y2="25.0" class="bond" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+        <line x1="82.00083602145799" x2="48.00033734199182" y1="30.19607620995607" y2="30.19607620995607" class="bond" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+      </g>
+      <g id="b5">
+        <line x1="85.00088002258735" x2="105.00117336344981" y1="94.28101613274754" y2="59.64050806637377" class="bond" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+        <line x1="99.00108536119107" x2="82.00083602145799" y1="59.64050806637377" y2="89.08493992279148" class="bond" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+      </g>
+      <line x1="85.00088002258735" x2="105.00117336344981" y1="25.0" y2="59.64050806637377" class="bond" id="b6" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+      <line x1="105.00117336344981" x2="145.0017600451747" y1="59.64050806637377" y2="59.64050806637377" class="bond" id="b7" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+      <line x1="145.0017600451747" x2="165.00205338603718" y1="59.64050806637377" y2="25.0" class="bond" id="b8" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+      <g id="b9">
+        <line x1="146.7337981504322" x2="166.73409149129463" y1="58.64048606564774" y2="93.2809941320215" class="bond" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+        <line x1="143.26972193991725" x2="163.2700152807797" y1="60.640530067099796" y2="95.28103813347357" class="bond" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+      </g>
+    </g>
+    <g>
+      <g class="atom" id="a8">
+        <rect x="152.14780533916218" y="18.326171875" fill="rgb(255, 255, 255)" width="25.70849609375" height="13.34765625" stroke="rgb(255, 255, 255)" stroke-width="1.0"/>
+        <text x="153.14780533916218" font-size="15.0px" y="30.673828125" fill="rgb(255, 13, 13)" font-family="Serif" stroke="rgb(255, 13, 13)" stroke-width="1.0">OH</text>
+      </g>
+      <g class="atom" id="a9">
+        <rect x="158.69199479228718" y="87.60718800774754" fill="rgb(255, 255, 255)" width="12.6201171875" height="13.34765625" stroke="rgb(255, 255, 255)" stroke-width="1.0"/>
+        <text x="159.69199479228718" font-size="15.0px" y="99.95484425774754" fill="rgb(255, 13, 13)" font-family="Serif" stroke="rgb(255, 13, 13)" stroke-width="1.0">O</text>
+      </g>
+    </g>
+  </g>
+</svg>
