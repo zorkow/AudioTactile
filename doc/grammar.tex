@@ -1,0 +1,197 @@
+\documentclass{article}
+
+\usepackage[paper=a4paper,margin=1in]{geometry}
+\usepackage{url}
+\usepackage{syntax}
+\usepackage{xspace}
+\grammarindent5em
+\def\atom{\texttt{active}\xspace}
+\def\passive{\texttt{passive}\xspace}
+\def\grouped{\texttt{grouped}\xspace}
+
+
+
+
+\begin{document}
+\subsection*{Algorithm Overview}
+
+The basic idea of the algorithm is to ``fold'' an XML annotation into a SVG in
+order to create a tactile diagram. The XML annotation is a navigation structure
+that describes multiple hierarchical levels and contains speech annotations its
+elements.  It is generally part of an XML document that combines it with
+scientific data (e.g., chemical data).  The SVG is an ordinary SVG diagram,
+however, hierarchically structured with some elements having id attributes that
+correspond to elements of the annotation.
+
+The folding process enriches the SVG, by adding title and description elements
+for the overall SVG as well as to the drawn elements. In addition, it introduces
+invisible regions by combining multiple drawn elements together. These are elements
+
+E.g., a Benzene ring is composed of six bonds (some of which are double bonds),
+which are actual drawn elements in the SVG. The ring itself is simulated by
+adding an invisible polygon to the SVG that contains the single bonds but lies
+behind them (in terms of z layer). This invisible element furnishes title and
+description for the Benzene ring.
+
+We have effectively three types of annotation elements. The motivation behind
+some of these elements is best observed with an example, e.g.,
+\url{https://progressiveaccess.com/chemistry/generic.html?mole=data/aspirin-enr}.
+\begin{description}
+\item[active] Single elements that form the base level of the navigation
+  structure.  Some active elements do not correspond to a drawn element in the
+  SVG. They have to be computed from their neighbouring passive elements.  E.g.,
+  Carbon atoms in a chemical molecule can be given by the junction of two or
+  more bonds.
+\item[passive] Single elements that can be attached to active elements but are
+  not interesting enough to be navigatable in their own right in online
+  navigation. However, for tactile diagrams they need to be explorable, i.e.,
+  get their own title and description.
+  
+  They always correspond to existing, drawn elements in the SVG.
+\item[grouped] Elements that form higher level nagivation elements. They
+  correspond to compound structures, made up of active, passive or other grouped
+  elements. They have initially no correspondence in the SVG and have to be
+  created as invisible polygons.
+\end{description}
+
+
+\subsection*{Algorithm Outline}
+
+\begin{tabular}{ll}
+  \textbf{Input:} & Structured SVG \\
+  & XML markup \\
+  \textbf{Output:} & Audio-tactile SVG
+\end{tabular}
+
+\textbf{Cases}
+
+\begin{enumerate}
+\item For every \atom and \passive element. If SVG element with corresponding id
+  exists, add speech to SVG element. If necessary:
+  \begin{enumerate}
+  \item embed elements into a new SVG group element,
+  \item put an invisible bounding polygon around thin lines.
+  \end{enumerate}
+\item For every \atom element that does not exists
+  \begin{enumerate}
+  \item Compute a bounding box by considering the internal neighbours (i.e., for
+    take the via elements of neighbour elements with location attribute
+    ``internal'').
+  \item Create \atom into invisible rectangle with the computed bounding box.
+  \item Add speech to new rectangle.
+  \end{enumerate}
+\item For each \grouped element with parent elements
+  \begin{enumerate}
+  \item Compute a bounding polygon by combining the SVG bounding boxes of its components.
+  \item Add an invisible polygon for the computed bounding polygon.
+  \item Add speech to new polygon.
+  \end{enumerate}
+\item For the \grouped element without parent (top-most element) add speech as
+  title and description of the SVG.
+\end{enumerate}
+
+Add speech means add \texttt{speech} attribute as SVG title element and \texttt{speech2} attribute (if it exists) as SVG descr element.
+
+\newpage
+
+\subsection*{Grammar}
+
+The following is a grammar outline in extended BNF for the annotation elements.
+\vspace{.5cm}
+\hrule
+
+\begin{grammar}\setlength{\parskip}{5pt}
+  <diagram> ::= `<' <type> `>' <data>* <annotations>  `</' type `>'
+
+  <data> ::= \ldots can be ignored \ldots
+  
+  <type>  ::= `histogram'
+  \alt `circuit'
+  \alt `molecule'
+  \alt \ldots
+  
+  
+  <annotations> ::= `<annotations>' <annotation>* <messages>* `</annotations>'
+
+  <annotation> ::= `<annotation speech="' <speech> `" speech2="' <speech> `">'
+  <element> <position> <parents> <children> <component> <neighbours> `</annotation>'
+
+  <element> ::= <active>
+  \alt <passive>
+  \alt <grouped>
+
+  <active> ::=  `<active>' <id> `</active>'
+
+  <passive> ::= `<passive>' <id> `</passive>'
+  
+  <grouped> ::= `<grouped>' <id> `</grouped>'
+
+  <position> ::= `<position>' <number> `</position>'
+
+  <parents> ::= `<parents>' <grouped>? `</parents>'
+
+  <children> ::= `<children>' <element>* `</children>'
+
+  <component> ::= `<component>' <element>* `</component>'
+
+  <neighbours> ::= `<neighbours>' <neighbour>* `</neighbours>'
+
+  <neighbour> ::= `<neighbour speech="' <speech> `" speech2="' <speech> `" location="' <location> `">' <element> <via>+ `</neighbour>'
+
+  <location> = internal | external
+  
+  <via> ::= `<via>' <passive> <position> `</via>'
+
+  <id> ::= <alpha> <id>* | <digit> <id>* | <symbol> <id>*
+
+  <number> ::= <digit> | <digit> <number>
+
+  <digit> ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+
+  <alpha> ::= a-z
+
+  <Alpha> ::= A-Z
+
+  <symbol> :: = - | _
+
+  <speech> ::=  <string> | <msgid>
+  
+  <string> ::= `Unicode'*
+
+  <messages> ::= `<language>' <language> `</language>' <message>*
+
+  <message> ::= `<message msg="' <msgid> `">' <string> `</message>'
+
+  <msgid> ::= <Alpha> <msgid>* | <symbol> <msgid>* | <number> <msgid>*
+  
+  <language> ::= iso-639-1 language code
+  
+\end{grammar}
+\hrule
+
+\subsubsection*{Notes:}
+
+\begin{enumerate}
+\item The grammar is defined in two namespaces:
+\begin{itemize}
+\item \emph{data} elements are definied in a namespace suitable for the expressed data.
+\item \emph{annotations} elements are defined in the \texttt{sre}
+  namespaces. Hence elements are usually of the form \texttt{sre:annotations}
+  etc.
+\end{itemize}
+\item The \texttt{component} element for active element annotations can only
+  contain \texttt{passive} elements.
+\item Multi-linguality is achieved via the message elements.
+\begin{itemize}
+\item In case \texttt{messages} elements are present, the \texttt{<speech>} elements are \texttt{<id>}s
+\item If there are no \texttt{messages} elements, the attributes \texttt{speech}
+  and \texttt{speech2} contain each contain a <string> only.
+\end{itemize}
+\item Special case of molecule diagrams:
+\begin{itemize}
+\item \texttt{active}, \texttt{bond}, \texttt{grouped}, are called
+  \texttt{atom}, \texttt{bond}, \texttt{atomSet}, respectively.
+\end{itemize}
+\end{enumerate}
+
+\end{document}

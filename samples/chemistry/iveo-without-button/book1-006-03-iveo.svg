@@ -1,0 +1,202 @@
+<svg contentScriptType="text/ecmascript" width="269.91704995804656" zoomAndPan="magnify" contentStyleType="text/css" height="191.64110547021306" preserveAspectRatio="xMidYMid meet" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:iveo="http://viewplus.com/iveo" xmlns:daisy="http://www.daisy.org/z3986/2005/">
+    <g id="as3" class="atomset" opacity="0.0">
+        <polygon points="57.026527,21.36584 70.452308,21.36584 76.955192,97.56289 76.955192,111.174218 59.972282,111.174218 18.28711,72.33410599999999 18.28711,59.396606 57.026527,21.36584" onmouseover="speakIt(evt)" visibility="visible" id="as3r" opacity="0.0" onmousedown="speakIt(evt)"/>
+        <title>Functional group Alkylchloride.</title>
+        <desc>Functional group C H2 Cl.</desc>
+    </g>
+    <g id="as2" class="atomset" opacity="0.0">
+        <polygon points="104.0335,20.420979 117.459281,20.420979 122.082763,94.829 122.082763,107.7665 102.71704,107.7665 102.71704,94.829 104.0335,20.420979" onmouseover="speakIt(evt)" visibility="visible" id="as2r" opacity="0.0" onmousedown="speakIt(evt)"/>
+        <title>Functional group Alkylbromide.</title>
+        <desc>Functional group C H Br.</desc>
+    </g>
+    <g id="as1" class="atomset" opacity="0.0">
+        <polygon points="197.81123,18.53125 211.237011,18.53125 251.629941,54.672287 251.629941,67.609787 212.890521,105.87678 166.119761,106.82164 152.69398,106.82164 18.28711,72.33410599999999 18.28711,59.396606 57.026527,21.36584 197.81123,18.53125" onmouseover="speakIt(evt)" visibility="visible" id="as1r" opacity="0.0" onmousedown="speakIt(evt)"/>
+        <title>n-Butane Substitutions at positions 1 and 2.</title>
+        <desc>Aliphatic chain of length 4 Substitutions at positions 1 and 2.</desc>
+    </g>
+    <title>C4H8BrCl.</title>
+    <desc>Molecule consisting of Aliphatic chain of length 4 and Functional group C H Br and Functional group C H2 Cl.</desc>
+    <g>
+        <g>
+            <g class="bond" id="b1">
+                <line x1="68.46373490040878" x2="64.44806374113188" y1="104.36855938335515" y2="64.92049564222327" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+                <polygon id="b1r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="62.44807,62.920494000000005 66.44807,62.920494000000005 70.46374,102.36856 70.46374,106.36856 66.46374,106.36856 62.44807,66.920494 62.44807,62.920494000000005" opacity="0.0">
+                    <title>single bond.</title>
+                </polygon>
+            </g>
+            <g class="bond" id="b2">
+                <line x1="64.44806374113188" x2="63.73941588949478" y1="64.92049564222327" y2="27.834591406548398" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+                <polygon id="b2r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="61.739418,25.834593 65.739418,25.834593 66.44807,62.920494000000005 66.44807,66.920494 62.44807,66.920494 61.739418,29.834593 61.739418,25.834593" opacity="0.0">
+                    <title>Single bond</title>
+                </polygon>
+            </g>
+            <g class="bond" id="b3">
+                <line x1="158.4620120583204" x2="159.4068758605032" y1="62.79455208731197" y2="100.35288822407824" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+                <polygon id="b3r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="156.46202,60.79455 160.46202,60.79455 161.40688,98.35289 161.40688,102.35289 157.40688,102.35289 156.46202,64.79455 156.46202,60.79455" opacity="0.0">
+                    <title>Single bond</title>
+                </polygon>
+            </g>
+            <g class="bond" id="b4">
+                <line x1="204.9965543158233" x2="244.91704995804656" y1="62.085904235674874" y2="61.14104043349208" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+                <polygon id="b4r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="242.91705,59.141045 246.91705,59.141045 246.91705,63.141045 206.99657,64.08590699999999 202.99657,64.08590699999999 202.99657,60.085907 242.91705,59.141045" opacity="0.0">
+                    <title>Single bond</title>
+                </polygon>
+            </g>
+            <g class="bond" id="b5">
+                <line x1="158.4620120583204" x2="204.9965543158233" y1="62.79455208731197" y2="62.085904235674874" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+                <polygon id="b5r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="202.99657,60.085907 206.99657,60.085907 206.99657,64.08590699999999 160.46202,64.79455 156.46202,64.79455 156.46202,60.79455 202.99657,60.085907" opacity="0.0">
+                    <title>single bond.</title>
+                </polygon>
+            </g>
+            <g class="bond" id="b6">
+                <line x1="204.9965543158233" x2="204.5241224147319" y1="62.085904235674874" y2="25.0" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+                <polygon id="b6r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="202.52412,23.0 206.52412,23.0 206.99657,60.085907 206.99657,64.08590699999999 202.99657,64.08590699999999 202.52412,27.0 202.52412,23.0" opacity="0.0">
+                    <title>Single bond</title>
+                </polygon>
+            </g>
+            <g class="bond" id="b7">
+                <line x1="204.9965543158233" x2="206.17763406855178" y1="62.085904235674874" y2="99.40802442189545" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+                <polygon id="b7r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="202.99657,60.085907 206.99657,60.085907 208.17763,97.40803 208.17763,101.40803 204.17763,101.40803 202.99657,64.08590699999999 202.99657,60.085907" opacity="0.0">
+                    <title>Single bond</title>
+                </polygon>
+            </g>
+            <g class="bond" id="b8">
+                <line x1="111.21882194918045" x2="158.4620120583204" y1="63.975631840040464" y2="62.79455208731197" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+                <polygon id="b8r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="156.46202,60.79455 160.46202,60.79455 160.46202,64.79455 113.21883,65.975628 109.21883,65.975628 109.21883,61.975628 156.46202,60.79455" opacity="0.0">
+                    <title>single bond.</title>
+                </polygon>
+            </g>
+            <g class="bond" id="b9">
+                <line x1="64.44806374113188" x2="111.21882194918045" y1="64.92049564222327" y2="63.975631840040464" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+                <polygon id="b9r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="109.21883,61.975628 113.21883,61.975628 113.21883,65.975628 66.44807,66.920494 62.44807,66.920494 62.44807,62.920494000000005 109.21883,61.975628" opacity="0.0">
+                    <title>single bond.</title>
+                </polygon>
+            </g>
+            <g class="bond" id="b10">
+                <line x1="111.21882194918045" x2="110.74639004808904" y1="63.975631840040464" y2="26.889727604365596" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+                <polygon id="b10r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="108.74639,24.889729 112.74639,24.889729 113.21883,61.975628 113.21883,65.975628 109.21883,65.975628 108.74639,28.889729 108.74639,24.889729" opacity="0.0">
+                    <title>Single bond</title>
+                </polygon>
+            </g>
+            <g class="bond" id="b11">
+                <line x1="111.21882194918045" x2="112.39990170190895" y1="63.975631840040464" y2="101.29775202626104" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+                <polygon id="b11r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="109.21883,61.975628 113.21883,61.975628 114.3999,99.29775 114.3999,103.29775 110.3999,103.29775 109.21883,65.975628 109.21883,61.975628" opacity="0.0">
+                    <title>single bond.</title>
+                </polygon>
+            </g>
+            <g class="bond" id="b12">
+                <line x1="158.4620120583204" x2="157.75336420668333" y1="62.79455208731197" y2="25.9448638021828" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+                <polygon id="b12r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="155.75336,23.944864 159.75336,23.944864 160.46202,60.79455 160.46202,64.79455 156.46202,64.79455 155.75336,27.944864 155.75336,23.944864" opacity="0.0">
+                    <title>Single bond</title>
+                </polygon>
+            </g>
+            <g class="bond" id="b13">
+                <line x1="64.44806374113188" x2="25.000000000000007" y1="64.92049564222327" y2="65.86535944440607" stroke="rgb(0, 0, 0)" stroke-width="1.0"/>
+                <polygon id="b13r" onmousedown="speakIt(evt)" onmouseover="speakIt(evt)" points="62.44807,62.920494000000005 66.44807,62.920494000000005 66.44807,66.920494 27.0,67.86536 23.0,67.86536 23.0,63.865359999999995 62.44807,62.920494000000005" opacity="0.0">
+                    <title>Single bond</title>
+                </polygon>
+            </g>
+        </g>
+        <g>
+            <g class="atom" id="a1">
+                <rect x="102.71704037378395" y="94.82900202626104" fill="rgb(255, 255, 255)" width="19.36572265625" height="12.9375" stroke="rgb(255, 255, 255)" stroke-width="1.0"/>
+                <text x="103.71704037378395" font-size="15.0px" y="106.76650202626104" fill="rgb(166, 41, 41)" font-family="Serif" stroke="rgb(166, 41, 41)" stroke-width="1.0">Br</text>
+                <rect x="102.71704037378395" onmouseover="speakIt(evt)" y="94.82900202626104" fill="rgb(255, 255, 255)" width="19.36572265625" opacity="0.0" id="a1r" height="12.9375" stroke="rgb(255, 255, 255)" onmousedown="speakIt(evt)" stroke-width="1.0">
+                    <title>Bromine 2.</title>
+                </rect>
+            </g>
+            <g class="atom" id="a3">
+                <rect x="59.97227982228378" y="97.56289532085515" fill="rgb(255, 255, 255)" width="16.98291015625" height="13.611328125" stroke="rgb(255, 255, 255)" stroke-width="1.0"/>
+                <text x="60.97227982228378" font-size="15.0px" y="110.17422344585515" fill="rgb(31, 240, 31)" font-family="Serif" stroke="rgb(31, 240, 31)" stroke-width="1.0">Cl</text>
+                <rect x="59.97227982228378" onmouseover="speakIt(evt)" y="97.56289532085515" fill="rgb(255, 255, 255)" width="16.98291015625" opacity="0.0" id="a3r" height="13.611328125" stroke="rgb(255, 255, 255)" onmousedown="speakIt(evt)" stroke-width="1.0">
+                    <title>Chlorine 2.</title>
+                </rect>
+            </g>
+            <g class="atom" id="a4">
+                <rect x="57.02652526449478" y="21.365841406548398" fill="rgb(255, 255, 255)" width="13.42578125" height="12.9375" stroke="rgb(255, 255, 255)" stroke-width="1.0"/>
+                <text x="58.02652526449478" font-size="15.0px" y="33.3033414065484" fill="rgb(191, 191, 191)" font-family="Serif" stroke="rgb(191, 191, 191)" stroke-width="1.0">H</text>
+                <rect x="57.02652526449478" onmouseover="speakIt(evt)" y="21.365841406548398" fill="rgb(255, 255, 255)" width="13.42578125" opacity="0.0" id="a4r" height="12.9375" stroke="rgb(255, 255, 255)" onmousedown="speakIt(evt)" stroke-width="1.0">
+                    <title>Hydrogen</title>
+                </rect>
+            </g>
+            <g class="atom" id="a5">
+                <rect x="238.20415933304656" y="54.67229043349208" fill="rgb(255, 255, 255)" width="13.42578125" height="12.9375" stroke="rgb(255, 255, 255)" stroke-width="1.0"/>
+                <text x="239.20415933304656" font-size="15.0px" y="66.60979043349208" fill="rgb(191, 191, 191)" font-family="Serif" stroke="rgb(191, 191, 191)" stroke-width="1.0">H</text>
+                <rect x="238.20415933304656" onmouseover="speakIt(evt)" y="54.67229043349208" fill="rgb(255, 255, 255)" width="13.42578125" opacity="0.0" id="a5r" height="12.9375" stroke="rgb(255, 255, 255)" onmousedown="speakIt(evt)" stroke-width="1.0">
+                    <title>Hydrogen</title>
+                </rect>
+            </g>
+            <g class="atom" id="a6">
+                <rect x="104.03349942308904" y="20.420977604365596" fill="rgb(255, 255, 255)" width="13.42578125" height="12.9375" stroke="rgb(255, 255, 255)" stroke-width="1.0"/>
+                <text x="105.03349942308904" font-size="15.0px" y="32.358477604365596" fill="rgb(191, 191, 191)" font-family="Serif" stroke="rgb(191, 191, 191)" stroke-width="1.0">H</text>
+                <rect x="104.03349942308904" onmouseover="speakIt(evt)" y="20.420977604365596" fill="rgb(255, 255, 255)" width="13.42578125" opacity="0.0" id="a6r" height="12.9375" stroke="rgb(255, 255, 255)" onmousedown="speakIt(evt)" stroke-width="1.0">
+                    <title>Hydrogen</title>
+                </rect>
+            </g>
+            <g class="atom" id="a7">
+                <rect x="152.6939852355032" y="93.88413822407824" fill="rgb(255, 255, 255)" width="13.42578125" height="12.9375" stroke="rgb(255, 255, 255)" stroke-width="1.0"/>
+                <text x="153.6939852355032" font-size="15.0px" y="105.82163822407824" fill="rgb(191, 191, 191)" font-family="Serif" stroke="rgb(191, 191, 191)" stroke-width="1.0">H</text>
+                <rect x="152.6939852355032" onmouseover="speakIt(evt)" y="93.88413822407824" fill="rgb(255, 255, 255)" width="13.42578125" opacity="0.0" id="a7r" height="12.9375" stroke="rgb(255, 255, 255)" onmousedown="speakIt(evt)" stroke-width="1.0">
+                    <title>Hydrogen</title>
+                </rect>
+            </g>
+            <g class="atom" id="a8">
+                <rect x="197.8112317897319" y="18.53125" fill="rgb(255, 255, 255)" width="13.42578125" height="12.9375" stroke="rgb(255, 255, 255)" stroke-width="1.0"/>
+                <text x="198.8112317897319" font-size="15.0px" y="30.46875" fill="rgb(191, 191, 191)" font-family="Serif" stroke="rgb(191, 191, 191)" stroke-width="1.0">H</text>
+                <rect x="197.8112317897319" onmouseover="speakIt(evt)" y="18.53125" fill="rgb(255, 255, 255)" width="13.42578125" opacity="0.0" id="a8r" height="12.9375" stroke="rgb(255, 255, 255)" onmousedown="speakIt(evt)" stroke-width="1.0">
+                    <title>Hydrogen</title>
+                </rect>
+            </g>
+            <g class="atom" id="a11">
+                <rect x="199.46474344355178" y="92.93927442189545" fill="rgb(255, 255, 255)" width="13.42578125" height="12.9375" stroke="rgb(255, 255, 255)" stroke-width="1.0"/>
+                <text x="200.46474344355178" font-size="15.0px" y="104.87677442189545" fill="rgb(191, 191, 191)" font-family="Serif" stroke="rgb(191, 191, 191)" stroke-width="1.0">H</text>
+                <rect x="199.46474344355178" onmouseover="speakIt(evt)" y="92.93927442189545" fill="rgb(255, 255, 255)" width="13.42578125" opacity="0.0" id="a11r" height="12.9375" stroke="rgb(255, 255, 255)" onmousedown="speakIt(evt)" stroke-width="1.0">
+                    <title>Hydrogen</title>
+                </rect>
+            </g>
+            <g class="atom" id="a13">
+                <rect x="151.04047358168333" y="19.4761138021828" fill="rgb(255, 255, 255)" width="13.42578125" height="12.9375" stroke="rgb(255, 255, 255)" stroke-width="1.0"/>
+                <text x="152.04047358168333" font-size="15.0px" y="31.4136138021828" fill="rgb(191, 191, 191)" font-family="Serif" stroke="rgb(191, 191, 191)" stroke-width="1.0">H</text>
+                <rect x="151.04047358168333" onmouseover="speakIt(evt)" y="19.4761138021828" fill="rgb(255, 255, 255)" width="13.42578125" opacity="0.0" id="a13r" height="12.9375" stroke="rgb(255, 255, 255)" onmousedown="speakIt(evt)" stroke-width="1.0">
+                    <title>Hydrogen</title>
+                </rect>
+            </g>
+            <g class="atom" id="a14">
+                <rect x="18.287109375000007" y="59.39660944440607" fill="rgb(255, 255, 255)" width="13.42578125" height="12.9375" stroke="rgb(255, 255, 255)" stroke-width="1.0"/>
+                <text x="19.287109375000007" font-size="15.0px" y="71.33410944440607" fill="rgb(191, 191, 191)" font-family="Serif" stroke="rgb(191, 191, 191)" stroke-width="1.0">H</text>
+                <rect x="18.287109375000007" onmouseover="speakIt(evt)" y="59.39660944440607" fill="rgb(255, 255, 255)" width="13.42578125" opacity="0.0" id="a14r" height="12.9375" stroke="rgb(255, 255, 255)" onmousedown="speakIt(evt)" stroke-width="1.0">
+                    <title>Hydrogen</title>
+                </rect>
+            </g>
+        </g>
+    </g>
+    <g id="a2" class="atom" opacity="0.0">
+        <rect x="59.44807" onmouseover="speakIt(evt)" y="59.920494000000005" width="10.0" height="10.0" id="a2r" onmousedown="speakIt(evt)">
+            <title>Carbon 1 bonded to 2 hydrogens.</title>
+        </rect>
+    </g>
+    <g id="a9" class="atom" opacity="0.0">
+        <rect x="153.46202" onmouseover="speakIt(evt)" y="57.79455" width="10.0" height="10.0" id="a9r" onmousedown="speakIt(evt)">
+            <title>Carbon 3 bonded to 2 hydrogens.</title>
+        </rect>
+    </g>
+    <g id="a10" class="atom" opacity="0.0">
+        <rect x="199.99657" onmouseover="speakIt(evt)" y="57.085907" width="10.0" height="10.0" id="a10r" onmousedown="speakIt(evt)">
+            <title>Carbon 4 bonded to 3 hydrogens.</title>
+        </rect>
+    </g>
+    <g id="a12" class="atom" opacity="0.0">
+        <rect x="106.21883" onmouseover="speakIt(evt)" y="58.975628" width="10.0" height="10.0" id="a12r" onmousedown="speakIt(evt)">
+            <title>Carbon 2 bonded to 1 hydrogen.</title>
+        </rect>
+    </g>
+    <iveo:paper top-margin="1.0 inch" width="8.5 inch" right-margin="0.6 inch" orientation="landscape" left-margin="0.75 inch" bottom-margin="0.5 inch" height="11.0 inch" name="Custom paper size"/>
+    <daisy:layers>
+        <daisy:layerItem print="on" display="on" enabledInViewer="on" lock="off" speak="on" emboss="on" name="Default"/>
+        <daisy:layerItem print="on" display="on" enabledInViewer="on" lock="off" speak="on" emboss="off" name="Print"/>
+        <daisy:layerItem print="off" display="on" enabledInViewer="on" lock="off" speak="on" emboss="on" name="Emboss"/>
+        <daisy:layerItem print="off" display="on" enabledInViewer="on" lock="off" speak="on" emboss="on" name="Braille"/>
+        <daisy:layerItem print="on" display="on" enabledInViewer="on" lock="off" speak="on" emboss="on" name="OnLayer"/>
+        <daisy:layerItem print="off" display="off" enabledInViewer="on" lock="off" speak="off" emboss="off" name="OffLayer"/>
+    </daisy:layers>
+</svg>

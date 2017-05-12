@@ -29,6 +29,7 @@
 package com.progressiveaccess.audiotactile;
 
 import com.google.common.base.Joiner;
+import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -52,7 +53,6 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
-import org.w3c.dom.Attr;
 
 
 /**
@@ -67,6 +67,8 @@ public final class Tactile {
   // Magic numbers should be parameterisable.
   private static final Double MIN_DIFF = 5.0;
   private static final Double INV_ATOM_SIZE = 10.0;
+  private static final String TITLE_ATTR = "sre:speech";
+  private static final String DESCR_ATTR = "sre:speech2";
 
   private SVGDocument svg = null;
   private Document xml = null;
@@ -111,7 +113,8 @@ public final class Tactile {
    * Initialises the list of annotation elements.
    */
   public void annotations() {
-    final NodeList annotations = this.xml.getElementsByTagName("sre:annotation");
+    final NodeList annotations =
+        this.xml.getElementsByTagName("sre:annotation");
     for (Integer i = 0; i < annotations.getLength(); i++) {
       final Element item = (Element) annotations.item(i);
       Logger.logging(FileHandler.toString(item));
@@ -151,7 +154,13 @@ public final class Tactile {
     }
   }
 
-
+  /**
+   * Retrievs the message element in the annotations.
+   *
+   * @param language A ISO indicator for the language.
+   *
+   * @return The message element, if it exists. O/w null.
+   */
   private NodeList getMessages(String language) {
     NodeList messages = null;
     try {
@@ -201,6 +210,44 @@ public final class Tactile {
     FileHandler.writeSvg(this.svg, fileName);
   }
 
+  /**
+   * Gets the title element for an annotation.
+   *
+   * @param annotation The XML element.
+   *
+   * @return The speech attribute for the title.
+   */
+  private String getTitle(Element annotation) {
+    return this.getSpeech(annotation, Tactile.TITLE_ATTR);
+  }
+
+  /**
+   * Gets the description element for an annotation.
+   *
+   * @param annotation The XML element.
+   *
+   * @return The speech attribute for the description.
+   */
+  private String getDescr(Element annotation) {
+    return this.getSpeech(annotation, Tactile.DESCR_ATTR);
+  }
+
+  /**
+   * Gets the attibute value for a speech annotation.
+   *
+   * @param annotation The XML element.
+   * @param attribute The attribute name.
+   *
+   * @return The speech attribute for the annotation element.
+   */
+  private String getSpeech(Element annotation, String attribute) {
+    String speech = annotation.getAttribute(attribute);
+    return this.useSpeechAttr ? speech : this.messages.get(speech);
+  }
+
+  /**
+   * Adds titles and descriptions to the annotation elements.
+   */
   private void addBaseTitles() {
     for (final Element element : this.annotations) {
       System.out.println(this.getTitle(element));
@@ -208,19 +255,6 @@ public final class Tactile {
     }
   }
 
-  private String getTitle(Element annotation) {
-    return this.getSpeech(annotation, "sre:speech");
-  }
-  
-  private String getDescr(Element annotation) {
-    return this.getSpeech(annotation, "sre:speech2");
-  }
-  
-  private String getSpeech(Element annotation, String attribute) {
-    String speech = annotation.getAttribute(attribute);
-    return this.useSpeechAttr ? speech : this.messages.get(speech);
-  }
-  
   // private static void addBaseTitles() {
   //   Language.reset("en");
   //   for (final RichBond bond : RichStructureHelper.getBonds()) {
@@ -359,7 +393,7 @@ public final class Tactile {
   //     rect.setAttribute("height", Double.toString(bottomRight.y - topLeft.y));
   //   }
   //   rect.setAttribute("visibility", "visible");
-  //   // TODO: Add iveo attributes here.
+  //   // TODO : Add iveo attributes here.
   //   if (Cli.hasOption("iveo")) {
   //     rect.setAttribute("id", atomSet.getId() + "r");
   //     rect.setAttribute("onmouseover", "speakIt(evt)");
@@ -414,10 +448,12 @@ public final class Tactile {
   //   return desc;
   // }
 
-  // private static Element atomSetTitle(final RichAtomSet atomSet, SreElement annotation) {
+  // private static Element atomSetTitle(
+  //     final RichAtomSet atomSet, SreElement annotation) {
   //   Element title = svg.createElementNS(Tactile.uri, "title");
   //   String content = Languages.
-  //     get(annotation.getAttributeValue("speech", annotation.getNamespaceURI()), "en");
+  //     get(annotation.getAttributeValue(
+  //             "speech", annotation.getNamespaceURI()), "en");
   //   Text text = svg.createTextNode(content);
   //   title.appendChild(text);
   //   return title;
@@ -479,7 +515,7 @@ public final class Tactile {
   //     if (length == 0) {
   //       return;
   //     }
-  //     /// TODO: Do this properly with triple bonds
+  //     /// TODO : Do this properly with triple bonds
   //     Double[] ys = new Double[2 * length];
   //     Double[] xs = new Double[2 * length];
 
@@ -615,8 +651,8 @@ public final class Tactile {
   //     }
   //     System.out.println("Error2: Something is wrong with bond ends!");
   //   }
-  //   // TODO: This has to iterate over all other points in the structure. Test
-  //   //       with pure skeletal chain!
+  //   // TODO : This has to iterate over all other points in the structure.
+  //   //        Test with pure skeletal chain!
   //   if (currentPoint == null) {
   //     currentPoint = point1;
   //   }
@@ -648,7 +684,8 @@ public final class Tactile {
   // }
 
 
-  // private static void getAverageBondEnd(Element group, Point2d point1, Point2d point2) {
+  // private static void getAverageBondEnd(
+  //     Element group, Point2d point1, Point2d point2) {
   //   Integer number = 0;
   //   Point2d ref1 = null;
   //   Point2d ref2 = null;
@@ -918,6 +955,7 @@ public final class Tactile {
    * SVG.
    */
   private void maxPolygon() {
+    // TODO : Add additional drawn SVG elements.
     NodeList lines = this.svg.getElementsByTagNameNS(this.uri, "line");
     NodeList rectangles = this.svg.getElementsByTagNameNS(this.uri, "rect");
     NodeList polygons = this.svg.getElementsByTagNameNS(this.uri, "polygon");

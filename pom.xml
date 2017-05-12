@@ -124,6 +124,16 @@
       </configuration>
     </plugin>
     <plugin>
+      <artifactId>maven-jar-plugin</artifactId>
+      <configuration>
+        <archive>
+          <manifest>
+	    <mainClass>com.progressiveaccess.audiotactile.App</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+    </plugin>
+    <plugin>
       <artifactId>maven-assembly-plugin</artifactId>
       <configuration>
         <archive>
