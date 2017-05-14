@@ -353,7 +353,7 @@ public final class Tactile {
   //       Tactile.combineBbox(topLeft, bottomRight, tempTop, tempBot, init);
   //       init = false;
   //       // POLY
-  //       Tactile.coordinatesFromLine((SVGLineElement)component, xs, ys);
+  //       Tactile.getCoordinates((SVGLineElement)component, xs, ys);
   //     }
   //     NodeList nodes = component.getElementsByTagNameNS(Tactile.uri, "rect");
   //     for (Integer i = 0; i < nodes.getLength(); i++) {
@@ -363,7 +363,7 @@ public final class Tactile {
   //       Tactile.combineBbox(topLeft, bottomRight, tempTop, tempBot, init);
   //       init = false;
   //       // POLY
-  //       Tactile.coordinatesFromRectangle((SVGRectElement)node, xs, ys);
+  //       Tactile.getCoordinates((SVGRectElement)node, xs, ys);
   //     }
   //     nodes = component.getElementsByTagNameNS(Tactile.uri, "line");
   //     for (Integer i = 0; i < nodes.getLength(); i++) {
@@ -373,7 +373,7 @@ public final class Tactile {
   //       Tactile.combineBbox(topLeft, bottomRight, tempTop, tempBot, init);
   //       init = false;
   //       // POLY
-  //       Tactile.coordinatesFromLine((SVGLineElement)node, xs, ys);
+  //       Tactile.getCoordinates((SVGLineElement)node, xs, ys);
   //     }
   //   }
   //   Element group = svg.createElementNS(Tactile.uri, "g");
@@ -905,16 +905,16 @@ public final class Tactile {
     }
   }
 
-  private void coordinatesFromLine (SVGLineElement line,
-                                    List<Double> xs, List<Double> ys) {
+  private void getCoordinates (SVGLineElement line,
+                               List<Double> xs, List<Double> ys) {
     xs.add(Tactile.getValue(line.getX1()));
     ys.add(Tactile.getValue(line.getY1()));
     xs.add(Tactile.getValue(line.getX2()));
     ys.add(Tactile.getValue(line.getY2()));
   }
 
-  private void coordinatesFromRectangle(SVGRectElement rectangle,
-                                        List<Double> xs, List<Double> ys) {
+  private void getCoordinates(SVGRectElement rectangle,
+                              List<Double> xs, List<Double> ys) {
     Double x = Tactile.getValue(rectangle.getX());
     Double y = Tactile.getValue(rectangle.getY());
     Double h = Tactile.getValue(rectangle.getHeight());
@@ -925,7 +925,7 @@ public final class Tactile {
     xs.add(x); ys.add(y);
   }
 
-  private void coordinatesFromPolygon(SVGPolygonElement polygon,
+  private void getCoordinates(SVGPolygonElement polygon,
                                       List<Double> xs, List<Double> ys) {
     SVGPointList points = polygon.getPoints();
     for (Integer j = 0; j < points.getNumberOfItems(); j++) {
@@ -962,13 +962,13 @@ public final class Tactile {
     List<Double> xs = new ArrayList<>();
     List<Double> ys = new ArrayList<>();
     for (Integer i = 0; i < lines.getLength(); i++) {
-      this.coordinatesFromLine((SVGLineElement) lines.item(i), xs, ys);
+      this.getCoordinates((SVGLineElement) lines.item(i), xs, ys);
     }
     for (Integer i = 0; i < rectangles.getLength(); i++) {
-      this.coordinatesFromRectangle((SVGRectElement) rectangles.item(i), xs, ys);
+      this.getCoordinates((SVGRectElement) rectangles.item(i), xs, ys);
     }
     for (Integer i = 0; i < polygons.getLength(); i++) {
-      this.coordinatesFromPolygon((SVGPolygonElement) polygons.item(i), xs, ys);
+      this.getCoordinates((SVGPolygonElement) polygons.item(i), xs, ys);
     }
     this.root.appendChild(this.polygonFromCoordinates(xs, ys));
   }
