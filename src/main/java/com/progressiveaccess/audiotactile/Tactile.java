@@ -29,7 +29,6 @@
 package com.progressiveaccess.audiotactile;
 
 import com.google.common.base.Joiner;
-import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -54,6 +53,7 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
+import org.w3c.dom.NamedNodeMap;
 
 
 /**
@@ -69,8 +69,10 @@ public final class Tactile {
   // Magic numbers should be parameterisable.
   private static final Double MIN_DIFF = 5.0;
   private static final Double INV_ATOM_SIZE = 10.0;
-  private static final String TITLE_ATTR = "sre:speech";
-  private static final String DESCR_ATTR = "sre:speech2";
+  private static final String SRE_PREFIX = "sre:";
+  private static final String TITLE_ATTR = "speech";
+  private static final String DESCR_ATTR = "speech2";
+  private static final String MSG_ATTR = "msg";
 
   private SVGDocument svg = null;
   private Document xml = null;
@@ -104,9 +106,9 @@ public final class Tactile {
     this.messages();
     this.enrich();
 
-	// cherden, add all missing <title> and <desc> nodes to tactile elements
-	this.addTitlesAndDesc();
-	
+    // cherden, add all missing <title> and <desc> nodes to tactile elements
+    this.addTitlesAndDesc();
+
     // Output
     if (Cli.hasOption("o")) {
       this.writeSvg(Cli.getOptionValue("o"));
@@ -156,7 +158,7 @@ public final class Tactile {
     for (Integer i = 0; i < messages.getLength(); i++) {
       final Element item = (Element) messages.item(i);
       Logger.logging(FileHandler.toString(item));
-      this.messages.put(item.getAttribute("sre:msg"), item.getTextContent());
+      this.messages.put(getSreAttributeValue(item, MSG_ATTR), item.getTextContent());
     }
   }
 
@@ -247,7 +249,7 @@ public final class Tactile {
    * @return The speech attribute for the annotation element.
    */
   private String getSpeech(Element annotation, String attribute) {
-    String speech = annotation.getAttribute(attribute);
+    String speech = annotation.getAttributeNS(sreUri, attribute);
     return this.useSpeechAttr ? speech : this.messages.get(speech);
   }
 
@@ -885,6 +887,8 @@ public final class Tactile {
     NodeList lines = this.svg.getElementsByTagNameNS(this.uri, "line");
     NodeList rectangles = this.svg.getElementsByTagNameNS(this.uri, "rect");
     NodeList polygons = this.svg.getElementsByTagNameNS(this.uri, "polygon");
+    // TODO (sorge): Integrate Paths.
+    // NodeList paths = this.svg.getElementsByTagNameNS(this.uri, "path");
     for (Integer i = 0; i < lines.getLength(); i++) {
       SVGLineElement line = (SVGLineElement)lines.item(i);
       this.updateCollision(Tactile.getValue(line.getX1()),
@@ -965,6 +969,8 @@ public final class Tactile {
     NodeList lines = this.svg.getElementsByTagNameNS(this.uri, "line");
     NodeList rectangles = this.svg.getElementsByTagNameNS(this.uri, "rect");
     NodeList polygons = this.svg.getElementsByTagNameNS(this.uri, "polygon");
+    // TODO (sorge): Integrate Paths.
+    // NodeList paths = this.svg.getElementsByTagNameNS(this.uri, "path");
     List<Double> xs = new ArrayList<>();
     List<Double> ys = new ArrayList<>();
     for (Integer i = 0; i < lines.getLength(); i++) {
@@ -979,255 +985,214 @@ public final class Tactile {
     this.root.appendChild(this.polygonFromCoordinates(xs, ys));
   }
 
-  private static Element getDirectChild( Element parent, String name)
-  {
-    for(Node child = parent.getFirstChild(); child != null; child = child.getNextSibling())
-    {
-		//System.out.println( child.getNodeName() + " ?= " + name );
-        if(child instanceof Element && name.equals(child.getNodeName())) return (Element) child;
+  private static Element getDirectChild( Element parent, String name) {
+    for(Node child = parent.getFirstChild();
+        child != null; child = child.getNextSibling()) {
+      //System.out.println( child.getNodeName() + " ?= " + name );
+      if(child instanceof Element && name.equals(child.getNodeName())) {
+        return (Element) child;
+      }
     }
     return null;
   }
-  
-  
+
+
   /*****************
    * begin insert
    * cherden
    * 5/29/2017
    *
-   * functions for adding all <title> and <desc> elements for tactile objects
-   * 
+   * functions for adding all <title/> and <desc/> elements for tactile objects.
+   *
    *****************/
-  private static void addTitle(SVGDocument svg, Node elem, String innertitle)
-  {
-			if( innertitle.length() == 0 )
-				return;
+  private void addTitle(SVGDocument svg, Node elem, String innertitle) {
+    if( innertitle.length() == 0 ) {
+      return;
+    }
+    String id = elem.getTextContent().trim();
+    Element noddy = svg.getElementById( id );
 
-            String id = elem.getTextContent().trim();
-
-            Element noddy = svg.getElementById( id );
-
-            if (noddy == null)
-                return;
-
-            Element elti = getDirectChild( noddy, "title" );
-
-            if (elti == null)
-            {
-				Node title = svg.createElementNS( Tactile.svgUri , "title" );
-				title.setTextContent( innertitle );
-                noddy.appendChild( title );
-            }
-            else
-			{	
-				String innertext = elti.getTextContent().trim();
-				
-				//if( !innertext.contains( innertitle ) )
-				//	elti.setTextContent( innertext += " " + innertitle );
-				elti.setTextContent( innertitle );
-			}
-  }
-		
-  private static void addDescription(SVGDocument svg, Node elem, String innertitle)
-  {
-			if( innertitle.length() == 0 )
-				return;
-			
-            String id = elem.getTextContent().trim();
-
-            Element noddy = svg.getElementById( id );
-
-            if (noddy == null)
-                return;
-
-            Element elti = getDirectChild( noddy, "desc" );
-
-            if (elti == null)
-            {
-				Node title = svg.createElementNS( Tactile.svgUri , "desc" );
-				title.setTextContent( innertitle );
-                noddy.appendChild( title );
-            }
-            else
-			{	
-				String innertext = elti.getTextContent().trim();
-				
-				//if( !innertext.contains( innertitle ) )
-				//	elti.setTextContent( innertext += " " + innertitle );
-				elti.setTextContent( innertitle );
-			}
+    if (noddy == null) {
+      return;
+    }
+    addOrReplaceElement(noddy, "title", innertitle);
   }
 
-  private Element findFirstChildElement( Node node )
-  {
-		NodeList children = node.getChildNodes();
-		
-		for( int i = 0; i < children.getLength(); i++ )
-		{
-			if( children.item(i).getNodeType() != 1 )
-				continue;
-				
-			return (Element)children.item(i);
-		}
-		
-		return null;
+  private void addDescription(SVGDocument svg, Node elem, String innertitle) {
+    if ( innertitle.length() == 0 ) {
+      return;
+    }
+
+    String id = elem.getTextContent().trim();
+
+    Element noddy = svg.getElementById( id );
+
+    if (noddy == null) {
+      return;
+    }
+
+    addOrReplaceElement(noddy, "desc", innertitle);
   }
-          
-	private Node findAnnotationByName( String group, String name )
-    {
-            
-            for( int i = 0; i < this.annotations.size(); i++)
-            {
-                Element node = this.annotations.get(i);
-				Element fairchild = getDirectChild( node, group );
-				
-				if( fairchild == null )
-					continue;
-								
-                if (fairchild != null && fairchild.getTextContent().trim().equals(name))
-                {
-                    return node;
-                }
 
-            }
+  private Element findFirstChildElement( Node node ) {
+    NodeList children = node.getChildNodes();
+    for( int i = 0; i < children.getLength(); i++ ) {
+      if ( children.item(i).getNodeType() != 1 ) {
+        continue;
+      }
+      return (Element)children.item(i);
+    }
 
-            return null;
-        }
+    return null;
+  }
 
-  private void addTitlesAndDesc()
-  {
-	  for (int i = 0; i < this.annotations.size(); i++)
-	  {
-			Element node = this.annotations.get(i);
-					
-			if( node.hasChildNodes() )
-			{
-				Element elem = findFirstChildElement( node );
-				String name = elem.getTextContent().trim();			
-				
-				Node attr = node.getAttributes().getNamedItem( TITLE_ATTR );
-				String attrTitle = (attr != null) ? attr.getNodeValue() : null;
-				
-				attr = node.getAttributes().getNamedItem( DESCR_ATTR );
-				String attrDesc = (attr != null) ? attr.getNodeValue() : null;
-				
-				String title = "";
-				String desc = "";
-				
-				// if no speech attribute exists go and fetch the next
-                // speech from its components.
-                if (attrTitle == null)
-                {	
-					Logger.logging( name + " annotation has no sre:speech attribute" );
-					
-					Node component = getDirectChild( node, "sre:component" );
-					
-					if( component != null && component.hasChildNodes() )
-					{
-						Logger.logging( "<sre:component/> has children" );
-						
-						Node fairchild = findFirstChildElement( component );
-						String componentName = fairchild.getTextContent().trim();
-							
-							Node annotation = findAnnotationByName( fairchild.getNodeName(), componentName );
-							if (annotation != null)
-                            {
-                                Node localattr = annotation.getAttributes().getNamedItem( TITLE_ATTR );
+  private Node findAnnotationByName( String group, String name ) {
 
-                                if (localattr != null)
-                                {
-                                    title += localattr.getNodeValue();
-									Logger.logging( "found useful speech in <" + fairchild.getNodeName() + ">" + title + "</" + fairchild.getNodeName() + ">" );
-                                }
-                            }					
-					}
-					
-					component = getDirectChild( node, "sre:parents" );
+    for( int i = 0; i < this.annotations.size(); i++) {
+      Element node = this.annotations.get(i);
+      Element fairchild = getDirectChild( node, group );
 
-					if( component != null && component.hasChildNodes() )
-					{
-						Logger.logging( "<sre:parent/> has children" );
-						
-						Node lonelyparent = findFirstChildElement( component );
-						String parentName = lonelyparent.getTextContent().trim();
-						
-						Node annotation = findAnnotationByName( lonelyparent.getNodeName(), parentName );
-						if (annotation != null)
-                        {
-                            Node localattr = annotation.getAttributes().getNamedItem( TITLE_ATTR );
+      if ( fairchild == null ) {
+        continue;
+      }
 
-                            if (localattr != null)
-                            {
-                                title += localattr.getNodeValue();
-								Logger.logging( "found useful title in <" + lonelyparent.getNodeName() + ">" + title + "</" + lonelyparent.getNodeName() + ">" );
-                            }
-							else
-							{
-								localattr = annotation.getAttributes().getNamedItem( "type" );
-                                    
-                                if (localattr != null)
-                                {
-                                    desc += "Type " + localattr.getNodeValue();
-									Logger.logging( "found useful desc in <" + lonelyparent.getNodeName() + ">" + desc + "</" + lonelyparent.getNodeName() + ">" );
-                                }
-							}
-                        }	
-					}
-				}
-				else
-				{
-					title = attrTitle;
+      if (fairchild != null && fairchild.getTextContent().trim().equals(name)) {
+        return node;
+      }
 
-                    if (attrDesc != null)
-						desc = attrDesc;
+    }
 
-					Logger.logging( name + " adding annotation <title>" + title + "</title>" ); 				
-				}
-				
-				addTitle(svg, elem, title);
-                addDescription(svg, elem, desc);
-			}
-			
-			Node parent = getDirectChild( node, "sre:parents");
-			if( parent != null && !parent.hasChildNodes() )
-			{
-				Logger.logging( "found the SVG root element, adding" ); 				
-				SVGSVGElement root = svg.getRootElement();
-				
-				Node attr = node.getAttributes().getNamedItem( TITLE_ATTR );
-				String title = (attr != null) ? attr.getNodeValue() : "";
-				
-				attr = node.getAttributes().getNamedItem( DESCR_ATTR );
-				String desc = (attr != null) ? attr.getNodeValue() : "";
+    return null;
+  }
 
-				Logger.logging( "   <title>" + title + "</title>" ); 				
-				Logger.logging( "   <desc>" + desc + "</desc>" ); 				
-
-				Element elti = getDirectChild( root, "title" );
-				if( elti == null )
-				{
-					elti = svg.createElementNS( Tactile.svgUri, "title" );
-					elti.setTextContent( title );
-					root.appendChild( elti );
-				}
-				else {
-					elti.setTextContent( title );
-				}
-				
-				elti = getDirectChild( root, "desc" );
-				if( elti == null )
-				{
-					elti = svg.createElementNS( Tactile.svgUri, "desc" );
-					elti.setTextContent( desc );
-					root.appendChild( elti );
-				}
-				else {
-					elti.setTextContent( desc );
-				}
-			}
-	  }
+  private String getSreAttributeValue(Element element, String attribute) {
+    String attr = getSreAttribute(element, attribute);
+    return (attr != null) ? attr : "";
   }
   
+  private String getSreAttribute(Element element, String attribute) {
+    NamedNodeMap attrs = element.getAttributes();
+    Node attr = attrs.getNamedItem(attribute);
+    if (attr == null) {
+      attr = attrs.getNamedItem(SRE_PREFIX + attribute);
+    }
+    return (attr != null) ? attr.getNodeValue() : null;
+  }
+
+  private void addTitlesAndDesc() {
+    for (int i = 0; i < this.annotations.size(); i++) {
+      Element node = this.annotations.get(i);
+
+      if ( node.hasChildNodes() ) {
+        Element elem = findFirstChildElement( node );
+        String name = elem.getTextContent().trim();
+
+        String attrTitle = getSreAttribute(node, TITLE_ATTR);
+        String attrDesc = getSreAttribute(node, DESCR_ATTR);
+
+        String title = "";
+        String desc = "";
+
+        // if no speech attribute exists go and fetch the next
+        // speech from its components.
+        if (attrTitle == null) {
+          Logger.logging( name + " annotation has no sre:speech attribute" );
+
+          Node component = getDirectChild( node, "sre:component" );
+
+          if ( component != null && component.hasChildNodes() ) {
+            Logger.logging( "<sre:component/> has children" );
+
+            Node fairchild = findFirstChildElement( component );
+            String componentName = fairchild.getTextContent().trim();
+
+            Node annotation = findAnnotationByName( fairchild.getNodeName(), componentName );
+            if (annotation != null) {
+              Node localattr = annotation.getAttributes().getNamedItem( TITLE_ATTR );
+
+              if (localattr != null) {
+                title += localattr.getNodeValue();
+                Logger.logging( "found useful speech in <"
+                                + fairchild.getNodeName() + ">"
+                                + title + "</" + fairchild.getNodeName() + ">" );
+              }
+            }
+          }
+
+          component = getDirectChild( node, "sre:parents" );
+
+          if ( component != null && component.hasChildNodes() ) {
+            Logger.logging( "<sre:parent/> has children" );
+
+            Node lonelyparent = findFirstChildElement( component );
+            String parentName = lonelyparent.getTextContent().trim();
+
+            Node annotation = findAnnotationByName( lonelyparent.getNodeName(), parentName );
+            if (annotation != null) {
+              Node localattr = annotation.getAttributes().getNamedItem( TITLE_ATTR );
+
+              if (localattr != null) {
+                title += localattr.getNodeValue();
+                Logger.logging( "found useful title in <"
+                                + lonelyparent.getNodeName()
+                                + ">" + title + "</"
+                                + lonelyparent.getNodeName() + ">" );
+              } else {
+                localattr = annotation.getAttributes().getNamedItem( "type" );
+
+                if (localattr != null) {
+                  desc += "Type " + localattr.getNodeValue();
+                  Logger.logging( "found useful desc in <"
+                                  + lonelyparent.getNodeName() + ">"
+                                  + desc + "</"
+                                  + lonelyparent.getNodeName() + ">" );
+                }
+              }
+            }
+          }
+        } else {
+          title = attrTitle;
+          if (attrDesc != null) {
+            desc = attrDesc;
+          }
+
+          Logger.logging( name + " adding annotation <title>"
+                          + title + "</title>" );
+          Logger.logging( name + " adding annotation <desc>"
+                          + desc + "</desc>" );
+        }
+
+        addTitle(svg, elem, title);
+        addDescription(svg, elem, desc);
+      }
+
+      Node parent = getDirectChild( node, "sre:parents");
+      if ( parent != null && !parent.hasChildNodes() ) {
+        Logger.logging( "found the SVG root element, adding" );
+        SVGSVGElement root = svg.getRootElement();
+        String title = getSreAttributeValue(node, TITLE_ATTR);
+        String desc = getSreAttributeValue(node, DESCR_ATTR);
+        Logger.logging( "   <title>" + title + "</title>" );
+        Logger.logging( "   <desc>" + desc + "</desc>" );
+        addOrReplaceElement(root, "title", title);
+        addOrReplaceElement(root, "desc", desc);
+      }
+    }
+  }
+
+  private void addOrReplaceElement(Element element, String tag,
+                                   String content) {
+    Element elti = getDirectChild( element, tag );
+    if ( elti == null ) {
+      elti = svg.createElementNS( Tactile.svgUri, tag );
+      elti.setTextContent( content );
+      element.appendChild( elti );
+    } else {
+      elti.setTextContent( content );
+    }
+  }
+  
+
   /*****************
    * end insert
    * cherden
