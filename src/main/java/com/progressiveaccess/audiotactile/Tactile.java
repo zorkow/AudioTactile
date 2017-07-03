@@ -332,6 +332,7 @@ public final class Tactile {
         components.add(comp.getTextContent().trim());
       }
     }
+    System.out.println(components.size());
     Element svgGroup = this.getInvisibleGroup(name, components);
     if (svgGroup == null) {
       Logger.error("Invisible group " + name + " could not be built.");
@@ -341,7 +342,8 @@ public final class Tactile {
     String desc = getSreAttributeValue(svgGroup, DESCR_ATTR);
     addOrReplaceElement(svgGroup, "title", title);
     addOrReplaceElement(svgGroup, "desc", desc);
-    this.root.appendChild(svgGroup);
+    Node first = root.getFirstChild();
+    this.root.insertBefore(svgGroup, first);
   }
 
   
@@ -372,6 +374,11 @@ public final class Tactile {
     // Adds all components.
     for (String name : components) {
       Element component = this.root.getElementById(name);
+      // This is the case of invisible junctions (atoms)!
+      if (component == null) {
+        System.out.println("Invisible: " + name);
+        continue;
+      }
       System.out.println("TagName: " + component.getTagName());
       if (component.getTagName() == "line") {
         // BBOX
@@ -819,13 +826,13 @@ public final class Tactile {
 
 
   private void addIveoAnnotations() {
-    if (Cli.hasOption("iveo_buttons")) {
-      this.addIveoButtons();
-    }
     String width = this.root.getAttribute("width");
     String height = this.root.getAttribute("height");
     Double widthValue = Double.parseDouble(width.replaceAll("[^\\d.]", ""));
     Double heightValue = Double.parseDouble(height.replaceAll("[^\\d.]", ""));
+    if (Cli.hasOption("iveo_buttons")) {
+      this.addIveoButtons(widthValue, heightValue);
+    }
     Double finalWidth = widthValue;
     Double finalHeight = heightValue;
     // If true portrait mode.
@@ -882,9 +889,7 @@ public final class Tactile {
     layers.appendChild(layerItem);
   }
 
-  private void addIveoButtons() {
-    Double width = Double.parseDouble(this.root.getAttribute("width"));
-    Double height = Double.parseDouble(this.root.getAttribute("height"));
+  private void addIveoButtons(Double width, Double height) {
     // Double radius = height < 0.7 * width ? 0.035 * width : 0.035 * height;
     Double radius = 0.035 * width;
     Double whiteX = .8 * width;
@@ -1167,6 +1172,24 @@ public final class Tactile {
     return (attr != null) ? attr.getNodeValue() : null;
   }
 
+  private Boolean isGrouped(Element element) {
+    String tag = element.getTagName();
+    return tag == SRE_PREFIX + "grouped" || tag == SRE_PREFIX + "atomSet" ||
+      tag == "grouped" || tag == "atomSet";
+  }
+  
+  private Boolean isActive(Element element) {
+    String tag = element.getTagName();
+    return tag == SRE_PREFIX + "active" || tag == SRE_PREFIX + "atom" ||
+      tag == "active" || tag == "atom";
+  }
+  
+  private Boolean isPassive(Element element) {
+    String tag = element.getTagName();
+    return tag == SRE_PREFIX + "passive" || tag == SRE_PREFIX + "bond" ||
+      tag == "passive" || tag == "bond";
+  }
+  
   private void addTitlesAndDesc() {
     for (final Element node : this.annotations) {
       if ( node.hasChildNodes() ) {
@@ -1174,8 +1197,10 @@ public final class Tactile {
         String name = elem.getTextContent().trim();
         Node parent = getDirectChild( node, "sre:parents");
 
-        if ( parent == null || !parent.hasChildNodes() ) {
-          Logger.logging( "found the SVG root element, adding" );
+        System.out.println("Enriching: " + name);
+        if (isGrouped(elem)) {
+          if (parent == null || !parent.hasChildNodes()) {
+          Logger.logging( "found the SVG root element: " + name);
           SVGSVGElement root = svg.getRootElement();
           String title = getSreAttributeValue(node, TITLE_ATTR);
           String desc = getSreAttributeValue(node, DESCR_ATTR);
@@ -1184,10 +1209,7 @@ public final class Tactile {
           addOrReplaceElement(root, "title", title);
           addOrReplaceElement(root, "desc", desc);
           continue;
-        }
-
-        System.out.println(elem.getTagName());
-        if (elem.getTagName() == "sre:grouped") {
+          }
           this.addInvisibleGroup(name, node);
         }
 
@@ -1244,10 +1266,10 @@ public final class Tactile {
                                 + ">" + title + "</"
                                 + lonelyparent.getNodeName() + ">" );
               } else {
-                localattr = annotation.getAttributes().getNamedItem( "type" );
+                String type = getSreAttributeValue((Element)annotation, "type");
 
-                if (localattr != null) {
-                  desc += "Type " + localattr.getNodeValue();
+                if (!type.equals("")) {
+                  desc += "Type " + type;
                   Logger.logging( "found useful desc in <"
                                   + lonelyparent.getNodeName() + ">"
                                   + desc + "</"
