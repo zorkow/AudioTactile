@@ -32,6 +32,7 @@ import com.google.common.base.Joiner;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.svg.SVGAnimatedLength;
 import org.w3c.dom.svg.SVGDocument;
@@ -64,6 +65,7 @@ public final class Tactile {
   private static String daisyUri = "http://www.daisy.org/z3986/2005/";
   private static String iveoUri = "http://viewplus.com/iveo";
   private static String sreUri = "http://www.chemaccess.org/sre-schema";
+  private static String svgUri = "http://www.w3.org/2000/svg";
   // Magic numbers should be parameterisable.
   private static final Double MIN_DIFF = 5.0;
   private static final Double INV_ATOM_SIZE = 10.0;
@@ -101,6 +103,10 @@ public final class Tactile {
     this.annotations();
     this.messages();
     this.enrich();
+
+	// cherden, add all missing <title> and <desc> nodes to tactile elements
+	this.addTitlesAndDesc();
+	
     // Output
     if (Cli.hasOption("o")) {
       this.writeSvg(Cli.getOptionValue("o"));
@@ -120,7 +126,7 @@ public final class Tactile {
       Logger.logging(FileHandler.toString(item));
       this.annotations.add(item);
     }
-    System.out.println(this.annotations.size());
+    //System.out.println(this.annotations.size());
   }
 
   /**
@@ -250,8 +256,8 @@ public final class Tactile {
    */
   private void addBaseTitles() {
     for (final Element element : this.annotations) {
-      System.out.println(this.getTitle(element));
-      System.out.println(this.getDescr(element));
+      //System.out.println(this.getTitle(element));
+      //System.out.println(this.getDescr(element));
     }
   }
 
@@ -747,8 +753,8 @@ public final class Tactile {
     }
     String width = this.root.getAttribute("width");
     String height = this.root.getAttribute("height");
-    Double widthValue = Double.parseDouble(width);
-    Double heightValue = Double.parseDouble(height);
+    Double widthValue = Double.parseDouble(width.replaceAll("[^\\d.]", ""));
+    Double heightValue = Double.parseDouble(height.replaceAll("[^\\d.]", ""));
     Double finalWidth = widthValue;
     Double finalHeight = heightValue;
     // If true portrait mode.
@@ -973,4 +979,260 @@ public final class Tactile {
     this.root.appendChild(this.polygonFromCoordinates(xs, ys));
   }
 
+  private static Element getDirectChild( Element parent, String name)
+  {
+    for(Node child = parent.getFirstChild(); child != null; child = child.getNextSibling())
+    {
+		//System.out.println( child.getNodeName() + " ?= " + name );
+        if(child instanceof Element && name.equals(child.getNodeName())) return (Element) child;
+    }
+    return null;
+  }
+  
+  
+  /*****************
+   * begin insert
+   * cherden
+   * 5/29/2017
+   *
+   * functions for adding all <title> and <desc> elements for tactile objects
+   * 
+   *****************/
+  private static void addTitle(SVGDocument svg, Node elem, String innertitle)
+  {
+			if( innertitle.length() == 0 )
+				return;
+
+            String id = elem.getTextContent().trim();
+
+            Element noddy = svg.getElementById( id );
+
+            if (noddy == null)
+                return;
+
+            Element elti = getDirectChild( noddy, "title" );
+
+            if (elti == null)
+            {
+				Node title = svg.createElementNS( Tactile.svgUri , "title" );
+				title.setTextContent( innertitle );
+                noddy.appendChild( title );
+            }
+            else
+			{	
+				String innertext = elti.getTextContent().trim();
+				
+				//if( !innertext.contains( innertitle ) )
+				//	elti.setTextContent( innertext += " " + innertitle );
+				elti.setTextContent( innertitle );
+			}
+  }
+		
+  private static void addDescription(SVGDocument svg, Node elem, String innertitle)
+  {
+			if( innertitle.length() == 0 )
+				return;
+			
+            String id = elem.getTextContent().trim();
+
+            Element noddy = svg.getElementById( id );
+
+            if (noddy == null)
+                return;
+
+            Element elti = getDirectChild( noddy, "desc" );
+
+            if (elti == null)
+            {
+				Node title = svg.createElementNS( Tactile.svgUri , "desc" );
+				title.setTextContent( innertitle );
+                noddy.appendChild( title );
+            }
+            else
+			{	
+				String innertext = elti.getTextContent().trim();
+				
+				//if( !innertext.contains( innertitle ) )
+				//	elti.setTextContent( innertext += " " + innertitle );
+				elti.setTextContent( innertitle );
+			}
+  }
+
+  private Element findFirstChildElement( Node node )
+  {
+		NodeList children = node.getChildNodes();
+		
+		for( int i = 0; i < children.getLength(); i++ )
+		{
+			if( children.item(i).getNodeType() != 1 )
+				continue;
+				
+			return (Element)children.item(i);
+		}
+		
+		return null;
+  }
+          
+	private Node findAnnotationByName( String group, String name )
+    {
+            
+            for( int i = 0; i < this.annotations.size(); i++)
+            {
+                Element node = this.annotations.get(i);
+				Element fairchild = getDirectChild( node, group );
+				
+				if( fairchild == null )
+					continue;
+								
+                if (fairchild != null && fairchild.getTextContent().trim().equals(name))
+                {
+                    return node;
+                }
+
+            }
+
+            return null;
+        }
+
+  private void addTitlesAndDesc()
+  {
+	  for (int i = 0; i < this.annotations.size(); i++)
+	  {
+			Element node = this.annotations.get(i);
+					
+			if( node.hasChildNodes() )
+			{
+				Element elem = findFirstChildElement( node );
+				String name = elem.getTextContent().trim();			
+				
+				Node attr = node.getAttributes().getNamedItem( TITLE_ATTR );
+				String attrTitle = (attr != null) ? attr.getNodeValue() : null;
+				
+				attr = node.getAttributes().getNamedItem( DESCR_ATTR );
+				String attrDesc = (attr != null) ? attr.getNodeValue() : null;
+				
+				String title = "";
+				String desc = "";
+				
+				// if no speech attribute exists go and fetch the next
+                // speech from its components.
+                if (attrTitle == null)
+                {	
+					Logger.logging( name + " annotation has no sre:speech attribute" );
+					
+					Node component = getDirectChild( node, "sre:component" );
+					
+					if( component != null && component.hasChildNodes() )
+					{
+						Logger.logging( "<sre:component/> has children" );
+						
+						Node fairchild = findFirstChildElement( component );
+						String componentName = fairchild.getTextContent().trim();
+							
+							Node annotation = findAnnotationByName( fairchild.getNodeName(), componentName );
+							if (annotation != null)
+                            {
+                                Node localattr = annotation.getAttributes().getNamedItem( TITLE_ATTR );
+
+                                if (localattr != null)
+                                {
+                                    title += localattr.getNodeValue();
+									Logger.logging( "found useful speech in <" + fairchild.getNodeName() + ">" + title + "</" + fairchild.getNodeName() + ">" );
+                                }
+                            }					
+					}
+					
+					component = getDirectChild( node, "sre:parents" );
+
+					if( component != null && component.hasChildNodes() )
+					{
+						Logger.logging( "<sre:parent/> has children" );
+						
+						Node lonelyparent = findFirstChildElement( component );
+						String parentName = lonelyparent.getTextContent().trim();
+						
+						Node annotation = findAnnotationByName( lonelyparent.getNodeName(), parentName );
+						if (annotation != null)
+                        {
+                            Node localattr = annotation.getAttributes().getNamedItem( TITLE_ATTR );
+
+                            if (localattr != null)
+                            {
+                                title += localattr.getNodeValue();
+								Logger.logging( "found useful title in <" + lonelyparent.getNodeName() + ">" + title + "</" + lonelyparent.getNodeName() + ">" );
+                            }
+							else
+							{
+								localattr = annotation.getAttributes().getNamedItem( "type" );
+                                    
+                                if (localattr != null)
+                                {
+                                    desc += "Type " + localattr.getNodeValue();
+									Logger.logging( "found useful desc in <" + lonelyparent.getNodeName() + ">" + desc + "</" + lonelyparent.getNodeName() + ">" );
+                                }
+							}
+                        }	
+					}
+				}
+				else
+				{
+					title = attrTitle;
+
+                    if (attrDesc != null)
+						desc = attrDesc;
+
+					Logger.logging( name + " adding annotation <title>" + title + "</title>" ); 				
+				}
+				
+				addTitle(svg, elem, title);
+                addDescription(svg, elem, desc);
+			}
+			
+			Node parent = getDirectChild( node, "sre:parents");
+			if( parent != null && !parent.hasChildNodes() )
+			{
+				Logger.logging( "found the SVG root element, adding" ); 				
+				SVGSVGElement root = svg.getRootElement();
+				
+				Node attr = node.getAttributes().getNamedItem( TITLE_ATTR );
+				String title = (attr != null) ? attr.getNodeValue() : "";
+				
+				attr = node.getAttributes().getNamedItem( DESCR_ATTR );
+				String desc = (attr != null) ? attr.getNodeValue() : "";
+
+				Logger.logging( "   <title>" + title + "</title>" ); 				
+				Logger.logging( "   <desc>" + desc + "</desc>" ); 				
+
+				Element elti = getDirectChild( root, "title" );
+				if( elti == null )
+				{
+					elti = svg.createElementNS( Tactile.svgUri, "title" );
+					elti.setTextContent( title );
+					root.appendChild( elti );
+				}
+				else {
+					elti.setTextContent( title );
+				}
+				
+				elti = getDirectChild( root, "desc" );
+				if( elti == null )
+				{
+					elti = svg.createElementNS( Tactile.svgUri, "desc" );
+					elti.setTextContent( desc );
+					root.appendChild( elti );
+				}
+				else {
+					elti.setTextContent( desc );
+				}
+			}
+	  }
+  }
+  
+  /*****************
+   * end insert
+   * cherden
+   * 5/29/2017
+   *
+   * functions for adding all <title> and <desc> elements for tactile objects
+   *****************/
 }
