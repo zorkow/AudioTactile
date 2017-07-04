@@ -14,12 +14,12 @@
 
 
 /**
- * @file   Tactile.java
- * @author Volker Sorge
- *          <a href="mailto:V.Sorge@progressiveaccess.com">Volker Sorge</a>
- * @date   Thu Jun 23 05:47:46 2016
+ * @file Tactile.java
+ * @author Volker Sorge <a href="mailto:V.Sorge@progressiveaccess.com">Volker
+ *         Sorge</a>
+ * @date Thu Jun 23 05:47:46 2016
  *
- * @brief  Utility functions for generation of audio tactile SVG.
+ * @brief Utility functions for generation of audio tactile SVG.
  *
  *
  */
@@ -31,17 +31,18 @@
 package com.progressiveaccess.audiotactile;
 
 import com.google.common.base.Joiner;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.w3c.dom.svg.SVGAnimatedLength;
 import org.w3c.dom.svg.SVGDocument;
 import org.w3c.dom.svg.SVGLineElement;
 import org.w3c.dom.svg.SVGPoint;
 import org.w3c.dom.svg.SVGPointList;
 import org.w3c.dom.svg.SVGPolygonElement;
-import org.w3c.dom.svg.SVGRect;
+import org.w3c.dom.svg.SVGPolylineElement;
 import org.w3c.dom.svg.SVGRectElement;
 import org.w3c.dom.svg.SVGSVGElement;
 
@@ -49,6 +50,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import javax.vecmath.Point2d;
 import javax.xml.XMLConstants;
 import javax.xml.xpath.XPath;
@@ -56,9 +58,6 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.svg.SVGPolylineElement;
-import org.w3c.dom.svg.SVGAnimatedPoints;
 
 
 /**
@@ -71,9 +70,6 @@ public final class Tactile {
   private static String iveoUri = "http://viewplus.com/iveo";
   private static String sreUri = "http://www.chemaccess.org/sre-schema";
   private static String svgUri = "http://www.w3.org/2000/svg";
-  // Magic numbers should be parameterisable.
-  private static final Double MIN_DIFF = 5.0;
-  private static final Double INV_ATOM_SIZE = 10.0;
   private static final String SRE_PREFIX = "sre:";
   private static final String TITLE_ATTR = "speech";
   private static final String DESCR_ATTR = "speech2";
@@ -91,19 +87,21 @@ public final class Tactile {
   /**
    * Constructor.
    *
-   * @param svgFile The SVG file.
-   * @param xmlFile The XML annotation file.
+   * @param svgFile
+   *          The SVG file.
+   * @param xmlFile
+   *          The XML annotation file.
    */
   public Tactile(final String svgFile, final String xmlFile) {
     try {
       this.svg = FileHandler.loadSvg(svgFile);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       Logger.error("Can't load SVG file " + svgFile + "\n");
       return;
     }
     try {
       this.xml = FileHandler.loadXml(xmlFile);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       Logger.error("Can't load XML file " + xmlFile + "\n");
       return;
     }
@@ -126,8 +124,8 @@ public final class Tactile {
    * Initialises the list of annotation elements.
    */
   public void annotations() {
-    final NodeList annotations =
-        this.xml.getElementsByTagName("sre:annotation");
+    final NodeList annotations = this.xml
+        .getElementsByTagName("sre:annotation");
     for (Integer i = 0; i < annotations.getLength(); i++) {
       final Element item = (Element) annotations.item(i);
       Logger.logging(FileHandler.toString(item));
@@ -141,7 +139,7 @@ public final class Tactile {
    */
   public void messages() {
     NodeList messages = null;
-    boolean hasLang = Cli.hasOption("language");
+    final boolean hasLang = Cli.hasOption("language");
     String lang = "en";
     if (hasLang) {
       lang = Cli.getOptionValue("language");
@@ -150,7 +148,7 @@ public final class Tactile {
     if (messages == null || messages.getLength() == 0) {
       if (hasLang) {
         Logger.error("Language " + lang + " does not exist. " +
-                     "Attempting English as default." );
+            "Attempting English as default.");
       }
       messages = this.getMessages("en");
     }
@@ -162,32 +160,33 @@ public final class Tactile {
     for (Integer i = 0; i < messages.getLength(); i++) {
       final Element item = (Element) messages.item(i);
       Logger.logging(FileHandler.toString(item));
-      this.messages.put(getSreAttributeValue(item, MSG_ATTR), item.getTextContent());
+      this.messages.put(this.getSreAttributeValue(item, MSG_ATTR),
+          item.getTextContent());
     }
   }
 
   /**
    * Retrievs the message element in the annotations.
    *
-   * @param language A ISO indicator for the language.
+   * @param language
+   *          A ISO indicator for the language.
    *
    * @return The message element, if it exists. O/w null.
    */
-  private NodeList getMessages(String language) {
+  private NodeList getMessages(final String language) {
     NodeList messages = null;
     try {
-      final XPathExpression expr =
-          this.xpath.compile(// 1. Pick all message elements.
-                             "//*[local-name()='messages']/" +
-                             // 2. Get the contained language element.
-                             "*[local-name()='language'" +
-                             // 3. Check if it is the language we want.
-                             " and text()='" + language + "']/" +
-                             // 4. Then backup and take all message elements.
-                             "../*[local-name()='message']");
+      final XPathExpression expr = this.xpath.compile(// 1. Pick all message
+                                                      // elements.
+          "//*[local-name()='messages']/" +
+          // 2. Get the contained language element.
+              "*[local-name()='language'" +
+              // 3. Check if it is the language we want.
+              " and text()='" + language + "']/" +
+              // 4. Then backup and take all message elements.
+              "../*[local-name()='message']");
       messages = (NodeList) expr.evaluate(this.xml, XPathConstants.NODESET);
-    }
-    catch (XPathExpressionException e) {
+    } catch (final XPathExpressionException e) {
       Logger.error("Illegal Xpath Expression " + e.getMessage());
       return null;
     }
@@ -203,57 +202,62 @@ public final class Tactile {
     this.addBaseTitles();
     if (Cli.hasOption("iveo")) {
       this.addIveoAnnotations();
-    };
+    }
+    ;
     // Tactile.maxPolygon();
   }
 
   /**
    * Converts and writes the SVG to a file.
    */
-  private void writeSvg(String fileName) {
+  private void writeSvg(final String fileName) {
     if (!Cli.hasOption("iveo")) {
       FileHandler.writeSvg(this.svg, fileName);
       return;
     }
     this.root.setAttributeNS(XMLConstants.XMLNS_ATTRIBUTE_NS_URI,
-                             "xmlns:iveo", Tactile.iveoUri);
+        "xmlns:iveo", Tactile.iveoUri);
     this.root.setAttributeNS(XMLConstants.XMLNS_ATTRIBUTE_NS_URI,
-                             "xmlns:daisy", Tactile.daisyUri);
+        "xmlns:daisy", Tactile.daisyUri);
     FileHandler.writeSvg(this.svg, fileName);
   }
 
   /**
    * Gets the title element for an annotation.
    *
-   * @param annotation The XML element.
+   * @param annotation
+   *          The XML element.
    *
    * @return The speech attribute for the title.
    */
-  private String getTitle(Element annotation) {
+  private String getTitle(final Element annotation) {
     return this.getSpeech(annotation, Tactile.TITLE_ATTR);
   }
 
   /**
    * Gets the description element for an annotation.
    *
-   * @param annotation The XML element.
+   * @param annotation
+   *          The XML element.
    *
    * @return The speech attribute for the description.
    */
-  private String getDescr(Element annotation) {
+  private String getDescr(final Element annotation) {
     return this.getSpeech(annotation, Tactile.DESCR_ATTR);
   }
 
   /**
    * Gets the attibute value for a speech annotation.
    *
-   * @param annotation The XML element.
-   * @param attribute The attribute name.
+   * @param annotation
+   *          The XML element.
+   * @param attribute
+   *          The attribute name.
    *
    * @return The speech attribute for the annotation element.
    */
-  private String getSpeech(Element annotation, String attribute) {
-    String speech = annotation.getAttributeNS(sreUri, attribute);
+  private String getSpeech(final Element annotation, final String attribute) {
+    final String speech = annotation.getAttributeNS(sreUri, attribute);
     return this.useSpeechAttr ? speech : this.messages.get(speech);
   }
 
@@ -262,8 +266,8 @@ public final class Tactile {
    */
   private void addBaseTitles() {
     for (final Element element : this.annotations) {
-      //System.out.println(this.getTitle(element));
-      //System.out.println(this.getDescr(element));
+      // System.out.println(this.getTitle(element));
+      // System.out.println(this.getDescr(element));
     }
   }
 
@@ -315,50 +319,45 @@ public final class Tactile {
   //   }
   // }
 
-  private void addInvisibleGroup(String name, Element group) {
+  private void addInvisibleGroup(final String name, final Element group) {
     Logger.logging("Adding grouped element " + name);
-    Node component = getDirectChild(group, "sre:component" );
+    final Node component = getDirectChild(group, "sre:component");
     FileHandler.printXml(group);
     System.out.println(component);
     if (component == null) {
       Logger.error("Group without children: " + name);
       return;
     }
-    NodeList componentNodes = component.getChildNodes();
-    List<String> components = new ArrayList<>();
+    final NodeList componentNodes = component.getChildNodes();
+    final List<String> components = new ArrayList<>();
     for (Integer i = 0; i < componentNodes.getLength(); i++) {
-      Node comp = componentNodes.item(i);
+      final Node comp = componentNodes.item(i);
       if (comp instanceof Element) {
         components.add(comp.getTextContent().trim());
       }
     }
     System.out.println(components.size());
-    Element svgGroup = this.getInvisibleGroup(name, components);
+    final Element svgGroup = this.getInvisibleGroup(name, components);
     if (svgGroup == null) {
       Logger.error("Invisible group " + name + " could not be built.");
       return;
     }
-    String title = getSreAttributeValue(svgGroup, TITLE_ATTR);
-    String desc = getSreAttributeValue(svgGroup, DESCR_ATTR);
-    addOrReplaceElement(svgGroup, "title", title);
-    addOrReplaceElement(svgGroup, "desc", desc);
-    Node first = root.getFirstChild();
+    final String title = this.getSreAttributeValue(svgGroup, TITLE_ATTR);
+    final String desc = this.getSreAttributeValue(svgGroup, DESCR_ATTR);
+    this.addOrReplaceElement(svgGroup, "title", title);
+    this.addOrReplaceElement(svgGroup, "desc", desc);
+    final Node first = this.root.getFirstChild();
     this.root.insertBefore(svgGroup, first);
   }
 
-  
-  
-  private Element getInvisibleGroup(String id, List<String> components) {
-    //BBOX
-    Point2d topLeft = new Point2d();
-    Point2d bottomRight = new Point2d();
-    Point2d tempTop = new Point2d();
-    Point2d tempBot = new Point2d();
-    Boolean init = true;
-    //POLY
-    List<Double> xs = new ArrayList<>();
-    List<Double> ys = new ArrayList<>();
 
+  private Element getInvisibleGroup(final String id,
+      final List<String> components) {
+    // POLY
+    final List<Double> xs = new ArrayList<>();
+    final List<Double> ys = new ArrayList<>();
+
+    Bbox bbox = new Bbox();
     // Get all components
     //   // Adds hydrogens and hydrogen bonds to components.
     //   if (Cli.hasOption("tactile_hydrogens")) {
@@ -372,8 +371,8 @@ public final class Tactile {
     //     }
     //   }
     // Adds all components.
-    for (String name : components) {
-      Element component = this.root.getElementById(name);
+    for (final String name : components) {
+      final Element component = this.root.getElementById(name);
       // This is the case of invisible junctions (atoms)!
       if (component == null) {
         System.out.println("Invisible: " + name);
@@ -382,52 +381,42 @@ public final class Tactile {
       System.out.println("TagName: " + component.getTagName());
       if (component.getTagName() == "line") {
         // BBOX
-        Tactile.getPoints((SVGLineElement)component, tempTop, tempBot);
-        Tactile.combineBbox(topLeft, bottomRight, tempTop, tempBot, init);
-        init = false;
+        bbox.addPoints((SVGLineElement) component);
         // POLY
-        this.getCoordinates((SVGLineElement)component, xs, ys);
+        this.getCoordinates((SVGLineElement) component, xs, ys);
       }
       NodeList nodes = component.getElementsByTagNameNS(this.uri, "rect");
       for (Integer i = 0; i < nodes.getLength(); i++) {
         // BBOX
-        SVGRectElement node = (SVGRectElement)(nodes.item(i));
-        Tactile.getPoints(node, tempTop, tempBot);
-        Tactile.combineBbox(topLeft, bottomRight, tempTop, tempBot, init);
-        init = false;
+        final SVGRectElement node = (SVGRectElement) (nodes.item(i));
+        bbox.addPoints(node);
         // POLY
         this.getCoordinates(node, xs, ys);
       }
       nodes = component.getElementsByTagNameNS(this.uri, "line");
       for (Integer i = 0; i < nodes.getLength(); i++) {
         // BBOX
-        SVGLineElement node = (SVGLineElement)(nodes.item(i));
-        Tactile.getPoints(node, tempTop, tempBot);
-        Tactile.combineBbox(topLeft, bottomRight, tempTop, tempBot, init);
-        init = false;
+        final SVGLineElement node = (SVGLineElement) (nodes.item(i));
+        bbox.addPoints(node);
         // POLY
         this.getCoordinates(node, xs, ys);
       }
       if (component.getTagName() == "polyline") {
         // BBOX
-        Tactile.getPoints((SVGPolylineElement)component, tempTop, tempBot);
-        Tactile.combineBbox(topLeft, bottomRight, tempTop, tempBot, init);
-        init = false;
+        bbox.addPoints((SVGPolylineElement) component);
         // POLY
-        this.getCoordinates((SVGPolylineElement)component, xs, ys);
+        this.getCoordinates((SVGPolylineElement) component, xs, ys);
       }
       nodes = component.getElementsByTagNameNS(this.uri, "polyline");
       for (Integer i = 0; i < nodes.getLength(); i++) {
         // BBOX
-        SVGPolylineElement node = (SVGPolylineElement)(nodes.item(i));
-        Tactile.getPoints(node, tempTop, tempBot);
-        Tactile.combineBbox(topLeft, bottomRight, tempTop, tempBot, init);
-        init = false;
+        final SVGPolylineElement node = (SVGPolylineElement) (nodes.item(i));
+        bbox.addPoints(node);
         // POLY
         this.getCoordinates(node, xs, ys);
       }
     }
-    Element group = svg.createElementNS(this.uri, "g");
+    final Element group = this.svg.createElementNS(this.uri, "g");
     group.setAttribute("class", "atomset");
     group.setAttribute("id", id);
     group.setAttribute("opacity", "0.0");
@@ -437,11 +426,13 @@ public final class Tactile {
       rect = this.polygonFromCoordinates(xs, ys);
     } else {
       // BBOX
-      rect = svg.createElementNS(this.uri, "rect");
-      rect.setAttribute("x", Double.toString(topLeft.x));
-      rect.setAttribute("y", Double.toString(topLeft.y));
-      rect.setAttribute("width", Double.toString(bottomRight.x - topLeft.x));
-      rect.setAttribute("height", Double.toString(bottomRight.y - topLeft.y));
+      rect = this.svg.createElementNS(this.uri, "rect");
+      Point2d top = bbox.getTop();
+      Point2d bot = bbox.getBottom();
+      rect.setAttribute("x", Double.toString(top.x));
+      rect.setAttribute("y", Double.toString(top.y));
+      rect.setAttribute("width", Double.toString(bot.x - top.x));
+      rect.setAttribute("height", Double.toString(bot.y - top.y));
     }
     rect.setAttribute("visibility", "visible");
     // TODO : Add iveo attributes here.
@@ -453,71 +444,6 @@ public final class Tactile {
     group.appendChild(rect);
     return group;
   }
-
-
-  private static void combineBbox(Point2d top, Point2d bot, Point2d ttop,
-                                  Point2d tbot, Boolean init) {
-    if (init) {
-      top.set(ttop);
-      bot.set(tbot);
-      return;
-    }
-    top.set(Math.min(top.x, ttop.x), Math.min(top.y, ttop.y));
-    bot.set(Math.max(bot.x, tbot.x), Math.max(bot.y, tbot.y));
-  }
-
-
-  private static void getPoints(SVGLineElement line, Point2d top, Point2d bot) {
-    Double x1 = Tactile.getValue(line.getX1());
-    Double y1 = Tactile.getValue(line.getY1());
-    Double x2 = Tactile.getValue(line.getX2());
-    Double y2 = Tactile.getValue(line.getY2());
-    top.set(Math.min(x1, x2), Math.min(y1, y2));
-    bot.set(Math.max(x1, x2), Math.max(y1, y2));
-  }
-
-  private static void getPoints(SVGRectElement rect, Point2d top, Point2d bot) {
-    Double x1 = Tactile.getValue(rect.getX());
-    Double y1 = Tactile.getValue(rect.getY());
-    Double x2 = x1 + Tactile.getValue(rect.getWidth());
-    Double y2 = y1 + Tactile.getValue(rect.getHeight());
-    top.set(x1, y1);
-    bot.set(x2, y2);
-  }
-
-  private static void getPoints(SVGAnimatedPoints polygon,
-                                Point2d top, Point2d bot) {
-    SVGPointList points = polygon.getPoints();
-    if (points.getNumberOfItems() < 1) {
-      return;
-    }
-    SVGPoint point = points.getItem(1);
-    Double minX = Tactile.getValue(point.getX());
-    Double minY = Tactile.getValue(point.getY());
-    Double maxX = minX;
-    Double maxY = minY;
-    for (Integer j = 1; j < points.getNumberOfItems(); j++) {
-      point = points.getItem(j);
-      Double x = Tactile.getValue(point.getX());
-      Double y = Tactile.getValue(point.getY());
-      minX = Math.min(x, minX); minY = Math.min(y, minY);
-      maxX = Math.max(x, maxX); maxY = Math.max(y, maxY);
-    }
-    top.set(minX, minY);
-    bot.set(maxX, maxY);
-  }
-
-  // private static void getPoints(SVGPolylineElement polyline,
-  //                               Point2d top, Point2d bot) {
-  //   SVGRect rect = path.getBBox();
-  //   System.out.println(path.getPoints());
-  //   Double x1 = Tactile.getValue(rect.getX());
-  //   Double y1 = Tactile.getValue(rect.getY());
-  //   Double x2 = x1 + Tactile.getValue(rect.getWidth());
-  //   Double y2 = y1 + Tactile.getValue(rect.getHeight());
-  //   top.set(x1, y1);
-  //   bot.set(x2, y2);
-  // }
 
   // private static void describeAtomSet(final RichAtomSet atomSet, Element element) {
   // }
@@ -803,13 +729,6 @@ public final class Tactile {
   //   point2.scale(1.0 / number);
   // }
 
-  private static Double getValue(SVGAnimatedLength length) {
-    return Double.parseDouble("" + length.getBaseVal().getValue());
-  }
-
-  private static Double getValue(Float length) {
-    return Double.parseDouble("" + length);
-  }
 
   // private static Node getTitleRoot(Element element) {
   //   return Tactile.getTitleRoot(element, "rect");
@@ -826,10 +745,12 @@ public final class Tactile {
 
 
   private void addIveoAnnotations() {
-    String width = this.root.getAttribute("width");
-    String height = this.root.getAttribute("height");
-    Double widthValue = Double.parseDouble(width.replaceAll("[^\\d.]", ""));
-    Double heightValue = Double.parseDouble(height.replaceAll("[^\\d.]", ""));
+    final String width = this.root.getAttribute("width");
+    final String height = this.root.getAttribute("height");
+    final Double widthValue = Double
+        .parseDouble(width.replaceAll("[^\\d.]", ""));
+    final Double heightValue = Double
+        .parseDouble(height.replaceAll("[^\\d.]", ""));
     if (Cli.hasOption("iveo_buttons")) {
       this.addIveoButtons(widthValue, heightValue);
     }
@@ -854,7 +775,8 @@ public final class Tactile {
 
     this.root.setAttribute("width", finalWidth.toString());
     this.root.setAttribute("height", finalHeight.toString());
-    Element paper = svg.createElementNS(Tactile.iveoUri, "iveo:paper");
+    final Element paper = this.svg.createElementNS(Tactile.iveoUri,
+        "iveo:paper");
     paper.setAttribute("top-margin", "1.0 inch");
     paper.setAttribute("width", "8.5 inch");
     paper.setAttribute("right-margin", swap ? "0.5 inch" : "0.6 inch");
@@ -863,22 +785,26 @@ public final class Tactile {
     paper.setAttribute("bottom-margin", swap ? "0.6 inch" : "0.5 inch");
     paper.setAttribute("height", "11.0 inch");
     paper.setAttribute("name", "Custom paper size");
-    root.appendChild(paper);
+    this.root.appendChild(paper);
 
-    Element layers = svg.createElementNS(Tactile.daisyUri, "daisy:layers");
+    final Element layers = this.svg.createElementNS(Tactile.daisyUri,
+        "daisy:layers");
     this.addLayerItem(layers, "on", "on", "on", "off", "on", "on", "Default");
     this.addLayerItem(layers, "on", "on", "on", "off", "on", "off", "Print");
     this.addLayerItem(layers, "off", "on", "on", "off", "on", "on", "Emboss");
     this.addLayerItem(layers, "off", "on", "on", "off", "on", "on", "Braille");
     this.addLayerItem(layers, "on", "on", "on", "off", "on", "on", "OnLayer");
-    this.addLayerItem(layers, "off", "off", "on", "off", "off", "off", "OffLayer");
-    root.appendChild(layers);
+    this.addLayerItem(layers, "off", "off", "on", "off", "off", "off",
+        "OffLayer");
+    this.root.appendChild(layers);
   }
 
-  private void addLayerItem(Element layers, String print, String display,
-                                   String enabledInViewer, String lock, String speak,
-                                   String emboss, String name) {
-    Element layerItem = svg.createElementNS(Tactile.daisyUri, "daisy:layerItem");
+  private void addLayerItem(final Element layers, final String print,
+      final String display,
+      final String enabledInViewer, final String lock, final String speak,
+      final String emboss, final String name) {
+    final Element layerItem = this.svg.createElementNS(Tactile.daisyUri,
+        "daisy:layerItem");
     layerItem.setAttribute("print", print);
     layerItem.setAttribute("display", display);
     layerItem.setAttribute("enabledInViewer", enabledInViewer);
@@ -889,36 +815,39 @@ public final class Tactile {
     layers.appendChild(layerItem);
   }
 
-  private void addIveoButtons(Double width, Double height) {
+  private void addIveoButtons(final Double width, final Double height) {
     // Double radius = height < 0.7 * width ? 0.035 * width : 0.035 * height;
-    Double radius = 0.035 * width;
-    Double whiteX = .8 * width;
-    Double silverX = .9 * width;
+    final Double radius = 0.035 * width;
+    final Double whiteX = .8 * width;
+    final Double silverX = .9 * width;
     Double buttonY = .9 * height;
     if (Cli.hasOption("iveo_collision")) {
       buttonY = this.avoidIveoCollision(whiteX, buttonY, radius, height);
-    };
+    }
+    ;
     // Add buttons.
     this.addCircle(whiteX, buttonY, radius, "white", "remove", "drilldown");
     this.addCircle(silverX, buttonY, radius, "silver", "restore", "restore");
   }
 
-  private Double avoidIveoCollision(Double whiteX, Double buttonY, Double radius, Double height) {
+  private Double avoidIveoCollision(final Double whiteX, Double buttonY,
+      final Double radius, final Double height) {
     this.topX = whiteX - (radius + 10);
     this.topY = buttonY - (radius + 10);
     this.collisionY = null;
     this.collisionDetection();
-    if (this.collisionY  != null) {
-      Double delta = this.collisionY - this.topY;
+    if (this.collisionY != null) {
+      final Double delta = this.collisionY - this.topY;
       buttonY += delta;
-      Double newHeight = height + delta;
+      final Double newHeight = height + delta;
       this.root.setAttribute("height", newHeight.toString());
     }
     return buttonY;
   }
 
-  private void addCircle(Double x, Double y, Double r, String fill, String name, String id) {
-    Element circle = svg.createElementNS(this.uri, "circle");
+  private void addCircle(final Double x, final Double y, final Double r,
+      final String fill, final String name, final String id) {
+    final Element circle = this.svg.createElementNS(this.uri, "circle");
     circle.setAttribute("cx", x.toString());
     circle.setAttribute("cy", y.toString());
     circle.setAttribute("r", r.toString());
@@ -939,7 +868,7 @@ public final class Tactile {
   private Double topY = null;
   private Double collisionY = null;
 
-  private void updateCollision(Double x, Double y) {
+  private void updateCollision(final Double x, final Double y) {
     if (x < this.topX || y < this.topY) {
       return;
     }
@@ -958,95 +887,106 @@ public final class Tactile {
     // If no point is found, we are good.
     // O/w extend the height by max y - min y.
     //
-    NodeList lines = this.svg.getElementsByTagNameNS(this.uri, "line");
-    NodeList rectangles = this.svg.getElementsByTagNameNS(this.uri, "rect");
-    NodeList polygons = this.svg.getElementsByTagNameNS(this.uri, "polygon");
-    NodeList polylines = this.svg.getElementsByTagNameNS(this.uri, "polyline");
+    final NodeList lines = this.svg.getElementsByTagNameNS(this.uri, "line");
+    final NodeList rectangles = this.svg.getElementsByTagNameNS(this.uri,
+        "rect");
+    final NodeList polygons = this.svg.getElementsByTagNameNS(this.uri,
+        "polygon");
+    final NodeList polylines = this.svg.getElementsByTagNameNS(this.uri,
+        "polyline");
     // TODO (sorge): Integrate Paths.
     // NodeList paths = this.svg.getElementsByTagNameNS(this.uri, "path");
     for (Integer i = 0; i < lines.getLength(); i++) {
-      SVGLineElement line = (SVGLineElement)lines.item(i);
-      this.updateCollision(Tactile.getValue(line.getX1()),
-                              Tactile.getValue(line.getY1()));
-      this.updateCollision(Tactile.getValue(line.getX2()),
-                              Tactile.getValue(line.getY2()));
+      final SVGLineElement line = (SVGLineElement) lines.item(i);
+      this.updateCollision(TactileUtil.getValue(line.getX1()),
+          TactileUtil.getValue(line.getY1()));
+      this.updateCollision(TactileUtil.getValue(line.getX2()),
+          TactileUtil.getValue(line.getY2()));
     }
     for (Integer i = 0; i < rectangles.getLength(); i++) {
-      SVGRectElement rectangle = (SVGRectElement)rectangles.item(i);
-      Double x = Tactile.getValue(rectangle.getX());
-      Double y = Tactile.getValue(rectangle.getY());
-      Double w = Tactile.getValue(rectangle.getWidth());
-      Double h = Tactile.getValue(rectangle.getHeight());
+      final SVGRectElement rectangle = (SVGRectElement) rectangles.item(i);
+      final Double x = TactileUtil.getValue(rectangle.getX());
+      final Double y = TactileUtil.getValue(rectangle.getY());
+      final Double w = TactileUtil.getValue(rectangle.getWidth());
+      final Double h = TactileUtil.getValue(rectangle.getHeight());
       this.updateCollision(x + w, y + h);
     }
     for (Integer i = 0; i < polygons.getLength(); i++) {
-      SVGPolygonElement polygon = (SVGPolygonElement)polygons.item(i);
-      SVGPointList points = polygon.getPoints();
+      final SVGPolygonElement polygon = (SVGPolygonElement) polygons.item(i);
+      final SVGPointList points = polygon.getPoints();
       for (Integer j = 0; j < points.getNumberOfItems(); j++) {
-        SVGPoint point = points.getItem(j);
-        this.updateCollision(Tactile.getValue(point.getX()),
-                             Tactile.getValue(point.getY()));
+        final SVGPoint point = points.getItem(j);
+        this.updateCollision(TactileUtil.getValue(point.getX()),
+            TactileUtil.getValue(point.getY()));
       }
     }
     for (Integer i = 0; i < polylines.getLength(); i++) {
-      SVGPolylineElement polyline = (SVGPolylineElement)polylines.item(i);
-      SVGPointList points = polyline.getPoints();
+      final SVGPolylineElement polyline = (SVGPolylineElement) polylines
+          .item(i);
+      final SVGPointList points = polyline.getPoints();
       for (Integer j = 0; j < points.getNumberOfItems(); j++) {
-        SVGPoint point = points.getItem(j);
-        this.updateCollision(Tactile.getValue(point.getX()),
-                             Tactile.getValue(point.getY()));
+        final SVGPoint point = points.getItem(j);
+        this.updateCollision(TactileUtil.getValue(point.getX()),
+            TactileUtil.getValue(point.getY()));
       }
     }
   }
 
-  private void getCoordinates (SVGLineElement line,
-                               List<Double> xs, List<Double> ys) {
-    xs.add(Tactile.getValue(line.getX1()));
-    ys.add(Tactile.getValue(line.getY1()));
-    xs.add(Tactile.getValue(line.getX2()));
-    ys.add(Tactile.getValue(line.getY2()));
+  private void getCoordinates(final SVGLineElement line,
+      final List<Double> xs, final List<Double> ys) {
+    xs.add(TactileUtil.getValue(line.getX1()));
+    ys.add(TactileUtil.getValue(line.getY1()));
+    xs.add(TactileUtil.getValue(line.getX2()));
+    ys.add(TactileUtil.getValue(line.getY2()));
   }
 
-  private void getCoordinates(SVGRectElement rectangle,
-                              List<Double> xs, List<Double> ys) {
-    Double x = Tactile.getValue(rectangle.getX());
-    Double y = Tactile.getValue(rectangle.getY());
-    Double h = Tactile.getValue(rectangle.getHeight());
-    Double w = Tactile.getValue(rectangle.getWidth());
-    xs.add(x + w); ys.add(y + h);
-    xs.add(x + w); ys.add(y);
-    xs.add(x); ys.add(y + h);
-    xs.add(x); ys.add(y);
+  private void getCoordinates(final SVGRectElement rectangle,
+      final List<Double> xs, final List<Double> ys) {
+    final Double x = TactileUtil.getValue(rectangle.getX());
+    final Double y = TactileUtil.getValue(rectangle.getY());
+    final Double h = TactileUtil.getValue(rectangle.getHeight());
+    final Double w = TactileUtil.getValue(rectangle.getWidth());
+    xs.add(x + w);
+    ys.add(y + h);
+    xs.add(x + w);
+    ys.add(y);
+    xs.add(x);
+    ys.add(y + h);
+    xs.add(x);
+    ys.add(y);
   }
 
-  private void getCoordinates(SVGPolygonElement polygon,
-                                      List<Double> xs, List<Double> ys) {
-    SVGPointList points = polygon.getPoints();
+  private void getCoordinates(final SVGPolygonElement polygon,
+      final List<Double> xs, final List<Double> ys) {
+    final SVGPointList points = polygon.getPoints();
     for (Integer j = 0; j < points.getNumberOfItems(); j++) {
-      SVGPoint point = points.getItem(j);
-      Double x = Tactile.getValue(point.getX());
-      Double y = Tactile.getValue(point.getY());
-      xs.add(x); ys.add(y);
+      final SVGPoint point = points.getItem(j);
+      final Double x = TactileUtil.getValue(point.getX());
+      final Double y = TactileUtil.getValue(point.getY());
+      xs.add(x);
+      ys.add(y);
     }
   }
 
-  private void getCoordinates(SVGPolylineElement polyline,
-                              List<Double> xs, List<Double> ys) {
-    SVGPointList points = polyline.getPoints();
+  private void getCoordinates(final SVGPolylineElement polyline,
+      final List<Double> xs, final List<Double> ys) {
+    final SVGPointList points = polyline.getPoints();
     for (Integer j = 0; j < points.getNumberOfItems(); j++) {
-      SVGPoint point = points.getItem(j);
-      Double x = Tactile.getValue(point.getX());
-      Double y = Tactile.getValue(point.getY());
-      xs.add(x); ys.add(y);
+      final SVGPoint point = points.getItem(j);
+      final Double x = TactileUtil.getValue(point.getX());
+      final Double y = TactileUtil.getValue(point.getY());
+      xs.add(x);
+      ys.add(y);
     }
   }
 
-  private Element polygonFromCoordinates(List<Double> xs, List<Double> ys) {
-    List<Point2d> convexHull = GrahamScan.getConvexHull
-        (xs.toArray(new Double[xs.size()]), ys.toArray(new Double[ys.size()]));
-    Element poly = svg.createElementNS(this.uri, "polygon");
-    List<String> points = new ArrayList<>();
-    for (Point2d p : convexHull) {
+  private Element polygonFromCoordinates(final List<Double> xs,
+      final List<Double> ys) {
+    final List<Point2d> convexHull = GrahamScan.getConvexHull(
+        xs.toArray(new Double[xs.size()]), ys.toArray(new Double[ys.size()]));
+    final Element poly = this.svg.createElementNS(this.uri, "polygon");
+    final List<String> points = new ArrayList<>();
+    for (final Point2d p : convexHull) {
       points.add(p.x + "," + p.y);
     }
     final Joiner joiner = Joiner.on(" ");
@@ -1056,19 +996,20 @@ public final class Tactile {
   }
 
   /**
-   * Inserts a maximal convex polygon around all the visible points in the
-   * SVG.
+   * Inserts a maximal convex polygon around all the visible points in the SVG.
    */
   private void maxPolygon() {
     // TODO : Add additional drawn SVG elements.
-    NodeList lines = this.svg.getElementsByTagNameNS(this.uri, "line");
-    NodeList rectangles = this.svg.getElementsByTagNameNS(this.uri, "rect");
-    NodeList polygons = this.svg.getElementsByTagNameNS(this.uri, "polygon");
+    final NodeList lines = this.svg.getElementsByTagNameNS(this.uri, "line");
+    final NodeList rectangles = this.svg.getElementsByTagNameNS(this.uri,
+        "rect");
+    final NodeList polygons = this.svg.getElementsByTagNameNS(this.uri,
+        "polygon");
     // TODO (sorge): Avoid Paths.
-    // 
+    //
     // NodeList paths = this.svg.getElementsByTagNameNS(this.uri, "polyline");
-    List<Double> xs = new ArrayList<>();
-    List<Double> ys = new ArrayList<>();
+    final List<Double> xs = new ArrayList<>();
+    final List<Double> ys = new ArrayList<>();
     for (Integer i = 0; i < lines.getLength(); i++) {
       this.getCoordinates((SVGLineElement) lines.item(i), xs, ys);
     }
@@ -1081,11 +1022,12 @@ public final class Tactile {
     this.root.appendChild(this.polygonFromCoordinates(xs, ys));
   }
 
-  private static Element getDirectChild( Element parent, String name) {
-    for(Node child = parent.getFirstChild();
-        child != null; child = child.getNextSibling()) {
-      //System.out.println( child.getNodeName() + " ?= " + name );
-      if(child instanceof Element && name.equals(child.getNodeName())) {
+  private static Element getDirectChild(final Element parent,
+      final String name) {
+    for (Node child = parent.getFirstChild(); child != null; child = child
+        .getNextSibling()) {
+      // System.out.println( child.getNodeName() + " ?= " + name );
+      if (child instanceof Element && name.equals(child.getNodeName())) {
         return (Element) child;
       }
     }
@@ -1094,59 +1036,59 @@ public final class Tactile {
 
 
   /*****************
-   * begin insert
-   * cherden
-   * 5/29/2017
+   * begin insert cherden 5/29/2017
    *
    * functions for adding all <title/> and <desc/> elements for tactile objects.
    *
    *****************/
-  private void addTitle(SVGDocument svg, Node elem, String innertitle) {
-    if( innertitle.length() == 0 ) {
+  private void addTitle(final SVGDocument svg, final Node elem,
+      final String innertitle) {
+    if (innertitle.length() == 0) {
       return;
     }
-    String id = elem.getTextContent().trim();
-    Element noddy = svg.getElementById( id );
+    final String id = elem.getTextContent().trim();
+    final Element noddy = svg.getElementById(id);
 
     if (noddy == null) {
       return;
     }
-    addOrReplaceElement(noddy, "title", innertitle);
+    this.addOrReplaceElement(noddy, "title", innertitle);
   }
 
-  private void addDescription(SVGDocument svg, Node elem, String innertitle) {
-    if ( innertitle.length() == 0 ) {
+  private void addDescription(final SVGDocument svg, final Node elem,
+      final String innertitle) {
+    if (innertitle.length() == 0) {
       return;
     }
 
-    String id = elem.getTextContent().trim();
+    final String id = elem.getTextContent().trim();
 
-    Element noddy = svg.getElementById( id );
+    final Element noddy = svg.getElementById(id);
 
     if (noddy == null) {
       return;
     }
 
-    addOrReplaceElement(noddy, "desc", innertitle);
+    this.addOrReplaceElement(noddy, "desc", innertitle);
   }
 
-  private Element findFirstChildElement( Node node ) {
-    NodeList children = node.getChildNodes();
-    for( int i = 0; i < children.getLength(); i++ ) {
-      if ( children.item(i).getNodeType() != 1 ) {
+  private Element findFirstChildElement(final Node node) {
+    final NodeList children = node.getChildNodes();
+    for (int i = 0; i < children.getLength(); i++) {
+      if (children.item(i).getNodeType() != 1) {
         continue;
       }
-      return (Element)children.item(i);
+      return (Element) children.item(i);
     }
 
     return null;
   }
 
-  private Node findAnnotationByName( String group, String name ) {
+  private Node findAnnotationByName(final String group, final String name) {
 
     for (final Element node : this.annotations) {
-      Element fairchild = getDirectChild( node, group );
-      if ( fairchild == null ) {
+      final Element fairchild = getDirectChild(node, group);
+      if (fairchild == null) {
         continue;
       }
       if (fairchild != null && fairchild.getTextContent().trim().equals(name)) {
@@ -1158,13 +1100,15 @@ public final class Tactile {
     return null;
   }
 
-  private String getSreAttributeValue(Element element, String attribute) {
-    String attr = getSreAttribute(element, attribute);
+  private String getSreAttributeValue(final Element element,
+      final String attribute) {
+    final String attr = this.getSreAttribute(element, attribute);
     return (attr != null) ? attr : "";
   }
 
-  private String getSreAttribute(Element element, String attribute) {
-    NamedNodeMap attrs = element.getAttributes();
+  private String getSreAttribute(final Element element,
+      final String attribute) {
+    final NamedNodeMap attrs = element.getAttributes();
     Node attr = attrs.getNamedItem(attribute);
     if (attr == null) {
       attr = attrs.getNamedItem(SRE_PREFIX + attribute);
@@ -1172,51 +1116,51 @@ public final class Tactile {
     return (attr != null) ? attr.getNodeValue() : null;
   }
 
-  private Boolean isGrouped(Element element) {
-    String tag = element.getTagName();
+  private Boolean isGrouped(final Element element) {
+    final String tag = element.getTagName();
     return tag == SRE_PREFIX + "grouped" || tag == SRE_PREFIX + "atomSet" ||
-      tag == "grouped" || tag == "atomSet";
+        tag == "grouped" || tag == "atomSet";
   }
-  
-  private Boolean isActive(Element element) {
-    String tag = element.getTagName();
+
+  private Boolean isActive(final Element element) {
+    final String tag = element.getTagName();
     return tag == SRE_PREFIX + "active" || tag == SRE_PREFIX + "atom" ||
-      tag == "active" || tag == "atom";
+        tag == "active" || tag == "atom";
   }
-  
-  private Boolean isPassive(Element element) {
-    String tag = element.getTagName();
+
+  private Boolean isPassive(final Element element) {
+    final String tag = element.getTagName();
     return tag == SRE_PREFIX + "passive" || tag == SRE_PREFIX + "bond" ||
-      tag == "passive" || tag == "bond";
+        tag == "passive" || tag == "bond";
   }
-  
+
   private void addTitlesAndDesc() {
     for (final Element node : this.annotations) {
-      if ( node.hasChildNodes() ) {
-        Element elem = findFirstChildElement( node );
-        String name = elem.getTextContent().trim();
-        Node parent = getDirectChild( node, "sre:parents");
+      if (node.hasChildNodes()) {
+        final Element elem = this.findFirstChildElement(node);
+        final String name = elem.getTextContent().trim();
+        final Node parent = getDirectChild(node, "sre:parents");
 
         System.out.println("Enriching: " + name);
-        if (isGrouped(elem)) {
+        if (this.isGrouped(elem)) {
           if (parent == null || !parent.hasChildNodes()) {
-          Logger.logging( "found the SVG root element: " + name);
-          SVGSVGElement root = svg.getRootElement();
-          String title = getSreAttributeValue(node, TITLE_ATTR);
-          String desc = getSreAttributeValue(node, DESCR_ATTR);
-          Logger.logging( "   <title>" + title + "</title>" );
-          Logger.logging( "   <desc>" + desc + "</desc>" );
-          addOrReplaceElement(root, "title", title);
-          addOrReplaceElement(root, "desc", desc);
-          continue;
+            Logger.logging("found the SVG root element: " + name);
+            final SVGSVGElement root = this.svg.getRootElement();
+            final String title = this.getSreAttributeValue(node, TITLE_ATTR);
+            final String desc = this.getSreAttributeValue(node, DESCR_ATTR);
+            Logger.logging("   <title>" + title + "</title>");
+            Logger.logging("   <desc>" + desc + "</desc>");
+            this.addOrReplaceElement(root, "title", title);
+            this.addOrReplaceElement(root, "desc", desc);
+            continue;
           }
           this.addInvisibleGroup(name, node);
         }
 
         // Node parents = getDirectChild( node, "sre:parents" );
 
-        String attrTitle = getSreAttribute(node, TITLE_ATTR);
-        String attrDesc = getSreAttribute(node, DESCR_ATTR);
+        final String attrTitle = this.getSreAttribute(node, TITLE_ATTR);
+        final String attrDesc = this.getSreAttribute(node, DESCR_ATTR);
 
         String title = "";
         String desc = "";
@@ -1224,56 +1168,61 @@ public final class Tactile {
         // if no speech attribute exists go and fetch the next
         // speech from its components.
         if (attrTitle == null) {
-          Logger.logging( name + " annotation has no sre:speech attribute" );
+          Logger.logging(name + " annotation has no sre:speech attribute");
 
-          Node component = getDirectChild( node, "sre:component" );
+          Node component = getDirectChild(node, "sre:component");
 
-          if ( component != null && component.hasChildNodes() ) {
-            Logger.logging( "<sre:component/> has children" );
+          if (component != null && component.hasChildNodes()) {
+            Logger.logging("<sre:component/> has children");
 
-            Node fairchild = findFirstChildElement( component );
-            String componentName = fairchild.getTextContent().trim();
+            final Node fairchild = this.findFirstChildElement(component);
+            final String componentName = fairchild.getTextContent().trim();
 
-            Node annotation = findAnnotationByName( fairchild.getNodeName(), componentName );
+            final Node annotation = this
+                .findAnnotationByName(fairchild.getNodeName(), componentName);
             if (annotation != null) {
-              Node localattr = annotation.getAttributes().getNamedItem( TITLE_ATTR );
+              final Node localattr = annotation.getAttributes()
+                  .getNamedItem(TITLE_ATTR);
 
               if (localattr != null) {
                 title += localattr.getNodeValue();
-                Logger.logging( "found useful speech in <"
-                                + fairchild.getNodeName() + ">"
-                                + title + "</" + fairchild.getNodeName() + ">" );
+                Logger.logging("found useful speech in <"
+                    + fairchild.getNodeName() + ">"
+                    + title + "</" + fairchild.getNodeName() + ">");
               }
             }
           }
 
-          component = getDirectChild( node, "sre:parents" );
+          component = getDirectChild(node, "sre:parents");
 
-          if ( component != null && component.hasChildNodes() ) {
-            Logger.logging( "<sre:parent/> has children" );
+          if (component != null && component.hasChildNodes()) {
+            Logger.logging("<sre:parent/> has children");
 
-            Node lonelyparent = findFirstChildElement( component );
-            String parentName = lonelyparent.getTextContent().trim();
+            final Node lonelyparent = this.findFirstChildElement(component);
+            final String parentName = lonelyparent.getTextContent().trim();
 
-            Node annotation = findAnnotationByName( lonelyparent.getNodeName(), parentName );
+            final Node annotation = this
+                .findAnnotationByName(lonelyparent.getNodeName(), parentName);
             if (annotation != null) {
-              Node localattr = annotation.getAttributes().getNamedItem( TITLE_ATTR );
+              final Node localattr = annotation.getAttributes()
+                  .getNamedItem(TITLE_ATTR);
 
               if (localattr != null) {
                 title += localattr.getNodeValue();
-                Logger.logging( "found useful title in <"
-                                + lonelyparent.getNodeName()
-                                + ">" + title + "</"
-                                + lonelyparent.getNodeName() + ">" );
+                Logger.logging("found useful title in <"
+                    + lonelyparent.getNodeName()
+                    + ">" + title + "</"
+                    + lonelyparent.getNodeName() + ">");
               } else {
-                String type = getSreAttributeValue((Element)annotation, "type");
+                final String type = this
+                    .getSreAttributeValue((Element) annotation, "type");
 
                 if (!type.equals("")) {
                   desc += "Type " + type;
-                  Logger.logging( "found useful desc in <"
-                                  + lonelyparent.getNodeName() + ">"
-                                  + desc + "</"
-                                  + lonelyparent.getNodeName() + ">" );
+                  Logger.logging("found useful desc in <"
+                      + lonelyparent.getNodeName() + ">"
+                      + desc + "</"
+                      + lonelyparent.getNodeName() + ">");
                 }
               }
             }
@@ -1284,36 +1233,34 @@ public final class Tactile {
             desc = attrDesc;
           }
 
-          Logger.logging( name + " adding annotation <title>"
-                          + title + "</title>" );
-          Logger.logging( name + " adding annotation <desc>"
-                          + desc + "</desc>" );
+          Logger.logging(name + " adding annotation <title>"
+              + title + "</title>");
+          Logger.logging(name + " adding annotation <desc>"
+              + desc + "</desc>");
         }
 
-        addTitle(svg, elem, title);
-        addDescription(svg, elem, desc);
+        this.addTitle(this.svg, elem, title);
+        this.addDescription(this.svg, elem, desc);
       }
 
     }
   }
 
-  private void addOrReplaceElement(Element element, String tag,
-                                   String content) {
-    Element elti = getDirectChild( element, tag );
-    if ( elti == null ) {
-      elti = svg.createElementNS( Tactile.svgUri, tag );
-      elti.setTextContent( content );
-      element.appendChild( elti );
+  private void addOrReplaceElement(final Element element, final String tag,
+      final String content) {
+    Element elti = getDirectChild(element, tag);
+    if (elti == null) {
+      elti = this.svg.createElementNS(Tactile.svgUri, tag);
+      elti.setTextContent(content);
+      element.appendChild(elti);
     } else {
-      elti.setTextContent( content );
+      elti.setTextContent(content);
     }
   }
-  
+
 
   /*****************
-   * end insert
-   * cherden
-   * 5/29/2017
+   * end insert cherden 5/29/2017
    *
    * functions for adding all <title> and <desc> elements for tactile objects
    *****************/
