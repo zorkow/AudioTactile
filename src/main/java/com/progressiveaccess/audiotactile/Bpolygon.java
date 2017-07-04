@@ -35,6 +35,10 @@ import org.w3c.dom.svg.SVGRectElement;
 import java.util.ArrayList;
 import java.util.List;
 import javax.vecmath.Point2d;
+import org.w3c.dom.svg.SVGPolygonElement;
+import org.w3c.dom.svg.SVGPolylineElement;
+import org.w3c.dom.svg.SVGTransformList;
+import org.w3c.dom.svg.SVGTransform;
 
 /**
  * Class of bounding polygons for multiple SVG elements.
@@ -46,36 +50,28 @@ public class Bpolygon {
 
 
   public void addCoordinates(final SVGLineElement line) {
-    this.xs.add(TactileUtil.getValue(line.getX1()));
-    this.ys.add(TactileUtil.getValue(line.getY1()));
-    this.xs.add(TactileUtil.getValue(line.getX2()));
-    this.ys.add(TactileUtil.getValue(line.getY2()));
+    this.addCoordinates(TactileUtil.getPoints(line));
   }
 
-  public void addCoordinates(final SVGAnimatedPoints polygon) {
-    final SVGPointList points = polygon.getPoints();
-    for (Integer j = 0; j < points.getNumberOfItems(); j++) {
-      final SVGPoint point = points.getItem(j);
+  public void addCoordinates(final SVGPolygonElement polygon) {
+    this.addCoordinates(TactileUtil.getPoints(polygon));
+  }
+
+  public void addCoordinates(final SVGPolylineElement polyline) {
+    this.addCoordinates(TactileUtil.getPoints(polyline));
+  }
+
+  public void addCoordinates(final SVGRectElement rectangle) {
+    this.addCoordinates(TactileUtil.getPoints(rectangle));
+  }
+
+  private void addCoordinates(final List<SVGPoint> points) {
+    for (SVGPoint point: points) {
       final Double x = TactileUtil.getValue(point.getX());
       final Double y = TactileUtil.getValue(point.getY());
       this.xs.add(x);
       this.ys.add(y);
     }
-  }
-
-  public void addCoordinates(final SVGRectElement rectangle) {
-    final Double x = TactileUtil.getValue(rectangle.getX());
-    final Double y = TactileUtil.getValue(rectangle.getY());
-    final Double h = TactileUtil.getValue(rectangle.getHeight());
-    final Double w = TactileUtil.getValue(rectangle.getWidth());
-    this.xs.add(x + w);
-    this.ys.add(y + h);
-    this.xs.add(x + w);
-    this.ys.add(y);
-    this.xs.add(x);
-    this.ys.add(y + h);
-    this.xs.add(x);
-    this.ys.add(y);
   }
 
   public List<Point2d> getPolygon() {

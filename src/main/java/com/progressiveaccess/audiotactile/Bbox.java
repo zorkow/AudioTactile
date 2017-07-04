@@ -33,6 +33,9 @@ import org.w3c.dom.svg.SVGPointList;
 import org.w3c.dom.svg.SVGRectElement;
 
 import javax.vecmath.Point2d;
+import java.util.List;
+import org.w3c.dom.svg.SVGPolygonElement;
+import org.w3c.dom.svg.SVGPolylineElement;
 
 /**
  * Class for bounding boxes generated from multiple SVG elements.
@@ -81,18 +84,27 @@ public class Bbox {
     this.combineBbox(new Point2d(x1, y1), new Point2d(x2, y2));
   }
 
-  public void addPoints(final SVGAnimatedPoints polygon) {
-    final SVGPointList points = polygon.getPoints();
-    if (points.getNumberOfItems() < 1) {
+  public void addPoints(final SVGPolygonElement polygon) {
+    final List<SVGPoint> points = TactileUtil.getPoints(polygon);
+    this.addPoints(points);
+  }
+
+  public void addPoints(final SVGPolylineElement polyline) {
+    final List<SVGPoint> points = TactileUtil.getPoints(polyline);
+    this.addPoints(points);
+  }
+
+  public void addPoints(final List<SVGPoint> points) {
+    if (points.size() < 1) {
       return;
     }
-    SVGPoint point = points.getItem(1);
+    SVGPoint point = points.get(0);
     Double minX = TactileUtil.getValue(point.getX());
     Double minY = TactileUtil.getValue(point.getY());
     Double maxX = minX;
     Double maxY = minY;
-    for (Integer j = 1; j < points.getNumberOfItems(); j++) {
-      point = points.getItem(j);
+    for (Integer j = 1; j < points.size(); j++) {
+      point = points.get(j);
       final Double x = TactileUtil.getValue(point.getX());
       final Double y = TactileUtil.getValue(point.getY());
       minX = Math.min(x, minX);

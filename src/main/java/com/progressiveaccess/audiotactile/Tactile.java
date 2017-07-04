@@ -348,23 +348,12 @@ public final class Tactile {
   }
 
 
+  // TODO (sorge): Separate Bpoly and Bbox!
   private Element getInvisibleGroup(final String id,
       final List<String> components) {
     Bbox bbox = new Bbox();
     Bpolygon bpoly = new Bpolygon();
-    // Get all components
-    //   // Adds hydrogens and hydrogen bonds to components.
-    //   if (Cli.hasOption("tactile_hydrogens")) {
-    //     List<String> hydros = Tactile.hydrogens.getAtomSetHydrogens(atomSet.getId());
-    //     if (hydros != null) {
-    //       components.addAll(hydros);
-    //     }
-    //     List<String> hydroBonds = Tactile.hydrogens.getAtomSetBonds(atomSet.getId());
-    //     if (hydroBonds != null) {
-    //       components.addAll(hydroBonds);
-    //     }
-    //   }
-    // Adds all components.
+
     for (final String name : components) {
       final Element component = this.root.getElementById(name);
       // This is the case of invisible junctions (atoms)!
@@ -391,6 +380,20 @@ public final class Tactile {
       for (Integer i = 0; i < nodes.getLength(); i++) {
         // BBOX
         final SVGLineElement node = (SVGLineElement) (nodes.item(i));
+        bbox.addPoints(node);
+        // POLY
+        bpoly.addCoordinates(node);
+      }
+      if (component.getTagName() == "polygon") {
+        // BBOX
+        bbox.addPoints((SVGPolygonElement) component);
+        // POLY
+        bpoly.addCoordinates((SVGPolygonElement) component);
+      }
+      nodes = component.getElementsByTagNameNS(this.uri, "polygon");
+      for (Integer i = 0; i < nodes.getLength(); i++) {
+        // BBOX
+        final SVGPolygonElement node = (SVGPolygonElement) (nodes.item(i));
         bbox.addPoints(node);
         // POLY
         bpoly.addCoordinates(node);
@@ -432,8 +435,8 @@ public final class Tactile {
     // TODO : Add iveo attributes here.
     if (Cli.hasOption("iveo")) {
       rect.setAttribute("id", id + "r");
-      rect.setAttribute("onmouseover", "speakIt(evt)");
-      rect.setAttribute("onmousedown", "speakIt(evt)");
+      rect.setAttribute("onmouseover", "register(evt)");
+      rect.setAttribute("onmousedown", "register(evt)");
     }
     group.appendChild(rect);
     return group;
@@ -542,8 +545,8 @@ public final class Tactile {
   //   poly.setAttribute("opacity", "0.0");
   //   if (Cli.hasOption("iveo")) {
   //     poly.setAttribute("id", bond + "r");
-  //     poly.setAttribute("onmouseover", "speakIt(evt)");
-  //     poly.setAttribute("onmousedown", "speakIt(evt)");
+  //     poly.setAttribute("onmouseover", "register(evt)");
+  //     poly.setAttribute("onmousedown", "register(evt)");
   //   }
   //   element.appendChild(poly);
   // };
@@ -575,8 +578,8 @@ public final class Tactile {
   //   if (Cli.hasOption("iveo")) {
   //     String id = element.getAttribute("id");
   //     rectangle.setAttribute("id", id + "r");
-  //     rectangle.setAttribute("onmouseover", "speakIt(evt)");
-  //     rectangle.setAttribute("onmousedown", "speakIt(evt)");
+  //     rectangle.setAttribute("onmouseover", "register(evt)");
+  //     rectangle.setAttribute("onmousedown", "register(evt)");
   //   }
   //   rectangle.setAttribute("opacity", "0.0");
   //   element.appendChild(rectangle);
@@ -674,8 +677,8 @@ public final class Tactile {
   //   rect.setAttribute("height", Double.toString(Tactile.INV_ATOM_SIZE));
   //   if (Cli.hasOption("iveo")) {
   //     rect.setAttribute("id", id + "r");
-  //     rect.setAttribute("onmouseover", "speakIt(evt)");
-  //     rect.setAttribute("onmousedown", "speakIt(evt)");
+  //     rect.setAttribute("onmouseover", "register(evt)");
+  //     rect.setAttribute("onmousedown", "register(evt)");
   //   }
   //   group.appendChild(rect);
 
@@ -892,36 +895,31 @@ public final class Tactile {
     // NodeList paths = this.svg.getElementsByTagNameNS(this.uri, "path");
     for (Integer i = 0; i < lines.getLength(); i++) {
       final SVGLineElement line = (SVGLineElement) lines.item(i);
-      this.updateCollision(TactileUtil.getValue(line.getX1()),
-          TactileUtil.getValue(line.getY1()));
-      this.updateCollision(TactileUtil.getValue(line.getX2()),
-          TactileUtil.getValue(line.getY2()));
+      for (SVGPoint point: TactileUtil.getPoints(line)) {
+        this.updateCollision(TactileUtil.getValue(point.getX()),
+                             TactileUtil.getValue(point.getY()));
+      }
     }
     for (Integer i = 0; i < rectangles.getLength(); i++) {
       final SVGRectElement rectangle = (SVGRectElement) rectangles.item(i);
-      final Double x = TactileUtil.getValue(rectangle.getX());
-      final Double y = TactileUtil.getValue(rectangle.getY());
-      final Double w = TactileUtil.getValue(rectangle.getWidth());
-      final Double h = TactileUtil.getValue(rectangle.getHeight());
-      this.updateCollision(x + w, y + h);
+      for (SVGPoint point: TactileUtil.getPoints(rectangle)) {
+        this.updateCollision(TactileUtil.getValue(point.getX()),
+                             TactileUtil.getValue(point.getY()));
+      }
     }
     for (Integer i = 0; i < polygons.getLength(); i++) {
       final SVGPolygonElement polygon = (SVGPolygonElement) polygons.item(i);
-      final SVGPointList points = polygon.getPoints();
-      for (Integer j = 0; j < points.getNumberOfItems(); j++) {
-        final SVGPoint point = points.getItem(j);
+      for (SVGPoint point: TactileUtil.getPoints(polygon)) {
         this.updateCollision(TactileUtil.getValue(point.getX()),
-            TactileUtil.getValue(point.getY()));
+                             TactileUtil.getValue(point.getY()));
       }
     }
     for (Integer i = 0; i < polylines.getLength(); i++) {
       final SVGPolylineElement polyline = (SVGPolylineElement) polylines
           .item(i);
-      final SVGPointList points = polyline.getPoints();
-      for (Integer j = 0; j < points.getNumberOfItems(); j++) {
-        final SVGPoint point = points.getItem(j);
+      for (SVGPoint point: TactileUtil.getPoints(polyline)) {
         this.updateCollision(TactileUtil.getValue(point.getX()),
-            TactileUtil.getValue(point.getY()));
+                             TactileUtil.getValue(point.getY()));
       }
     }
   }
@@ -942,15 +940,13 @@ public final class Tactile {
    * Inserts a maximal convex polygon around all the visible points in the SVG.
    */
   private void maxPolygon() {
-    // TODO : Add additional drawn SVG elements.
     final NodeList lines = this.svg.getElementsByTagNameNS(this.uri, "line");
     final NodeList rectangles = this.svg.getElementsByTagNameNS(this.uri,
         "rect");
     final NodeList polygons = this.svg.getElementsByTagNameNS(this.uri,
         "polygon");
-    // TODO (sorge): Avoid Paths.
-    //
-    // NodeList paths = this.svg.getElementsByTagNameNS(this.uri, "polyline");
+    final NodeList polylines = this.svg.getElementsByTagNameNS(this.uri,
+        "polyline");
     final Bpolygon bpoly = new Bpolygon();
     for (Integer i = 0; i < lines.getLength(); i++) {
       bpoly.addCoordinates((SVGLineElement) lines.item(i));
@@ -960,6 +956,9 @@ public final class Tactile {
     }
     for (Integer i = 0; i < polygons.getLength(); i++) {
       bpoly.addCoordinates((SVGPolygonElement) polygons.item(i));
+    }
+    for (Integer i = 0; i < polylines.getLength(); i++) {
+      bpoly.addCoordinates((SVGPolylineElement) polylines.item(i));
     }
     this.root.appendChild(this.polygonFromCoordinates(bpoly));
   }
@@ -1094,6 +1093,7 @@ public final class Tactile {
             this.addOrReplaceElement(root, "desc", desc);
             continue;
           }
+          // TODO (sorge): Order with respect to size and overlap!
           this.addInvisibleGroup(name, node);
         }
 
