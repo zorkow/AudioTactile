@@ -26,11 +26,10 @@
 
 package com.progressiveaccess.audiotactile;
 
+import org.w3c.dom.svg.SVGAnimatedPoints;
 import org.w3c.dom.svg.SVGLineElement;
 import org.w3c.dom.svg.SVGPoint;
 import org.w3c.dom.svg.SVGPointList;
-import org.w3c.dom.svg.SVGPolygonElement;
-import org.w3c.dom.svg.SVGPolylineElement;
 import org.w3c.dom.svg.SVGRectElement;
 
 import java.util.ArrayList;
@@ -53,19 +52,8 @@ public class Bpolygon {
     this.ys.add(TactileUtil.getValue(line.getY2()));
   }
 
-  public void addCoordinates(final SVGPolygonElement polygon) {
+  public void addCoordinates(final SVGAnimatedPoints polygon) {
     final SVGPointList points = polygon.getPoints();
-    for (Integer j = 0; j < points.getNumberOfItems(); j++) {
-      final SVGPoint point = points.getItem(j);
-      final Double x = TactileUtil.getValue(point.getX());
-      final Double y = TactileUtil.getValue(point.getY());
-      this.xs.add(x);
-      this.ys.add(y);
-    }
-  }
-
-  public void addCoordinates(final SVGPolylineElement polyline) {
-    final SVGPointList points = polyline.getPoints();
     for (Integer j = 0; j < points.getNumberOfItems(); j++) {
       final SVGPoint point = points.getItem(j);
       final Double x = TactileUtil.getValue(point.getX());
