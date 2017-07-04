@@ -322,8 +322,6 @@ public final class Tactile {
   private void addInvisibleGroup(final String name, final Element group) {
     Logger.logging("Adding grouped element " + name);
     final Node component = getDirectChild(group, "sre:component");
-    FileHandler.printXml(group);
-    System.out.println(component);
     if (component == null) {
       Logger.error("Group without children: " + name);
       return;
@@ -336,7 +334,6 @@ public final class Tactile {
         components.add(comp.getTextContent().trim());
       }
     }
-    System.out.println(components.size());
     final Element svgGroup = this.getInvisibleGroup(name, components);
     if (svgGroup == null) {
       Logger.error("Invisible group " + name + " could not be built.");
@@ -971,7 +968,6 @@ public final class Tactile {
       final String name) {
     for (Node child = parent.getFirstChild(); child != null; child = child
         .getNextSibling()) {
-      // System.out.println( child.getNodeName() + " ?= " + name );
       if (child instanceof Element && name.equals(child.getNodeName())) {
         return (Element) child;
       }
@@ -1086,7 +1082,6 @@ public final class Tactile {
         final String name = elem.getTextContent().trim();
         final Node parent = getDirectChild(node, "sre:parents");
 
-        System.out.println("Enriching: " + name);
         if (this.isGrouped(elem)) {
           if (parent == null || !parent.hasChildNodes()) {
             Logger.logging("found the SVG root element: " + name);
