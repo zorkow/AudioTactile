@@ -361,25 +361,30 @@ public final class Tactile {
         System.out.println("Invisible: " + name);
         continue;
       }
-      System.out.println("TagName: " + component.getTagName());
       if (component.getTagName() == "line") {
         // BBOX
         bbox.addPoints((SVGLineElement) component);
         // POLY
         bpoly.addCoordinates((SVGLineElement) component);
       }
-      NodeList nodes = component.getElementsByTagNameNS(this.uri, "rect");
+      NodeList nodes = component.getElementsByTagNameNS(this.uri, "line");
       for (Integer i = 0; i < nodes.getLength(); i++) {
         // BBOX
-        final SVGRectElement node = (SVGRectElement) (nodes.item(i));
+        final SVGLineElement node = (SVGLineElement) (nodes.item(i));
         bbox.addPoints(node);
         // POLY
         bpoly.addCoordinates(node);
       }
-      nodes = component.getElementsByTagNameNS(this.uri, "line");
+      if (component.getTagName() == "rect") {
+        // BBOX
+        bbox.addPoints((SVGRectElement) component);
+        // POLY
+        bpoly.addCoordinates((SVGRectElement) component);
+      }
+      nodes = component.getElementsByTagNameNS(this.uri, "rect");
       for (Integer i = 0; i < nodes.getLength(); i++) {
         // BBOX
-        final SVGLineElement node = (SVGLineElement) (nodes.item(i));
+        final SVGRectElement node = (SVGRectElement) (nodes.item(i));
         bbox.addPoints(node);
         // POLY
         bpoly.addCoordinates(node);
