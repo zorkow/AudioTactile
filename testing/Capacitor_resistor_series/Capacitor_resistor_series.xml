@@ -1,0 +1,677 @@
+<?xml version="1.0"?>
+<histogram xmlns:sre="http://www.chemaccess.org/sre-schema">
+  <sre:annotations>
+    <sre:annotation speech="Junction" type="Junction">
+      <sre:active>lower-junction</sre:active>
+      <sre:position>5</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit1</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component>
+        <sre:passive sre:type="single">belowAmpere</sre:passive>
+        <sre:passive sre:type="single">bottomLeft</sre:passive>
+      </sre:component>
+      <sre:neighbours>
+        <sre:neighbour sre:speech="connected to Ampere meter" sre:location="internal">
+          <sre:active sre:type="Element">ampere</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">belowAmpere</sre:passive>
+            <sre:position>5</sre:position>
+          </sre:via>
+        </sre:neighbour>
+        <sre:neighbour sre:speech="connected to power source" sre:location="internal">
+          <sre:active sre:type="Element">source</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">bottomLeft</sre:passive>
+            <sre:position>3</sre:position>
+          </sre:via>
+        </sre:neighbour>
+        <sre:neighbour sre:speech="connected to right circuit" sre:speech2="connected to circuit with resistor" sre:location="external">
+          <sre:active sre:type="Circuit">circuit2</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">bottomRight</sre:passive>
+            <sre:position>0</sre:position>
+          </sre:via>
+        </sre:neighbour>
+      </sre:neighbours>
+    </sre:annotation>
+    <sre:annotation>
+      <sre:active>lower-junction</sre:active>
+      <sre:position>5</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit2</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component>
+        <sre:passive sre:type="single">belowAmpere</sre:passive>
+        <sre:passive sre:type="single">bottomRight</sre:passive>
+      </sre:component>
+      <sre:neighbours>
+        <sre:neighbour sre:speech="connected to Ampere meter" sre:location="internal">
+          <sre:active sre:type="Element">ampere</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">belowAmpere</sre:passive>
+            <sre:position>5</sre:position>
+          </sre:via>
+        </sre:neighbour>
+        <sre:neighbour sre:speech="connected to resistor" sre:location="internal">
+          <sre:active sre:type="Element">resistor</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">bottomRight</sre:passive>
+            <sre:position>3</sre:position>
+          </sre:via>
+        </sre:neighbour>
+        <sre:neighbour sre:speech="connected to left circuit" sre:speech2="connected to circuit with power source" sre:location="external">
+          <sre:active sre:type="Circuit">circuit1</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">bottomLeft</sre:passive>
+            <sre:position>0</sre:position>
+          </sre:via>
+        </sre:neighbour>
+      </sre:neighbours>
+    </sre:annotation>
+    <sre:annotation speech="Junction" type="Junction">
+      <sre:active>mid-junction</sre:active>
+      <sre:position>7</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit1</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component>
+        <sre:passive sre:type="single">aboveAmpere</sre:passive>
+        <sre:passive sre:type="single">belowCapacitor</sre:passive>
+      </sre:component>
+      <sre:neighbours>
+        <sre:neighbour sre:speech="connected to Ampere meter" sre:location="internal">
+          <sre:active sre:type="Element">ampere</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">aboveAmpere</sre:passive>
+            <sre:position>5</sre:position>
+          </sre:via>
+        </sre:neighbour>
+        <sre:neighbour sre:speech="connected to capacitor" sre:location="internal">
+          <sre:active sre:type="Element">capacitor</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">belowCapacitor</sre:passive>
+            <sre:position>1</sre:position>
+          </sre:via>
+        </sre:neighbour>
+        <sre:neighbour sre:speech="connected to inner circuit" sre:speech2="connected to circuit with Volt meter" sre:location="external">
+          <sre:active sre:type="Circuit">circuit3</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">belowVoltmeter</sre:passive>
+            <sre:position>0</sre:position>
+          </sre:via>
+        </sre:neighbour>
+      </sre:neighbours>
+    </sre:annotation>
+    <sre:annotation speech="Junction" type="Junction">
+      <sre:active>mid-junction</sre:active>
+      <sre:position>7</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit2</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component>
+        <sre:passive sre:type="single">aboveAmpere</sre:passive>
+        <sre:passive sre:type="single">belowCapacitor</sre:passive>
+      </sre:component>
+      <sre:neighbours>
+        <sre:neighbour sre:speech="connected to Ampere meter" sre:location="internal">
+          <sre:active sre:type="Element">ampere</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">aboveAmpere</sre:passive>
+            <sre:position>5</sre:position>
+          </sre:via>
+        </sre:neighbour>
+        <sre:neighbour sre:speech="connected to capacitor" sre:location="internal">
+          <sre:active sre:type="Element">capacitor</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">belowCapacitor</sre:passive>
+            <sre:position>1</sre:position>
+          </sre:via>
+        </sre:neighbour>
+        <sre:neighbour sre:speech="connected to inner circuit" sre:speech2="connected to circuit with Volt meter" sre:location="external">
+          <sre:active sre:type="Circuit">circuit3</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">belowVoltmeter</sre:passive>
+            <sre:position>0</sre:position>
+          </sre:via>
+        </sre:neighbour>
+      </sre:neighbours>
+    </sre:annotation>
+    <sre:annotation speech="Junction" type="Junction">
+      <sre:active>mid-junction</sre:active>
+      <sre:position>4</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit3</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component>
+        <sre:passive sre:type="single">belowVoltmeter</sre:passive>
+        <sre:passive sre:type="single">belowCapacitor</sre:passive>
+      </sre:component>
+      <sre:neighbours>
+        <sre:neighbour sre:speech="connected to Volt meter" sre:location="internal">
+          <sre:active sre:type="Element">volt</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">belowVoltmeter</sre:passive>
+            <sre:position>3</sre:position>
+          </sre:via>
+        </sre:neighbour>
+        <sre:neighbour sre:speech="connected to capacitor" sre:location="internal">
+          <sre:active sre:type="Element">capacitor</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">belowCapacitor</sre:passive>
+            <sre:position>1</sre:position>
+          </sre:via>
+        </sre:neighbour>
+        <sre:neighbour sre:speech="connected to outer circuits" sre:speech2="connected to circuit with resistor, power source and Ampere meter" sre:location="external">
+          <sre:active sre:type="Circuit">circuit1</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">aboveAmpere</sre:passive>
+            <sre:position>0</sre:position>
+          </sre:via>
+        </sre:neighbour>
+      </sre:neighbours>
+    </sre:annotation>
+    <sre:annotation speech="Junction" type="Junction">
+      <sre:active>top-junction</sre:active>
+      <sre:position>2</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit1</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component>
+        <sre:passive sre:type="single">aboveCapacitor</sre:passive>
+        <sre:passive sre:type="single">belowSwitch</sre:passive>
+      </sre:component>
+      <sre:neighbours>
+        <sre:neighbour sre:speech="connected to capacitor" sre:location="internal">
+          <sre:active sre:type="Element">capacitor</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">aboveCapacitor</sre:passive>
+            <sre:position>5</sre:position>
+          </sre:via>
+        </sre:neighbour>
+        <sre:neighbour sre:speech="connected to three way switch" sre:location="internal">
+          <sre:active sre:type="Element">switch</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">belowSwitch</sre:passive>
+            <sre:position>1</sre:position>
+          </sre:via>
+        </sre:neighbour>
+        <sre:neighbour sre:speech="connected to inner circuit" sre:speech2="connected to circuit with Volt meter" sre:location="external">
+          <sre:active sre:type="Circuit">circuit3</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">belowVoltmeter</sre:passive>
+            <sre:position>0</sre:position>
+          </sre:via>
+        </sre:neighbour>
+      </sre:neighbours>
+    </sre:annotation>
+    <sre:annotation speech="Junction" type="Junction">
+      <sre:active>top-junction</sre:active>
+      <sre:position>2</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit2</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component>
+        <sre:passive sre:type="single">aboveCapacitor</sre:passive>
+        <sre:passive sre:type="single">belowSwitch</sre:passive>
+      </sre:component>
+      <sre:neighbours>
+        <sre:neighbour sre:speech="connected to capacitor" sre:location="internal">
+          <sre:active sre:type="Element">capacitor</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">aboveCapacitor</sre:passive>
+            <sre:position>5</sre:position>
+          </sre:via>
+        </sre:neighbour>
+        <sre:neighbour sre:speech="connected to three way switch" sre:location="internal">
+          <sre:active sre:type="Element">switch</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">belowSwitch</sre:passive>
+            <sre:position>1</sre:position>
+          </sre:via>
+        </sre:neighbour>
+        <sre:neighbour sre:speech="connected to inner circuit" sre:speech2="connected to circuit with Volt meter" sre:location="external">
+          <sre:active sre:type="Circuit">circuit3</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">belowVoltmeter</sre:passive>
+            <sre:position>0</sre:position>
+          </sre:via>
+        </sre:neighbour>
+      </sre:neighbours>
+    </sre:annotation>
+    <sre:annotation speech="Junction" type="Junction">
+      <sre:active>top-junction</sre:active>
+      <sre:position>2</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit3</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component>
+        <sre:passive sre:type="single">aboveCapacitor</sre:passive>
+        <sre:passive sre:type="single">aboveVoltmeter</sre:passive>
+      </sre:component>
+      <sre:neighbours>
+        <sre:neighbour sre:speech="connected to capacitor" sre:location="internal">
+          <sre:active sre:type="Element">capacitor</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">aboveCapacitor</sre:passive>
+            <sre:position>5</sre:position>
+          </sre:via>
+        </sre:neighbour>
+        <sre:neighbour sre:speech="connected to Volt meter" sre:location="internal">
+          <sre:active sre:type="Element">switch</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">belowSwitch</sre:passive>
+            <sre:position>1</sre:position>
+          </sre:via>
+        </sre:neighbour>
+        <sre:neighbour sre:speech="connected to two circuit" sre:speech2="connected to circuit with power source and circuit with resistor" sre:location="external">
+          <sre:active sre:type="Circuit">circuit3</sre:active>
+          <sre:via sre:type="Wire">
+            <sre:passive sre:type="single">belowVoltmeter</sre:passive>
+            <sre:position>0</sre:position>
+          </sre:via>
+        </sre:neighbour>
+      </sre:neighbours>
+    </sre:annotation>
+    <sre:annotation speech="Power Source" type="Element">
+      <sre:active>source</sre:active>
+      <sre:position>4</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit1</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Ampere meter" type="Element">
+      <sre:active>ampere</sre:active>
+      <sre:position>6</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit1</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Volt meter" type="Element">
+      <sre:active>volt</sre:active>
+      <sre:position>3</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit3</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Capacitor" type="Element">
+      <sre:active>capacitor</sre:active>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit1</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Capacitor" type="Element">
+      <sre:active>capacitor</sre:active>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit2</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Capacitor" type="Element">
+      <sre:active>capacitor</sre:active>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit3</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Three-way switch" speech2="Three-way switch connecting circuit with resistor" type="Element">
+      <sre:active>switch</sre:active>
+      <sre:position>3</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit1</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Three-way switch" speech2="Three-way switch connecting circuit  and circuit with power source" type="Element">
+      <sre:active>switch</sre:active>
+      <sre:position>3</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit2</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Ampere meter" type="Element">
+      <sre:active>ampere</sre:active>
+      <sre:position>6</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit2</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Resistor" type="Element">
+      <sre:active>resistor</sre:active>
+      <sre:position>4</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit2</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation type="Wire">
+      <sre:passive>topleftWire</sre:passive>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit1</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation type="Wire">
+      <sre:passive sre:type="single">belowVoltmeter</sre:passive>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit1</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation type="Wire">
+      <sre:passive sre:type="single">aboveVoltmeter</sre:passive>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit1</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation type="Wire">
+      <sre:passive>belowSwitch</sre:passive>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit1</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation type="Wire">
+      <sre:passive>belowSwitch</sre:passive>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit2</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation type="Wire">
+      <sre:passive>aboveCapacitor</sre:passive>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit1</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation type="Wire">
+      <sre:passive>aboveCapacitor</sre:passive>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit2</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation type="Wire">
+      <sre:passive>aboveCapacitor</sre:passive>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit3</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation type="Wire">
+      <sre:passive>belowCapacitor</sre:passive>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit1</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation type="Wire">
+      <sre:passive>belowCapacitor</sre:passive>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit2</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation type="Wire">
+      <sre:passive>belowCapacitor</sre:passive>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit3</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation type="Wire">
+      <sre:passive>aboveAmpere</sre:passive>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit1</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation type="Wire">
+      <sre:passive>belowAmpere</sre:passive>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit1</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation type="Wire">
+      <sre:passive>aboveAmpere</sre:passive>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit2</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation type="Wire">
+      <sre:passive>belowAmpere</sre:passive>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit2</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation type="Wire">
+      <sre:passive>bottomLeft</sre:passive>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit1</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation type="Wire">
+      <sre:passive>bottomRight</sre:passive>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit2</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation type="Wire">
+      <sre:passive>topRight</sre:passive>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit2</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Left circuit" speech2="Circuit with power source and Ampere meter" type="subcircuit">
+      <sre:grouped>circuit1</sre:grouped>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit</sre:grouped>
+      </sre:parents>
+      <sre:children>
+        <sre:active>source</sre:active>
+        <sre:active>ampere</sre:active>
+        <sre:active>switch</sre:active>
+        <sre:active>capacitor</sre:active>
+        <sre:active>lower-junction</sre:active>
+        <sre:active>mid-junction</sre:active>
+      </sre:children>
+      <sre:component>
+        <sre:active>source</sre:active>
+        <sre:active>ampere</sre:active>
+        <sre:active>switch</sre:active>
+        <sre:active>capacitor</sre:active>
+        <sre:active>lower-junction</sre:active>
+        <sre:active>mid-junction</sre:active>
+        <sre:passive>topleftWire</sre:passive>
+        <sre:passive>belowSwitch</sre:passive>
+        <sre:passive>aboveCapacitor</sre:passive>
+        <sre:passive>aboveAmpere</sre:passive>
+        <sre:passive>belowAmpere</sre:passive>
+        <sre:passive>belowCapacitor</sre:passive>
+        <sre:passive>bottomLeft</sre:passive>
+      </sre:component>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Right circuit" speech2="Circuit with resistor and Ampere meter" type="subcircuit">
+      <sre:grouped>circuit2</sre:grouped>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit</sre:grouped>
+      </sre:parents>
+      <sre:children>
+        <sre:active>ampere</sre:active>
+        <sre:active>switch</sre:active>
+        <sre:active>capacitor</sre:active>
+        <sre:active>resistor</sre:active>
+        <sre:active>mid-junction</sre:active>
+      </sre:children>
+      <sre:component>
+        <sre:active>ampere</sre:active>
+        <sre:active>switch</sre:active>
+        <sre:active>capacitor</sre:active>
+        <sre:active>resistor</sre:active>
+        <sre:active>mid-junction</sre:active>
+        <sre:passive>belowSwitch</sre:passive>
+        <sre:passive>aboveCapacitor</sre:passive>
+        <sre:passive>aboveAmpere</sre:passive>
+        <sre:passive>belowAmpere</sre:passive>
+        <sre:passive>belowCapacitor</sre:passive>
+        <sre:passive>bottomRight</sre:passive>
+        <sre:passive>topRight</sre:passive>
+      </sre:component>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Inner circuit" speech2="Circuit with Volt meter and capacitor" type="subcircuit">
+      <sre:grouped>circuit3</sre:grouped>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>circuit</sre:grouped>
+      </sre:parents>
+      <sre:children>
+        <sre:active>volt</sre:active>
+        <sre:active>capacitor</sre:active>
+      </sre:children>
+      <sre:component>
+        <sre:active>volt</sre:active>
+        <sre:active>capacitor</sre:active>
+        <sre:passive>aboveVoltmeter</sre:passive>
+        <sre:passive>belowVoltmeter</sre:passive>
+        <sre:passive>aboveCapacitor</sre:passive>
+        <sre:passive>belowCapacitor</sre:passive>
+      </sre:component>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Circuit with three sub-circuits" speech2="" type="Circuit">
+      <sre:grouped>circuit</sre:grouped>
+      <sre:position>1</sre:position>
+      <sre:parents/>
+      <sre:children>
+        <sre:grouped>circuit1</sre:grouped>
+        <sre:grouped>circuit2</sre:grouped>
+        <sre:grouped>circuit3</sre:grouped>
+      </sre:children>
+      <sre:component>
+        <sre:active>source</sre:active>
+        <sre:active>ampere</sre:active>
+        <sre:active>volt</sre:active>
+        <sre:active>switch</sre:active>
+        <sre:active>capacitor</sre:active>
+        <sre:active>resistor</sre:active>
+        <sre:active>lower-junction</sre:active>
+        <sre:active>mid-junction</sre:active>
+        <sre:passive>topleftWire</sre:passive>
+        <sre:passive>aboveVoltmeter</sre:passive>
+        <sre:passive>belowVoltmeter</sre:passive>
+        <sre:passive>belowSwitch</sre:passive>
+        <sre:passive>aboveCapacitor</sre:passive>
+        <sre:passive>belowCapacitor</sre:passive>
+        <sre:passive>aboveAmpere</sre:passive>
+        <sre:passive>belowAmpere</sre:passive>
+        <sre:passive>bottomLeft</sre:passive>
+        <sre:passive>bottomRight</sre:passive>
+        <sre:passive>topRight</sre:passive>
+      </sre:component>
+      <sre:neighbours/>
+    </sre:annotation>
+  </sre:annotations>
+</histogram>

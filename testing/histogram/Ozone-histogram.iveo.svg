@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:iveo="http://viewplus.com/iveo" xmlns:daisy="http://www.daisy.org/z3986/2005/" contentScriptType="text/ecmascript" width="671.0" zoomAndPan="magnify" contentStyleType="text/css" viewBox="0 0 671 671.94" height="879.01" preserveAspectRatio="xMidYMid meet" version="1.1">
+  <g id="center" onmousedown="register(evt)" class="atomset" opacity="0.0">
+    <rect x="99.16" width="511.08000000000004" id="centerr" height="458.61" y="116.26" visibility="visible"/>
+    <title>Histogram bars</title>
+    <desc>Histogram with 9 bars</desc>
+  </g>
+  <g id="yaxis" onmousedown="register(evt)" class="atomset" opacity="0.0">
+    <rect x="67.12" width="13.599999999999994" id="yaxisr" height="375.84997999999996" y="181.83002" visibility="visible"/>
+    <title>y axis: Frequency</title>
+    <desc>y axis Frequency ranges from 0 to 37</desc>
+  </g>
+  <g id="xaxis" onmousedown="register(evt)" class="atomset" opacity="0.0">
+    <rect x="97.16" width="429.9" id="xaxisr" height="13.600000000000023" y="572.02" visibility="visible"/>
+    <title>x axis: Ozone</title>
+    <desc>x axis Ozone ranges from 0 to 180</desc>
+  </g>
+  <metadata xmlns:gridsvg="http://www.stat.auckland.ac.nz/~paul/R/gridSVG/">
+    <gridsvg:generator name="gridSVG" time="2017-05-12 23:06:39" version="1.5-0"/>
+    <gridsvg:argument name="name" value="Ozone.svg"/>
+    <gridsvg:argument name="exportCoords" value="none"/>
+    <gridsvg:argument name="exportMappings" value="none"/>
+    <gridsvg:argument name="exportJS" value="none"/>
+    <gridsvg:argument name="res" value="96"/>
+    <gridsvg:argument name="prefix" value=""/>
+    <gridsvg:argument name="addClasses" value="FALSE"/>
+    <gridsvg:argument name="indent" value="TRUE"/>
+    <gridsvg:argument name="htmlWrapper" value="FALSE"/>
+    <gridsvg:argument name="usePaths" value="vpPaths"/>
+    <gridsvg:argument name="uniqueNames" value="TRUE"/>
+    <gridsvg:separator name="id.sep" value="."/>
+    <gridsvg:separator name="gPath.sep" value="::"/>
+    <gridsvg:separator name="vpPath.sep" value="::"/>
+  </metadata>
+  <g>
+    <g fill-opacity="0" stroke="rgb(0,0,0)" id="gridSVG" stroke-linecap="round" stroke-miterlimit="10" stroke-opacity="1" fill="rgb(0,0,0)" font-weight="normal" stroke-dasharray="none" stroke-width="1" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke-linejoin="round" opacity="1" font-size="16">
+      <g id="graphics-root.1"/>
+      <g id="graphics-root.2">
+        <g id="graphics-root::graphics-inner.1"/>
+      </g>
+      <g id="graphics-root.3">
+        <g id="graphics-root::graphics-inner.2">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.1"/>
+          <defs>
+            <clipPath id="graphics-root::graphics-inner::graphics-figure-1-clip.1.clipPath">
+              <rect x="0" y="0" transform="translate(0, 671.94) scale(1, -1)" fill="rgb(0,0,0)" width="671" height="671.94" stroke="none"/>
+            </clipPath>
+          </defs>
+          <g id="graphics-root::graphics-inner::graphics-figure-1-clip.1" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1-clip.1.clipPath)"/>
+        </g>
+      </g>
+      <g id="graphics-root.4">
+        <g id="graphics-root::graphics-inner.3">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.2">
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1.1"/>
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.1.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="rgb(0,0,0)" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.1" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.1.clipPath)"/>
+          </g>
+          <defs>
+            <clipPath id="graphics-root::graphics-inner::graphics-figure-1-clip.2.clipPath">
+              <rect x="0" y="0" transform="translate(0, 671.94) scale(1, -1)" fill="rgb(0,0,0)" width="671" height="671.94" stroke="none"/>
+            </clipPath>
+          </defs>
+          <g id="graphics-root::graphics-inner::graphics-figure-1-clip.2" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1-clip.2.clipPath)">
+            <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1.1"/>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.5">
+        <g id="graphics-root::graphics-inner.4">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.3">
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1.2">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1::graphics-window-1-0.1"/>
+            </g>
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.2.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="rgb(0,0,0)" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.2" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.2.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-0.1"/>
+            </g>
+          </g>
+          <defs>
+            <clipPath id="graphics-root::graphics-inner::graphics-figure-1-clip.3.clipPath">
+              <rect x="0" y="0" transform="translate(0, 671.94) scale(1, -1)" fill="rgb(0,0,0)" width="671" height="671.94" stroke="none"/>
+            </clipPath>
+          </defs>
+          <g id="graphics-root::graphics-inner::graphics-figure-1-clip.3" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1-clip.3.clipPath)">
+            <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1.2">
+              <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1::graphics-window-1-0.1"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.6">
+        <g id="graphics-root::graphics-inner.5">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.4">
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1.3">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1::graphics-window-1-1.1"/>
+            </g>
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.3.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="rgb(0,0,0)" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.3" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.3.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.1"/>
+            </g>
+          </g>
+          <defs>
+            <clipPath id="graphics-root::graphics-inner::graphics-figure-1-clip.4.clipPath">
+              <rect x="0" y="0" transform="translate(0, 671.94) scale(1, -1)" fill="rgb(0,0,0)" width="671" height="671.94" stroke="none"/>
+            </clipPath>
+          </defs>
+          <g id="graphics-root::graphics-inner::graphics-figure-1-clip.4" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1-clip.4.clipPath)">
+            <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1.3">
+              <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1::graphics-window-1-1.1"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.7">
+        <g id="graphics-root::graphics-inner.6">
+          <defs>
+            <clipPath id="graphics-root::graphics-inner::graphics-figure-1-clip.5.clipPath">
+              <rect x="0" y="0" transform="translate(0, 671.94) scale(1, -1)" fill="rgb(0,0,0)" width="671" height="671.94" stroke="none"/>
+            </clipPath>
+          </defs>
+          <g id="graphics-root::graphics-inner::graphics-figure-1-clip.5" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1-clip.5.clipPath)">
+            <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1.4">
+              <g id="graphics-plot-1-main-1.1">
+                <g stroke-width="0.1" id="graphics-plot-1-main-1.1.1">
+                  <g id="graphics-plot-1-main-1.1.1.scale">
+                    <g id="graphics-plot-1-main-1.1.1.text">
+                      <text font-size="19.2" x="0" y="0" transform="translate(0, 671.94) scale(1, -1) translate(354.7, 632.58) scale(1, -1)" fill-opacity="1" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="bold" stroke-opacity="1">
+                      <tspan x="0" id="graphics-plot-1-main-1.1.1.tspan.1" dy="6.99">Histogram of Ozone</tspan>
+                    </text>
+                    </g>
+                  </g>
+                </g>
+              <title>Title: Histogram of Ozone</title>
+                <desc>Title: Histogram of Ozone</desc>
+              </g>
+              <g id="graphics-plot-1-xlab-1.1">
+                <g stroke-width="0.1" id="graphics-plot-1-xlab-1.1.1">
+                  <g id="graphics-plot-1-xlab-1.1.1.scale">
+                    <g id="graphics-plot-1-xlab-1.1.1.text">
+                      <text font-size="16" x="0" y="0" transform="translate(0, 671.94) scale(1, -1) translate(354.7, 24.96) scale(1, -1)" fill-opacity="1" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="normal" stroke-opacity="1">
+                      <tspan x="0" id="graphics-plot-1-xlab-1.1.1.tspan.1" dy="0">Ozone</tspan>
+                    </text>
+                    </g>
+                  </g>
+                </g>
+              <title>Label Ozone</title>
+                <desc>Label Ozone</desc>
+              </g>
+              <g id="graphics-plot-1-ylab-1.1">
+                <g stroke-width="0.1" id="graphics-plot-1-ylab-1.1.1">
+                  <g id="graphics-plot-1-ylab-1.1.1.scale">
+                    <g id="graphics-plot-1-ylab-1.1.1.text">
+                      <text font-size="16" x="0" y="0" fill-opacity="1" transform="translate(0, 671.94) scale(1, -1) translate(17.28, 345.57) scale(1, -1) rotate(-90)" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="normal" stroke-opacity="1">
+                      <tspan x="0" id="graphics-plot-1-ylab-1.1.1.tspan.1" dy="0">Frequency</tspan>
+                    </text>
+                    </g>
+                  </g>
+                </g>
+              <title>Label Frequency</title>
+                <desc>Label Frequency</desc>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.8">
+        <g id="graphics-root::graphics-inner.7">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.5">
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1.4">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1::graphics-window-1-1.2">
+                <g id="graphics-plot-1-bottom-axis-line-1.1">
+                  <title id="GRID.element.861.1">x axis: Ozone</title>
+                  <desc id="GRID.element.863.1">need something much smarter in here</desc>
+                  <g id="graphics-plot-1-bottom-axis-line-1.2">
+                    <g id="graphics-plot-1-bottom-axis-line-1.2.1">
+                      <polyline stroke-linecap="round" points="99.16,97.92 525.06,97.92" transform="translate(0, 671.94) scale(1, -1)" fill="rgb(0,0,0)" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                    </g>
+                  </g>
+                <polygon id="graphics-plot-1-bottom-axis-line-1.1r" opacity="0.0" points="97.16,572.02 527.06,572.02 527.06,576.02 97.16,576.02 97.16,572.02"/>
+                </g>
+                <g id="graphics-plot-1-bottom-axis-ticks-1.1">
+                  <g id="graphics-plot-1-bottom-axis-ticks-1.1.1">
+                    <polyline stroke-linecap="round" points="99.16,97.92 99.16,88.32" transform="translate(0, 671.94) scale(1, -1)" fill="rgb(0,0,0)" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                    <polygon id="graphics-plot-1-bottom-axis-ticks-1.1.1r" opacity="0.0" points="97.16,572.02 101.16,572.02 101.16,585.62 97.16,585.62 97.16,572.02"/>
+                    <title>Tick mark 0x axis: Ozone</title>
+                  </g>
+                  <g id="graphics-plot-1-bottom-axis-ticks-1.1.2">
+                    <polyline stroke-linecap="round" points="241.13,97.92 241.13,88.32" transform="translate(0, 671.94) scale(1, -1)" fill="rgb(0,0,0)" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                    <polygon id="graphics-plot-1-bottom-axis-ticks-1.1.2r" opacity="0.0" points="239.13,572.02 243.13,572.02 243.13,585.62 239.13,585.62 239.13,572.02"/>
+                    <title>Tick mark 50x axis: Ozone</title>
+                  </g>
+                  <g id="graphics-plot-1-bottom-axis-ticks-1.1.3">
+                    <polyline stroke-linecap="round" points="383.09,97.92 383.09,88.32" transform="translate(0, 671.94) scale(1, -1)" fill="rgb(0,0,0)" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                    <polygon id="graphics-plot-1-bottom-axis-ticks-1.1.3r" opacity="0.0" points="381.09,572.02 385.09,572.02 385.09,585.62 381.09,585.62 381.09,572.02"/>
+                    <title>Tick mark 100x axis: Ozone</title>
+                  </g>
+                  <g id="graphics-plot-1-bottom-axis-ticks-1.1.4">
+                    <polyline stroke-linecap="round" points="525.06,97.92 525.06,88.32" transform="translate(0, 671.94) scale(1, -1)" fill="rgb(0,0,0)" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                    <polygon id="graphics-plot-1-bottom-axis-ticks-1.1.4r" opacity="0.0" points="523.06,572.02 527.06,572.02 527.06,585.62 523.06,585.62 523.06,572.02"/>
+                    <title>Tick mark 150x axis: Ozone</title>
+                  </g>
+                </g>
+                <g id="graphics-plot-1-bottom-axis-labels-1.1">
+                  <g stroke-width="0.1" id="graphics-plot-1-bottom-axis-labels-1.1.1">
+                    <g id="graphics-plot-1-bottom-axis-labels-1.1.1.scale">
+                      <g id="graphics-plot-1-bottom-axis-labels-1.1.1.text">
+                        <text font-size="16" x="0" y="0" transform="translate(0, 671.94) scale(1, -1) translate(99.16, 63.36) scale(1, -1)" fill-opacity="1" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="normal" stroke-opacity="1">
+                        <tspan x="0" id="graphics-plot-1-bottom-axis-labels-1.1.1.tspan.1" dy="0">0</tspan>
+                      </text>
+                      </g>
+                    </g>
+                  <title>Tick mark 0</title>
+                    <desc>0</desc>
+                  </g>
+                  <g stroke-width="0.1" id="graphics-plot-1-bottom-axis-labels-1.1.2">
+                    <g id="graphics-plot-1-bottom-axis-labels-1.1.2.scale">
+                      <g id="graphics-plot-1-bottom-axis-labels-1.1.2.text">
+                        <text font-size="16" x="0" y="0" transform="translate(0, 671.94) scale(1, -1) translate(241.13, 63.36) scale(1, -1)" fill-opacity="1" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="normal" stroke-opacity="1">
+                        <tspan x="0" id="graphics-plot-1-bottom-axis-labels-1.1.2.tspan.1" dy="0">50</tspan>
+                      </text>
+                      </g>
+                    </g>
+                  <title>Tick mark 50</title>
+                    <desc>50</desc>
+                  </g>
+                  <g stroke-width="0.1" id="graphics-plot-1-bottom-axis-labels-1.1.3">
+                    <g id="graphics-plot-1-bottom-axis-labels-1.1.3.scale">
+                      <g id="graphics-plot-1-bottom-axis-labels-1.1.3.text">
+                        <text font-size="16" x="0" y="0" transform="translate(0, 671.94) scale(1, -1) translate(383.09, 63.36) scale(1, -1)" fill-opacity="1" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="normal" stroke-opacity="1">
+                        <tspan x="0" id="graphics-plot-1-bottom-axis-labels-1.1.3.tspan.1" dy="0">100</tspan>
+                      </text>
+                      </g>
+                    </g>
+                  <title>Tick mark 100</title>
+                    <desc>100</desc>
+                  </g>
+                  <g stroke-width="0.1" id="graphics-plot-1-bottom-axis-labels-1.1.4">
+                    <g id="graphics-plot-1-bottom-axis-labels-1.1.4.scale">
+                      <g id="graphics-plot-1-bottom-axis-labels-1.1.4.text">
+                        <text font-size="16" x="0" y="0" transform="translate(0, 671.94) scale(1, -1) translate(525.06, 63.36) scale(1, -1)" fill-opacity="1" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="normal" stroke-opacity="1">
+                        <tspan x="0" id="graphics-plot-1-bottom-axis-labels-1.1.4.tspan.1" dy="0">150</tspan>
+                      </text>
+                      </g>
+                    </g>
+                  <title>Tick mark 150</title>
+                    <desc>150</desc>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.9">
+        <g id="graphics-root::graphics-inner.8">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.6">
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1.5">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1::graphics-window-1-1.3">
+                <g id="graphics-plot-1-left-axis-line-1.1">
+                  <title id="GRID.element.865.1">y axis: Frequency</title>
+                  <desc id="GRID.element.867.1">need something much smarter in here</desc>
+                  <g id="graphics-plot-1-left-axis-line-1.2">
+                    <g id="graphics-plot-1-left-axis-line-1.2.1">
+                      <polyline stroke-linecap="round" points="78.72,116.26 78.72,488.11" transform="translate(0, 671.94) scale(1, -1)" fill="rgb(0,0,0)" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                    </g>
+                  </g>
+                <polygon id="graphics-plot-1-left-axis-line-1.1r" opacity="0.0" points="76.72,181.83002 80.72,181.83002 80.72,557.68 76.72,557.68 76.72,181.83002"/>
+                </g>
+                <g id="graphics-plot-1-left-axis-ticks-1.1">
+                  <g id="graphics-plot-1-left-axis-ticks-1.1.1">
+                    <polyline stroke-linecap="round" points="78.72,116.26 69.12,116.26" transform="translate(0, 671.94) scale(1, -1)" fill="rgb(0,0,0)" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                    <polygon id="graphics-plot-1-left-axis-ticks-1.1.1r" opacity="0.0" points="67.12,553.68 80.72,553.68 80.72,557.68 67.12,557.68 67.12,553.68"/>
+                    <title>Tick mark 0y axis: Frequency</title>
+                  </g>
+                  <g id="graphics-plot-1-left-axis-ticks-1.1.2">
+                    <polyline stroke-linecap="round" points="78.72,240.21 69.12,240.21" transform="translate(0, 671.94) scale(1, -1)" fill="rgb(0,0,0)" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                    <polygon id="graphics-plot-1-left-axis-ticks-1.1.2r" opacity="0.0" points="67.12,429.72998 80.72,429.72998 80.72,433.72998 67.12,433.72998 67.12,429.72998"/>
+                    <title>Tick mark 10y axis: Frequency</title>
+                  </g>
+                  <g id="graphics-plot-1-left-axis-ticks-1.1.3">
+                    <polyline stroke-linecap="round" points="78.72,364.16 69.12,364.16" transform="translate(0, 671.94) scale(1, -1)" fill="rgb(0,0,0)" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                    <polygon id="graphics-plot-1-left-axis-ticks-1.1.3r" opacity="0.0" points="67.12,305.78 80.72,305.78 80.72,309.78 67.12,309.78 67.12,305.78"/>
+                    <title>Tick mark 20y axis: Frequency</title>
+                  </g>
+                  <g id="graphics-plot-1-left-axis-ticks-1.1.4">
+                    <polyline stroke-linecap="round" points="78.72,488.11 69.12,488.11" transform="translate(0, 671.94) scale(1, -1)" fill="rgb(0,0,0)" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                    <polygon id="graphics-plot-1-left-axis-ticks-1.1.4r" opacity="0.0" points="67.12,181.83002 80.72,181.83002 80.72,185.83002 67.12,185.83002 67.12,181.83002"/>
+                    <title>Tick mark 30y axis: Frequency</title>
+                  </g>
+                </g>
+                <g id="graphics-plot-1-left-axis-labels-1.1">
+                  <g stroke-width="0.1" id="graphics-plot-1-left-axis-labels-1.1.1">
+                    <g id="graphics-plot-1-left-axis-labels-1.1.1.scale">
+                      <g id="graphics-plot-1-left-axis-labels-1.1.1.text">
+                        <text font-size="16" x="0" y="0" fill-opacity="1" transform="translate(0, 671.94) scale(1, -1) translate(55.68, 116.26) scale(1, -1) rotate(-90)" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="normal" stroke-opacity="1">
+                        <tspan x="0" id="graphics-plot-1-left-axis-labels-1.1.1.tspan.1" dy="0">0</tspan>
+                      </text>
+                      </g>
+                    </g>
+                  <title>Tick mark 0</title>
+                    <desc>8 of the 9 bars exceed the Frequency 0</desc>
+                  </g>
+                  <g stroke-width="0.1" id="graphics-plot-1-left-axis-labels-1.1.2">
+                    <g id="graphics-plot-1-left-axis-labels-1.1.2.scale">
+                      <g id="graphics-plot-1-left-axis-labels-1.1.2.text">
+                        <text font-size="16" x="0" y="0" fill-opacity="1" transform="translate(0, 671.94) scale(1, -1) translate(55.68, 240.21) scale(1, -1) rotate(-90)" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="normal" stroke-opacity="1">
+                        <tspan x="0" id="graphics-plot-1-left-axis-labels-1.1.2.tspan.1" dy="0">10</tspan>
+                      </text>
+                      </g>
+                    </g>
+                  <title>Tick mark 10</title>
+                    <desc>4 of the 9 bars exceed the Frequency 10</desc>
+                  </g>
+                  <g stroke-width="0.1" id="graphics-plot-1-left-axis-labels-1.1.3">
+                    <g id="graphics-plot-1-left-axis-labels-1.1.3.scale">
+                      <g id="graphics-plot-1-left-axis-labels-1.1.3.text">
+                        <text font-size="16" x="0" y="0" fill-opacity="1" transform="translate(0, 671.94) scale(1, -1) translate(55.68, 364.16) scale(1, -1) rotate(-90)" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="normal" stroke-opacity="1">
+                        <tspan x="0" id="graphics-plot-1-left-axis-labels-1.1.3.tspan.1" dy="0">20</tspan>
+                      </text>
+                      </g>
+                    </g>
+                  <title>Tick mark 20</title>
+                    <desc>2 of the 9 bars exceed the Frequency 20</desc>
+                  </g>
+                  <g stroke-width="0.1" id="graphics-plot-1-left-axis-labels-1.1.4">
+                    <g id="graphics-plot-1-left-axis-labels-1.1.4.scale">
+                      <g id="graphics-plot-1-left-axis-labels-1.1.4.text">
+                        <text font-size="16" x="0" y="0" fill-opacity="1" transform="translate(0, 671.94) scale(1, -1) translate(55.68, 488.11) scale(1, -1) rotate(-90)" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="normal" stroke-opacity="1">
+                        <tspan x="0" id="graphics-plot-1-left-axis-labels-1.1.4.tspan.1" dy="0">30</tspan>
+                      </text>
+                      </g>
+                    </g>
+                  <title>Tick mark 30</title>
+                    <desc>2 of the 9 bars exceed the Frequency 30</desc>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.10">
+        <g id="graphics-root::graphics-inner.9">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.7">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.4.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="rgb(0,0,0)" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.4" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.4.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.2">
+                <g id="graphics-plot-1-rect-1.1">
+                  <g id="graphics-plot-1-rect-1.1.1">
+                    <rect fill-opacity="0" stroke="rgb(0,0,0)" stroke-linecap="round" transform="translate(0, 671.94) scale(1, -1)" width="56.79" stroke-miterlimit="10" stroke-opacity="1" fill="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1" height="458.61" x="99.16" stroke-linejoin="round" y="116.26"/>
+                    <title>Bar 1 at 10 with value 37</title>
+                    <desc>Bar 1 between x values 0 and 20  with y value 37 and density 0.0159</desc>
+                  </g>
+                  <g id="graphics-plot-1-rect-1.1.2">
+                    <rect fill-opacity="0" stroke="rgb(0,0,0)" stroke-linecap="round" transform="translate(0, 671.94) scale(1, -1)" width="56.79" stroke-miterlimit="10" stroke-opacity="1" fill="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1" height="421.43" x="155.95" stroke-linejoin="round" y="116.26"/>
+                    <title>Bar 2 at 30 with value 34</title>
+                    <desc>Bar 2 between x values 20 and 40  with y value 34 and density 0.0147</desc>
+                  </g>
+                  <g id="graphics-plot-1-rect-1.1.3">
+                    <rect fill-opacity="0" stroke="rgb(0,0,0)" stroke-linecap="round" transform="translate(0, 671.94) scale(1, -1)" width="56.79" stroke-miterlimit="10" stroke-opacity="1" fill="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1" height="173.53" x="212.73" stroke-linejoin="round" y="116.26"/>
+                    <title>Bar 3 at 50 with value 14</title>
+                    <desc>Bar 3 between x values 40 and 60  with y value 14 and density 0.00603</desc>
+                  </g>
+                  <g id="graphics-plot-1-rect-1.1.4">
+                    <rect fill-opacity="0" stroke="rgb(0,0,0)" stroke-linecap="round" transform="translate(0, 671.94) scale(1, -1)" width="56.79" stroke-miterlimit="10" stroke-opacity="1" fill="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1" height="185.92" x="269.52" stroke-linejoin="round" y="116.26"/>
+                    <title>Bar 4 at 70 with value 15</title>
+                    <desc>Bar 4 between x values 60 and 80  with y value 15 and density 0.00647</desc>
+                  </g>
+                  <g id="graphics-plot-1-rect-1.1.5">
+                    <rect fill-opacity="0" stroke="rgb(0,0,0)" stroke-linecap="round" transform="translate(0, 671.94) scale(1, -1)" width="56.79" stroke-miterlimit="10" stroke-opacity="1" fill="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1" height="111.55" x="326.31" stroke-linejoin="round" y="116.26"/>
+                    <title>Bar 5 at 90 with value 9</title>
+                    <desc>Bar 5 between x values 80 and 100  with y value 9 and density 0.00388</desc>
+                  </g>
+                  <g id="graphics-plot-1-rect-1.1.6">
+                    <rect fill-opacity="0" stroke="rgb(0,0,0)" stroke-linecap="round" transform="translate(0, 671.94) scale(1, -1)" width="56.79" stroke-miterlimit="10" stroke-opacity="1" fill="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1" height="49.58" x="383.09" stroke-linejoin="round" y="116.26"/>
+                    <title>Bar 6 at 110 with value 4</title>
+                    <desc>Bar 6 between x values 100 and 120  with y value 4 and density 0.00172</desc>
+                  </g>
+                  <g id="graphics-plot-1-rect-1.1.7">
+                    <rect fill-opacity="0" stroke="rgb(0,0,0)" stroke-linecap="round" transform="translate(0, 671.94) scale(1, -1)" width="56.79" stroke-miterlimit="10" stroke-opacity="1" fill="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1" height="24.79" x="439.88" stroke-linejoin="round" y="116.26"/>
+                    <title>Bar 7 at 130 with value 2</title>
+                    <desc>Bar 7 between x values 120 and 140  with y value 2 and density 0.000862</desc>
+                  </g>
+                  <g id="graphics-plot-1-rect-1.1.8">
+                    <rect fill-opacity="0" stroke="rgb(0,0,0)" stroke-linecap="round" transform="translate(0, 671.94) scale(1, -1)" width="56.79" stroke-miterlimit="10" stroke-opacity="1" fill="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1" height="0" x="496.67" stroke-linejoin="round" y="116.26"/>
+                    <title>Bar 8 at 150 with value 0</title>
+                    <desc>Bar 8 between x values 140 and 160  with y value 0 and density 0</desc>
+                  </g>
+                  <g id="graphics-plot-1-rect-1.1.9">
+                    <rect fill-opacity="0" stroke="rgb(0,0,0)" stroke-linecap="round" transform="translate(0, 671.94) scale(1, -1)" width="56.79" stroke-miterlimit="10" stroke-opacity="1" fill="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1" height="12.39" x="553.45" stroke-linejoin="round" y="116.26"/>
+                    <title>Bar 9 at 170 with value 1</title>
+                    <desc>Bar 9 between x values 160 and 180  with y value 1 and density 0.000431</desc>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+<circle fill="white" r="23.485000000000003" cx="536.8000000000001" id="drilldown" cy="604.7460000000001" stroke="rgb(0, 0, 0)" onmousedown="drill(evt)" stroke-width="1.0"/>
+  <circle fill="silver" r="23.485000000000003" cx="603.9" id="restore" cy="604.7460000000001" stroke="rgb(0, 0, 0)" onmousedown="drill(evt)" stroke-width="1.0"/>
+  <iveo:paper top-margin="1.0 inch" width="8.5 inch" right-margin="0.5 inch" orientation="portrait" left-margin="0.75 inch" bottom-margin="0.6 inch" height="11.0 inch" name="Custom paper size"/>
+  <daisy:layers>
+    <daisy:layerItem print="on" display="on" enabledInViewer="on" lock="off" speak="on" emboss="on" name="Default"/>
+    <daisy:layerItem print="on" display="on" enabledInViewer="on" lock="off" speak="on" emboss="off" name="Print"/>
+    <daisy:layerItem print="off" display="on" enabledInViewer="on" lock="off" speak="on" emboss="on" name="Emboss"/>
+    <daisy:layerItem print="off" display="on" enabledInViewer="on" lock="off" speak="on" emboss="on" name="Braille"/>
+    <daisy:layerItem print="on" display="on" enabledInViewer="on" lock="off" speak="on" emboss="on" name="OnLayer"/>
+    <daisy:layerItem print="off" display="off" enabledInViewer="on" lock="off" speak="off" emboss="off" name="OffLayer"/>
+  </daisy:layers>
+  <title>Histogram of Ozone</title>
+  <desc>Histogram showing  9 bars for  Ozone over the range 0 to 180 and Frequency from 0 to 37</desc>
+</svg>

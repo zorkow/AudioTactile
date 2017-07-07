@@ -1,0 +1,1153 @@
+<?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:iveo="http://viewplus.com/iveo" xmlns:daisy="http://www.daisy.org/z3986/2005/" contentScriptType="text/ecmascript" width="671.0" zoomAndPan="magnify" contentStyleType="text/css" viewBox="0 0 671 671.94" height="879.01" preserveAspectRatio="xMidYMid meet" version="1.1">
+  <g id="yaxis" onmousedown="register(evt)" class="atomset" opacity="0.0">
+    <rect x="67.12" width="13.599999999999994" id="yaxisr" height="415.91999999999996" y="144.5" visibility="visible"/>
+    <title>y axis: Ozone</title>
+    <desc>y axis Ozone ranges from 0 to 150</desc>
+  </g>
+  <g id="xaxis" onmousedown="register(evt)" class="atomset" opacity="0.0">
+    <rect x="148.27" width="412.86" id="xaxisr" height="13.600000000000023" y="572.02" visibility="visible"/>
+    <title>x axis: Months</title>
+    <desc>x axis with values 5, 6, 7, 8, 9</desc>
+  </g>
+  <g id="boxplot5" onmousedown="register(evt)" class="atomset" opacity="0.0">
+    <rect x="512" width="103" id="boxplot5r" height="495.3" y="77.92" visibility="visible"/>
+    <title>Boxplot for 9 and quartiles in 7, 16, 23, 36, 47 and 4 outliers</title>
+    <desc>Boxplot for 9 for 29 datapoints. Minimum 7, Lower quartile 16, Median 23, Upper quartile 36, Upper whisker 47. 4 outliers at 96, 78, 73, 91</desc>
+  </g>
+  <g id="boxplot4" onmousedown="register(evt)" class="atomset" opacity="0.0">
+    <rect x="409" width="103" id="boxplot4r" height="496.16" y="77.06" visibility="visible"/>
+    <title>Boxplot for 8 and quartiles in 9, 28, 52, 84, 168</title>
+    <desc>Boxplot for 8 for 26 datapoints. Minimum 9, Lower quartile 28, Median 52, Upper quartile 84, Maximum 168. No outliers</desc>
+  </g>
+  <g id="boxplot3" onmousedown="register(evt)" class="atomset" opacity="0.0">
+    <rect x="306" width="103" id="boxplot3r" height="495.3" y="77.92" visibility="visible"/>
+    <title>Boxplot for 7 and quartiles in 7, 35, 60, 80, 135</title>
+    <desc>Boxplot for 7 for 26 datapoints. Minimum 7, Lower quartile 35, Median 60, Upper quartile 80, Maximum 135. No outliers</desc>
+  </g>
+  <g id="boxplot2" onmousedown="register(evt)" class="atomset" opacity="0.0">
+    <rect x="203" width="103" id="boxplot2r" height="495.3" y="77.92" visibility="visible"/>
+    <title>Boxplot for 6 and quartiles in 12, 20, 23, 37, 39 and 1 outlier</title>
+    <desc>Boxplot for 6 for 9 datapoints. Minimum 12, Lower quartile 20, Median 23, Upper quartile 37, Upper whisker 39. 1 outlier at 71</desc>
+  </g>
+  <g id="boxplot1" onmousedown="register(evt)" class="atomset" opacity="0.0">
+    <rect x="100" width="103" id="boxplot1r" height="495.3" y="77.92" visibility="visible"/>
+    <title>Boxplot for 5 and quartiles in 1, 11, 18, 32, 45 and 1 outlier</title>
+    <desc>Boxplot for 5 for 26 datapoints. Minimum 1, Lower quartile 11, Median 18, Upper quartile 32, Upper whisker 45. 1 outlier at 115</desc>
+  </g>
+  <g id="outliers5" onmousedown="register(evt)" class="atomset" opacity="0.0">
+    <rect x="550.0" width="18.0" id="outliers5r" height="80.0" y="285.0" visibility="visible"/>
+    <title>4 outliers at 96, 78, 73, 91</title>
+    <desc/>
+  </g>
+  <metadata xmlns:gridsvg="http://www.stat.auckland.ac.nz/~paul/R/gridSVG/">
+    <gridsvg:generator name="gridSVG" time="2017-05-12 23:15:25" version="1.5-0"/>
+    <gridsvg:argument name="name" value="Ozone.svg"/>
+    <gridsvg:argument name="exportCoords" value="none"/>
+    <gridsvg:argument name="exportMappings" value="none"/>
+    <gridsvg:argument name="exportJS" value="none"/>
+    <gridsvg:argument name="res" value="96"/>
+    <gridsvg:argument name="prefix" value=""/>
+    <gridsvg:argument name="addClasses" value="FALSE"/>
+    <gridsvg:argument name="indent" value="TRUE"/>
+    <gridsvg:argument name="htmlWrapper" value="FALSE"/>
+    <gridsvg:argument name="usePaths" value="vpPaths"/>
+    <gridsvg:argument name="uniqueNames" value="TRUE"/>
+    <gridsvg:separator name="id.sep" value="."/>
+    <gridsvg:separator name="gPath.sep" value="::"/>
+    <gridsvg:separator name="vpPath.sep" value="::"/>
+  </metadata>
+  <g>
+    <g fill-opacity="0" stroke="rgb(0,0,0)" id="gridSVG" stroke-linecap="round" stroke-miterlimit="10" stroke-opacity="1" fill="none" font-weight="normal" stroke-dasharray="none" stroke-width="1" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke-linejoin="round" opacity="1" font-size="16">
+      <defs>
+        <symbol overflow="visible" preserveAspectRatio="xMidYMid meet" id="gridSVG.pch1" viewBox="-5 -5 10 10">
+          <circle r="3.75" cx="0" cy="0"/>
+        </symbol>
+        <symbol overflow="visible" preserveAspectRatio="xMidYMid meet" id="gridSVG.pch32" viewBox="-5 -5 10 10">
+          <text x="0" y="0" transform="translate(0, 671.94) scale(1, -1) scale(1, -1)" baseline-shift="-25%" text-anchor="middle" fontsize="7.5"> </text>
+        </symbol>
+      </defs>
+      <g id="graphics-root.1"/>
+      <g id="graphics-root.2">
+        <g id="graphics-root::graphics-inner.1"/>
+      </g>
+      <g id="graphics-root.3">
+        <g id="graphics-root::graphics-inner.2">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.1"/>
+          <defs>
+            <clipPath id="graphics-root::graphics-inner::graphics-figure-1-clip.1.clipPath">
+              <rect x="0" y="0" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="671" height="671.94" stroke="none"/>
+            </clipPath>
+          </defs>
+          <g id="graphics-root::graphics-inner::graphics-figure-1-clip.1" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1-clip.1.clipPath)"/>
+        </g>
+      </g>
+      <g id="graphics-root.4">
+        <g id="graphics-root::graphics-inner.3">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.2">
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1.1"/>
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.1.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.1" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.1.clipPath)"/>
+          </g>
+          <defs>
+            <clipPath id="graphics-root::graphics-inner::graphics-figure-1-clip.2.clipPath">
+              <rect x="0" y="0" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="671" height="671.94" stroke="none"/>
+            </clipPath>
+          </defs>
+          <g id="graphics-root::graphics-inner::graphics-figure-1-clip.2" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1-clip.2.clipPath)">
+            <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1.1"/>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.5">
+        <g id="graphics-root::graphics-inner.4">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.3">
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1.2">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1::graphics-window-1-0.1"/>
+            </g>
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.2.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.2" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.2.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-0.1"/>
+            </g>
+          </g>
+          <defs>
+            <clipPath id="graphics-root::graphics-inner::graphics-figure-1-clip.3.clipPath">
+              <rect x="0" y="0" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="671" height="671.94" stroke="none"/>
+            </clipPath>
+          </defs>
+          <g id="graphics-root::graphics-inner::graphics-figure-1-clip.3" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1-clip.3.clipPath)">
+            <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1.2">
+              <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1::graphics-window-1-0.1"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.6">
+        <g id="graphics-root::graphics-inner.5">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.4">
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1.3">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1::graphics-window-1-1.1"/>
+            </g>
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.3.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.3" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.3.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.1"/>
+            </g>
+          </g>
+          <defs>
+            <clipPath id="graphics-root::graphics-inner::graphics-figure-1-clip.4.clipPath">
+              <rect x="0" y="0" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="671" height="671.94" stroke="none"/>
+            </clipPath>
+          </defs>
+          <g id="graphics-root::graphics-inner::graphics-figure-1-clip.4" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1-clip.4.clipPath)">
+            <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1.3">
+              <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1::graphics-window-1-1.1"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.7">
+        <g id="graphics-root::graphics-inner.6">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.5">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.4.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.4" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.4.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.2"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.9">
+        <g id="graphics-root::graphics-inner.8">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.7">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.6.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.6" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.6.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.4">
+                <g id="graphics-plot-1-points-1.1">
+                  <g id="graphics-plot-1-points-1.1.1">
+                    <use fill-opacity="1" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="none" transform="translate(0, 671.94) scale(1, -1) translate(-2,-2)" width="4" stroke-opacity="0" xlink:show="embed" xlink:type="simple" fill="rgb(0,0,0)" font-weight="normal" stroke-dasharray="none" stroke-width="0.1" height="4" font-style="normal" x="150.27" y="162.95" font-size="10" xlink:href="#gridSVG.pch32" xlink:actuate="onLoad"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.10">
+        <g id="graphics-root::graphics-inner.9">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.8">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.7.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.7" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.7.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.5">
+                <g id="graphics-plot-1-segments-2.1">
+                  <g id="graphics-plot-1-segments-2.1.1">
+                    <polyline stroke-linecap="round" points="150.27,116.26 150.27,143.73" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="4,4" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                  <g id="graphics-plot-1-segments-2.1.2">
+                    <polyline stroke-linecap="round" points="150.27,237.1 150.27,201.4" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="4,4" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>Boxplot for 5 and quartiles in 1, 11, 18, 32, 45 and 1 outlier</title>
+      </g>
+      <g id="graphics-root.11">
+        <g id="graphics-root::graphics-inner.10">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.9">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.8.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.8" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.8.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.6">
+                <g id="graphics-plot-1-segments-3.1">
+                  <g id="graphics-plot-1-segments-3.1.1">
+                    <polyline stroke-linecap="round" points="129.83,116.26 170.71,116.26" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                  <g id="graphics-plot-1-segments-3.1.2">
+                    <polyline stroke-linecap="round" points="129.83,237.1 170.71,237.1" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>Minimum 1 and Upper whisker 45.</title>
+      </g>
+      <g id="graphics-root.12">
+        <g id="graphics-root::graphics-inner.11">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.10">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.9.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.9" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.9.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.7">
+                <g id="graphics-plot-1-polygon-2.1">
+                  <g id="graphics-plot-1-polygon-2.1.1">
+                    <polygon stroke-linecap="round" points="109.38,143.73 191.16,143.73 191.16,201.4 109.38,201.4" transform="translate(0, 671.94) scale(1, -1)" fill-opacity="0" fill="rgb(0,0,0)" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>Lower quartile 11 and Upper quartile 32.</title>
+      </g>
+      <g id="graphics-root.8">
+        <g id="graphics-root::graphics-inner.7">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.6">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.5.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.5" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.5.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.3">
+                <g id="graphics-plot-1-segments-1.1">
+                  <g id="graphics-plot-1-segments-1.1.1">
+                    <polyline stroke-linecap="butt" points="109.38,162.95 191.16,162.95" transform="translate(0, 671.94) scale(1, -1)" fill="rgb(0,0,0)" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="3" stroke-miterlimit="10"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>Median 18</title>
+      </g>
+      <g id="graphics-root.13">
+        <g id="graphics-root::graphics-inner.12">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.11">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.10.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.10" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.10.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.8"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.14">
+        <g id="graphics-root::graphics-inner.13">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.12">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.11.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.11" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.11.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.9">
+                <g id="graphics-plot-1-points-2.1">
+                  <g id="graphics-plot-1-points-2.1.1">
+                    <use fill-opacity="0" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="rgb(0,0,0)" transform="translate(0, 671.94) scale(1, -1) translate(-4.8,-4.8)" width="9.6" stroke-opacity="1" xlink:show="embed" xlink:type="simple" fill="rgb(0,0,0)" font-weight="normal" stroke-dasharray="none" stroke-width="1.04" height="9.6" font-style="normal" x="150.27" y="429.33" font-size="16" xlink:href="#gridSVG.pch1" xlink:actuate="onLoad"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>1 outlier at 115</title>
+      </g>
+      <g id="graphics-root.15">
+        <g id="graphics-root::graphics-inner.14">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.13">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.12.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.12" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.12.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.10"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.17">
+        <g id="graphics-root::graphics-inner.16">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.15">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.14.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.14" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.14.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.12">
+                <g id="graphics-plot-1-points-3.1">
+                  <g id="graphics-plot-1-points-3.1.1">
+                    <use fill-opacity="1" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="none" transform="translate(0, 671.94) scale(1, -1) translate(-2,-2)" width="4" stroke-opacity="0" xlink:show="embed" xlink:type="simple" fill="rgb(0,0,0)" font-weight="normal" stroke-dasharray="none" stroke-width="0.1" height="4" font-style="normal" x="252.49" y="176.68" font-size="10" xlink:href="#gridSVG.pch32" xlink:actuate="onLoad"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.18">
+        <g id="graphics-root::graphics-inner.17">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.16">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.15.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.15" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.15.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.13">
+                <g id="graphics-plot-1-segments-6.1">
+                  <g id="graphics-plot-1-segments-6.1.1">
+                    <polyline stroke-linecap="round" points="252.49,146.47 252.49,168.44" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="4,4" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                  <g id="graphics-plot-1-segments-6.1.2">
+                    <polyline stroke-linecap="round" points="252.49,220.62 252.49,215.13" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="4,4" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>Boxplot for 6 and quartiles in 12, 20, 23, 37, 39 and 1 outlier</title>
+      </g>
+      <g id="graphics-root.19">
+        <g id="graphics-root::graphics-inner.18">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.17">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.16.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.16" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.16.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.14">
+                <g id="graphics-plot-1-segments-7.1">
+                  <g id="graphics-plot-1-segments-7.1.1">
+                    <polyline stroke-linecap="round" points="232.04,146.47 272.93,146.47" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                  <g id="graphics-plot-1-segments-7.1.2">
+                    <polyline stroke-linecap="round" points="232.04,220.62 272.93,220.62" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>Minimum 12 and Upper whisker 39.</title>
+      </g>
+      <g id="graphics-root.20">
+        <g id="graphics-root::graphics-inner.19">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.18">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.17.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.17" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.17.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.15">
+                <g id="graphics-plot-1-polygon-4.1">
+                  <g id="graphics-plot-1-polygon-4.1.1">
+                    <polygon stroke-linecap="round" points="211.6,168.44 293.37,168.44 293.37,215.13 211.6,215.13" transform="translate(0, 671.94) scale(1, -1)" fill-opacity="0" fill="rgb(0,0,0)" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>Lower quartile 20 and Upper quartile 37.</title>
+      </g>
+      <g id="graphics-root.16">
+        <g id="graphics-root::graphics-inner.15">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.14">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.13.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.13" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.13.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.11">
+                <g id="graphics-plot-1-segments-5.1">
+                  <g id="graphics-plot-1-segments-5.1.1">
+                    <polyline stroke-linecap="butt" points="211.6,176.68 293.37,176.68" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="3" stroke-miterlimit="10"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>Median 23</title>
+      </g>
+      <g id="graphics-root.21">
+        <g id="graphics-root::graphics-inner.20">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.19">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.18.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.18" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.18.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.16"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.22">
+        <g id="graphics-root::graphics-inner.21">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.20">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.19.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.19" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.19.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.17">
+                <g id="graphics-plot-1-points-4.1">
+                  <g id="graphics-plot-1-points-4.1.1">
+                    <use fill-opacity="0" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="rgb(0,0,0)" transform="translate(0, 671.94) scale(1, -1) translate(-4.8,-4.8)" width="9.6" stroke-opacity="1" xlink:show="embed" xlink:type="simple" fill="rgb(0,0,0)" font-weight="normal" stroke-dasharray="none" stroke-width="1.04" height="9.6" font-style="normal" x="252.49" y="308.5" font-size="16" xlink:href="#gridSVG.pch1" xlink:actuate="onLoad"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>1 outlier at 71</title>
+      </g>
+      <g id="graphics-root.23">
+        <g id="graphics-root::graphics-inner.22">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.21">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.20.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.20" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.20.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.18"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.25">
+        <g id="graphics-root::graphics-inner.24">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.23">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.22.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.22" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.22.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.20">
+                <g id="graphics-plot-1-points-5.1">
+                  <g id="graphics-plot-1-points-5.1.1">
+                    <use fill-opacity="1" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="none" transform="translate(0, 671.94) scale(1, -1) translate(-2,-2)" width="4" stroke-opacity="0" xlink:show="embed" xlink:type="simple" fill="rgb(0,0,0)" font-weight="normal" stroke-dasharray="none" stroke-width="0.1" height="4" font-style="normal" x="354.7" y="278.29" font-size="10" xlink:href="#gridSVG.pch32" xlink:actuate="onLoad"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.26">
+        <g id="graphics-root::graphics-inner.25">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.24">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.23.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.23" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.23.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.21">
+                <g id="graphics-plot-1-segments-10.1">
+                  <g id="graphics-plot-1-segments-10.1.1">
+                    <polyline stroke-linecap="round" points="354.7,132.74 354.7,209.63" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="4,4" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                  <g id="graphics-plot-1-segments-10.1.2">
+                    <polyline stroke-linecap="round" points="354.7,484.25 354.7,333.21" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="4,4" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>Boxplot for 7 and quartiles in 7, 35, 60, 80, 135</title>
+      </g>
+      <g id="graphics-root.27">
+        <g id="graphics-root::graphics-inner.26">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.25">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.24.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.24" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.24.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.22">
+                <g id="graphics-plot-1-segments-11.1">
+                  <g id="graphics-plot-1-segments-11.1.1">
+                    <polyline stroke-linecap="round" points="334.26,132.74 375.14,132.74" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                  <g id="graphics-plot-1-segments-11.1.2">
+                    <polyline stroke-linecap="round" points="334.26,484.25 375.14,484.25" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>Minimum 7 and Maximum 135.</title>
+      </g>
+      <g id="graphics-root.28">
+        <g id="graphics-root::graphics-inner.27">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.26">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.25.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.25" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.25.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.23">
+                <g id="graphics-plot-1-polygon-6.1">
+                  <g id="graphics-plot-1-polygon-6.1.1">
+                    <polygon stroke-linecap="round" points="313.81,209.63 395.59,209.63 395.59,333.21 313.81,333.21" transform="translate(0, 671.94) scale(1, -1)" fill-opacity="0" fill="rgb(0,0,0)" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>Lower quartile 35 and Upper quartile 80.</title>
+      </g>
+      <g id="graphics-root.24">
+        <g id="graphics-root::graphics-inner.23">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.22">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.21.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.21" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.21.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.19">
+                <g id="graphics-plot-1-segments-9.1">
+                  <g id="graphics-plot-1-segments-9.1.1">
+                    <polyline stroke-linecap="butt" points="313.81,278.29 395.59,278.29" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="3" stroke-miterlimit="10"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>Median 60</title>
+      </g>
+      <g id="graphics-root.29">
+        <g id="graphics-root::graphics-inner.28">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.27">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.26.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.26" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.26.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.24"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.31">
+        <g id="graphics-root::graphics-inner.30">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.29">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.28.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.28" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.28.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.26">
+                <g id="graphics-plot-1-points-6.1">
+                  <g id="graphics-plot-1-points-6.1.1">
+                    <use fill-opacity="1" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="none" transform="translate(0, 671.94) scale(1, -1) translate(-2,-2)" width="4" stroke-opacity="0" xlink:show="embed" xlink:type="simple" fill="rgb(0,0,0)" font-weight="normal" stroke-dasharray="none" stroke-width="0.1" height="4" font-style="normal" x="456.91" y="256.32" font-size="10" xlink:href="#gridSVG.pch32" xlink:actuate="onLoad"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.32">
+        <g id="graphics-root::graphics-inner.31">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.30">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.29.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.29" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.29.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.27">
+                <g id="graphics-plot-1-segments-13.1">
+                  <g id="graphics-plot-1-segments-13.1.1">
+                    <polyline stroke-linecap="round" points="456.91,138.23 456.91,190.41" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="4,4" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                  <g id="graphics-plot-1-segments-13.1.2">
+                    <polyline stroke-linecap="round" points="456.91,574.88 456.91,344.2" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="4,4" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>Boxplot for 8 and quartiles in 9, 28, 52, 84, 168</title>
+      </g>
+      <g id="graphics-root.33">
+        <g id="graphics-root::graphics-inner.32">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.31">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.30.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.30" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.30.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.28">
+                <g id="graphics-plot-1-segments-14.1">
+                  <g id="graphics-plot-1-segments-14.1.1">
+                    <polyline stroke-linecap="round" points="436.47,138.23 477.36,138.23" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                  <g id="graphics-plot-1-segments-14.1.2">
+                    <polyline stroke-linecap="round" points="436.47,574.88 477.36,574.88" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>Minimum 9 and Maximum 168.</title>
+      </g>
+      <g id="graphics-root.34">
+        <g id="graphics-root::graphics-inner.33">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.32">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.31.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.31" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.31.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.29">
+                <g id="graphics-plot-1-polygon-8.1">
+                  <g id="graphics-plot-1-polygon-8.1.1">
+                    <polygon stroke-linecap="round" points="416.03,190.41 497.8,190.41 497.8,344.2 416.03,344.2" transform="translate(0, 671.94) scale(1, -1)" fill-opacity="0" fill="rgb(0,0,0)" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>Lower quartile 28 and Upper quartile 84.</title>
+      </g>
+      <g id="graphics-root.30">
+        <g id="graphics-root::graphics-inner.29">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.28">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.27.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.27" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.27.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.25">
+                <g id="graphics-plot-1-segments-12.1">
+                  <g id="graphics-plot-1-segments-12.1.1">
+                    <polyline stroke-linecap="butt" points="416.03,256.32 497.8,256.32" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="3" stroke-miterlimit="10"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>Median 52</title>
+      </g>
+      <g id="graphics-root.35">
+        <g id="graphics-root::graphics-inner.34">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.33">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.32.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.32" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.32.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.30"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.37">
+        <g id="graphics-root::graphics-inner.36">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.35">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.34.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.34" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.34.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.32">
+                <g id="graphics-plot-1-points-7.1">
+                  <g id="graphics-plot-1-points-7.1.1">
+                    <use fill-opacity="1" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="none" transform="translate(0, 671.94) scale(1, -1) translate(-2,-2)" width="4" stroke-opacity="0" xlink:show="embed" xlink:type="simple" fill="rgb(0,0,0)" font-weight="normal" stroke-dasharray="none" stroke-width="0.1" height="4" font-style="normal" x="559.13" y="176.68" font-size="10" xlink:href="#gridSVG.pch32" xlink:actuate="onLoad"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.38">
+        <g id="graphics-root::graphics-inner.37">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.36">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.35.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.35" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.35.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.33">
+                <g id="graphics-plot-1-segments-16.1">
+                  <g id="graphics-plot-1-segments-16.1.1">
+                    <polyline stroke-linecap="round" points="559.13,132.74 559.13,157.46" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="4,4" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                  <g id="graphics-plot-1-segments-16.1.2">
+                    <polyline stroke-linecap="round" points="559.13,242.59 559.13,212.38" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="4,4" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>Boxplot for 9 and quartiles in 7, 16, 23, 36, 47 and 4 outliers</title>
+      </g>
+      <g id="graphics-root.39">
+        <g id="graphics-root::graphics-inner.38">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.37">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.36.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.36" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.36.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.34">
+                <g id="graphics-plot-1-segments-17.1">
+                  <g id="graphics-plot-1-segments-17.1.1">
+                    <polyline stroke-linecap="round" points="538.69,132.74 579.57,132.74" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                  <g id="graphics-plot-1-segments-17.1.2">
+                    <polyline stroke-linecap="round" points="538.69,242.59 579.57,242.59" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>Minimum 7 and Upper whisker 47.</title>
+      </g>
+      <g id="graphics-root.40">
+        <g id="graphics-root::graphics-inner.39">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.38">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.37.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.37" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.37.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.35">
+                <g id="graphics-plot-1-polygon-10.1">
+                  <g id="graphics-plot-1-polygon-10.1.1">
+                    <polygon stroke-linecap="round" points="518.24,157.46 600.02,157.46 600.02,212.38 518.24,212.38" transform="translate(0, 671.94) scale(1, -1)" fill-opacity="0" fill="rgb(0,0,0)" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>Lower quartile 16 and Upper quartile 36.</title>
+      </g>
+      <g id="graphics-root.36">
+        <g id="graphics-root::graphics-inner.35">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.34">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.33.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.33" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.33.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.31">
+                <g id="graphics-plot-1-segments-15.1">
+                  <g id="graphics-plot-1-segments-15.1.1">
+                    <polyline stroke-linecap="butt" points="518.24,176.68 600.02,176.68" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="3" stroke-miterlimit="10"/>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      <title>Median 23</title>
+      </g>
+      <g id="graphics-root.41">
+        <g id="graphics-root::graphics-inner.40">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.39">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.38.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.38" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.38.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.36"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.42">
+        <g id="graphics-root::graphics-inner.41">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.40">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.39.clipPath">
+                <rect x="78.72" y="97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="551.96" height="495.3" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.39" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.39.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1.37">
+                <g id="graphics-plot-1-points-8.1">
+                  <g id="graphics-plot-1-points-8.1.1">
+                    <use fill-opacity="0" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="rgb(0,0,0)" transform="translate(0, 671.94) scale(1, -1) translate(-4.8,-4.8)" width="9.6" stroke-opacity="1" xlink:show="embed" xlink:type="simple" fill="rgb(0,0,0)" font-weight="normal" stroke-dasharray="none" stroke-width="1.04" height="9.6" font-style="normal" x="559.13" y="377.15" font-size="16" xlink:href="#gridSVG.pch1" xlink:actuate="onLoad"/>
+                    <title>96</title>
+                    <desc>Outlier 96</desc>
+                  </g>
+                  <g id="graphics-plot-1-points-8.1.2">
+                    <use fill-opacity="0" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="rgb(0,0,0)" transform="translate(0, 671.94) scale(1, -1) translate(-4.8,-4.8)" width="9.6" stroke-opacity="1" xlink:show="embed" xlink:type="simple" fill="rgb(0,0,0)" font-weight="normal" stroke-dasharray="none" stroke-width="1.04" height="9.6" font-style="normal" x="559.13" y="327.72" font-size="16" xlink:href="#gridSVG.pch1" xlink:actuate="onLoad"/>
+                    <title>78</title>
+                    <desc>Outlier 78</desc>
+                  </g>
+                  <g id="graphics-plot-1-points-8.1.3">
+                    <use fill-opacity="0" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="rgb(0,0,0)" transform="translate(0, 671.94) scale(1, -1) translate(-4.8,-4.8)" width="9.6" stroke-opacity="1" xlink:show="embed" xlink:type="simple" fill="rgb(0,0,0)" font-weight="normal" stroke-dasharray="none" stroke-width="1.04" height="9.6" font-style="normal" x="559.13" y="313.99" font-size="16" xlink:href="#gridSVG.pch1" xlink:actuate="onLoad"/>
+                    <title>73</title>
+                    <desc>Outlier 73</desc>
+                  </g>
+                  <g id="graphics-plot-1-points-8.1.4">
+                    <use fill-opacity="0" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="rgb(0,0,0)" transform="translate(0, 671.94) scale(1, -1) translate(-4.8,-4.8)" width="9.6" stroke-opacity="1" xlink:show="embed" xlink:type="simple" fill="rgb(0,0,0)" font-weight="normal" stroke-dasharray="none" stroke-width="1.04" height="9.6" font-style="normal" x="559.13" y="363.42" font-size="16" xlink:href="#gridSVG.pch1" xlink:actuate="onLoad"/>
+                    <title>91</title>
+                    <desc>Outlier 91</desc>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.43">
+        <g id="graphics-root::graphics-inner.42">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.41">
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1.4">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1::graphics-window-1-1.2">
+                <g id="graphics-plot-1-bottom-axis-line-1.1">
+                  <g id="graphics-plot-1-bottom-axis-line-1.1.1">
+                    <polyline stroke-linecap="round" points="150.27,97.92 559.13,97.92" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                <polygon id="graphics-plot-1-bottom-axis-line-1.1r" opacity="0.0" points="148.27,572.02 561.13,572.02 561.13,576.02 148.27,576.02 148.27,572.02"/>
+                  <title>x axis: Months</title>
+                </g>
+                <g id="graphics-plot-1-bottom-axis-ticks-1.1">
+                  <g id="graphics-plot-1-bottom-axis-ticks-1.1.1">
+                    <polyline stroke-linecap="round" points="150.27,97.92 150.27,88.32" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                    <polygon id="graphics-plot-1-bottom-axis-ticks-1.1.1r" opacity="0.0" points="148.27,572.02 152.27,572.02 152.27,585.62 148.27,585.62 148.27,572.02"/>
+                    <title>Tick mark 5</title>
+                  </g>
+                  <g id="graphics-plot-1-bottom-axis-ticks-1.1.2">
+                    <polyline stroke-linecap="round" points="252.49,97.92 252.49,88.32" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                    <polygon id="graphics-plot-1-bottom-axis-ticks-1.1.2r" opacity="0.0" points="250.49,572.02 254.49,572.02 254.49,585.62 250.49,585.62 250.49,572.02"/>
+                    <title>Tick mark 6</title>
+                  </g>
+                  <g id="graphics-plot-1-bottom-axis-ticks-1.1.3">
+                    <polyline stroke-linecap="round" points="354.7,97.92 354.7,88.32" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                    <polygon id="graphics-plot-1-bottom-axis-ticks-1.1.3r" opacity="0.0" points="352.7,572.02 356.7,572.02 356.7,585.62 352.7,585.62 352.7,572.02"/>
+                    <title>Tick mark 7</title>
+                  </g>
+                  <g id="graphics-plot-1-bottom-axis-ticks-1.1.4">
+                    <polyline stroke-linecap="round" points="456.91,97.92 456.91,88.32" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                    <polygon id="graphics-plot-1-bottom-axis-ticks-1.1.4r" opacity="0.0" points="454.91,572.02 458.91,572.02 458.91,585.62 454.91,585.62 454.91,572.02"/>
+                    <title>Tick mark 8</title>
+                  </g>
+                  <g id="graphics-plot-1-bottom-axis-ticks-1.1.5">
+                    <polyline stroke-linecap="round" points="559.13,97.92 559.13,88.32" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                    <polygon id="graphics-plot-1-bottom-axis-ticks-1.1.5r" opacity="0.0" points="557.13,572.02 561.13,572.02 561.13,585.62 557.13,585.62 557.13,572.02"/>
+                    <title>Tick mark 9</title>
+                  </g>
+                </g>
+                <g id="graphics-plot-1-bottom-axis-labels-1.1">
+                  <g stroke-width="0.1" id="graphics-plot-1-bottom-axis-labels-1.1.1">
+                    <g id="graphics-plot-1-bottom-axis-labels-1.1.1.scale">
+                      <g id="graphics-plot-1-bottom-axis-labels-1.1.1.text">
+                        <text font-size="16" x="0" y="0" transform="translate(0, 671.94) scale(1, -1) translate(150.27, 63.36) scale(1, -1)" fill-opacity="1" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="normal" stroke-opacity="1">
+                        <tspan x="0" id="graphics-plot-1-bottom-axis-labels-1.1.1.tspan.1" dy="0">5</tspan>
+                      </text>
+                      </g>
+                    </g>
+                  <title>Tick mark 5</title>
+                    <desc>5</desc>
+                  </g>
+                  <g stroke-width="0.1" id="graphics-plot-1-bottom-axis-labels-1.1.2">
+                    <g id="graphics-plot-1-bottom-axis-labels-1.1.2.scale">
+                      <g id="graphics-plot-1-bottom-axis-labels-1.1.2.text">
+                        <text font-size="16" x="0" y="0" transform="translate(0, 671.94) scale(1, -1) translate(252.49, 63.36) scale(1, -1)" fill-opacity="1" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="normal" stroke-opacity="1">
+                        <tspan x="0" id="graphics-plot-1-bottom-axis-labels-1.1.2.tspan.1" dy="0">6</tspan>
+                      </text>
+                      </g>
+                    </g>
+                  <title>Tick mark 6</title>
+                    <desc>6</desc>
+                  </g>
+                  <g stroke-width="0.1" id="graphics-plot-1-bottom-axis-labels-1.1.3">
+                    <g id="graphics-plot-1-bottom-axis-labels-1.1.3.scale">
+                      <g id="graphics-plot-1-bottom-axis-labels-1.1.3.text">
+                        <text font-size="16" x="0" y="0" transform="translate(0, 671.94) scale(1, -1) translate(354.7, 63.36) scale(1, -1)" fill-opacity="1" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="normal" stroke-opacity="1">
+                        <tspan x="0" id="graphics-plot-1-bottom-axis-labels-1.1.3.tspan.1" dy="0">7</tspan>
+                      </text>
+                      </g>
+                    </g>
+                  <title>Tick mark 7</title>
+                    <desc>7</desc>
+                  </g>
+                  <g stroke-width="0.1" id="graphics-plot-1-bottom-axis-labels-1.1.4">
+                    <g id="graphics-plot-1-bottom-axis-labels-1.1.4.scale">
+                      <g id="graphics-plot-1-bottom-axis-labels-1.1.4.text">
+                        <text font-size="16" x="0" y="0" transform="translate(0, 671.94) scale(1, -1) translate(456.91, 63.36) scale(1, -1)" fill-opacity="1" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="normal" stroke-opacity="1">
+                        <tspan x="0" id="graphics-plot-1-bottom-axis-labels-1.1.4.tspan.1" dy="0">8</tspan>
+                      </text>
+                      </g>
+                    </g>
+                  <title>Tick mark 8</title>
+                    <desc>8</desc>
+                  </g>
+                  <g stroke-width="0.1" id="graphics-plot-1-bottom-axis-labels-1.1.5">
+                    <g id="graphics-plot-1-bottom-axis-labels-1.1.5.scale">
+                      <g id="graphics-plot-1-bottom-axis-labels-1.1.5.text">
+                        <text font-size="16" x="0" y="0" transform="translate(0, 671.94) scale(1, -1) translate(559.13, 63.36) scale(1, -1)" fill-opacity="1" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="normal" stroke-opacity="1">
+                        <tspan x="0" id="graphics-plot-1-bottom-axis-labels-1.1.5.tspan.1" dy="0">9</tspan>
+                      </text>
+                      </g>
+                    </g>
+                  <title>Tick mark 9</title>
+                    <desc>9</desc>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.44">
+        <g id="graphics-root::graphics-inner.43">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.42">
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1.5">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1::graphics-window-1-1.3">
+                <g id="graphics-plot-1-left-axis-line-1.1">
+                  <g id="graphics-plot-1-left-axis-line-1.1.1">
+                    <polyline stroke-linecap="round" points="78.72,113.52 78.72,525.44" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                  </g>
+                <polygon id="graphics-plot-1-left-axis-line-1.1r" opacity="0.0" points="76.72,144.5 80.72,144.5 80.72,560.42 76.72,560.42 76.72,144.5"/>
+                  <title>y axis: Ozone</title>
+                </g>
+                <g id="graphics-plot-1-left-axis-ticks-1.1">
+                  <g id="graphics-plot-1-left-axis-ticks-1.1.1">
+                    <polyline stroke-linecap="round" points="78.72,113.52 69.12,113.52" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                    <polygon id="graphics-plot-1-left-axis-ticks-1.1.1r" opacity="0.0" points="67.12,556.42 80.72,556.42 80.72,560.42 67.12,560.42 67.12,556.42"/>
+                    <title>Tick mark 0</title>
+                  </g>
+                  <g id="graphics-plot-1-left-axis-ticks-1.1.2">
+                    <polyline stroke-linecap="round" points="78.72,250.83 69.12,250.83" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                    <polygon id="graphics-plot-1-left-axis-ticks-1.1.2r" opacity="0.0" points="67.12,419.11 80.72,419.11 80.72,423.11 67.12,423.11 67.12,419.11"/>
+                    <title>Tick mark 50</title>
+                  </g>
+                  <g id="graphics-plot-1-left-axis-ticks-1.1.3">
+                    <polyline stroke-linecap="round" points="78.72,388.14 69.12,388.14" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                    <polygon id="graphics-plot-1-left-axis-ticks-1.1.3r" opacity="0.0" points="67.12,281.8 80.72,281.8 80.72,285.8 67.12,285.8 67.12,281.8"/>
+                    <title>Tick mark 100</title>
+                  </g>
+                  <g id="graphics-plot-1-left-axis-ticks-1.1.4">
+                    <polyline stroke-linecap="round" points="78.72,525.44 69.12,525.44" transform="translate(0, 671.94) scale(1, -1)" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="1" stroke-miterlimit="10"/>
+                    <polygon id="graphics-plot-1-left-axis-ticks-1.1.4r" opacity="0.0" points="67.12,144.5 80.72,144.5 80.72,148.5 67.12,148.5 67.12,144.5"/>
+                    <title>Tick mark 150</title>
+                  </g>
+                </g>
+                <g id="graphics-plot-1-left-axis-labels-1.1">
+                  <g stroke-width="0.1" id="graphics-plot-1-left-axis-labels-1.1.1">
+                    <g id="graphics-plot-1-left-axis-labels-1.1.1.scale">
+                      <g id="graphics-plot-1-left-axis-labels-1.1.1.text">
+                        <text font-size="16" x="0" y="0" fill-opacity="1" transform="translate(0, 671.94) scale(1, -1) translate(55.68, 113.52) scale(1, -1) rotate(-90)" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="normal" stroke-opacity="1">
+                        <tspan x="0" id="graphics-plot-1-left-axis-labels-1.1.1.tspan.1" dy="0">0</tspan>
+                      </text>
+                      </g>
+                    </g>
+                  <title>Tick mark 0</title>
+                    <desc>0</desc>
+                  </g>
+                  <g stroke-width="0.1" id="graphics-plot-1-left-axis-labels-1.1.2">
+                    <g id="graphics-plot-1-left-axis-labels-1.1.2.scale">
+                      <g id="graphics-plot-1-left-axis-labels-1.1.2.text">
+                        <text font-size="16" x="0" y="0" fill-opacity="1" transform="translate(0, 671.94) scale(1, -1) translate(55.68, 250.83) scale(1, -1) rotate(-90)" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="normal" stroke-opacity="1">
+                        <tspan x="0" id="graphics-plot-1-left-axis-labels-1.1.2.tspan.1" dy="0">50</tspan>
+                      </text>
+                      </g>
+                    </g>
+                  <title>Tick mark 50</title>
+                    <desc>50</desc>
+                  </g>
+                  <g stroke-width="0.1" id="graphics-plot-1-left-axis-labels-1.1.3">
+                    <g id="graphics-plot-1-left-axis-labels-1.1.3.scale">
+                      <g id="graphics-plot-1-left-axis-labels-1.1.3.text">
+                        <text font-size="16" x="0" y="0" fill-opacity="1" transform="translate(0, 671.94) scale(1, -1) translate(55.68, 388.14) scale(1, -1) rotate(-90)" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="normal" stroke-opacity="1">
+                        <tspan x="0" id="graphics-plot-1-left-axis-labels-1.1.3.tspan.1" dy="0">100</tspan>
+                      </text>
+                      </g>
+                    </g>
+                  <title>Tick mark 100</title>
+                    <desc>100</desc>
+                  </g>
+                  <g stroke-width="0.1" id="graphics-plot-1-left-axis-labels-1.1.4">
+                    <g id="graphics-plot-1-left-axis-labels-1.1.4.scale">
+                      <g id="graphics-plot-1-left-axis-labels-1.1.4.text">
+                        <text font-size="16" x="0" y="0" fill-opacity="1" transform="translate(0, 671.94) scale(1, -1) translate(55.68, 525.44) scale(1, -1) rotate(-90)" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="normal" stroke-opacity="1">
+                        <tspan x="0" id="graphics-plot-1-left-axis-labels-1.1.4.tspan.1" dy="0">150</tspan>
+                      </text>
+                      </g>
+                    </g>
+                  <title>Tick mark 150</title>
+                    <desc>150</desc>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.45">
+        <g id="graphics-root::graphics-inner.44">
+          <defs>
+            <clipPath id="graphics-root::graphics-inner::graphics-figure-1-clip.5.clipPath">
+              <rect x="0" y="0" transform="translate(0, 671.94) scale(1, -1)" fill="none" width="671" height="671.94" stroke="none"/>
+            </clipPath>
+          </defs>
+          <g id="graphics-root::graphics-inner::graphics-figure-1-clip.5" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1-clip.5.clipPath)">
+            <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1.4">
+              <g id="graphics-plot-1-main-1.1">
+                <g stroke-width="0.1" id="graphics-plot-1-main-1.1.1">
+                  <g id="graphics-plot-1-main-1.1.1.scale">
+                    <g id="graphics-plot-1-main-1.1.1.text">
+                      <text font-size="19.2" x="0" y="0" transform="translate(0, 671.94) scale(1, -1) translate(354.7, 632.58) scale(1, -1)" fill-opacity="1" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="bold" stroke-opacity="1">
+                      <tspan x="0" id="graphics-plot-1-main-1.1.1.tspan.1" dy="6.99">Boxplots for Ozone</tspan>
+                    </text>
+                    </g>
+                  </g>
+                </g>
+              <title>Title: Boxplots for Ozone</title>
+                <desc>Title: Boxplots for Ozone</desc>
+              </g>
+              <g id="graphics-plot-1-xlab-1.1">
+                <g stroke-width="0.1" id="graphics-plot-1-xlab-1.1.1">
+                  <g id="graphics-plot-1-xlab-1.1.1.scale">
+                    <g id="graphics-plot-1-xlab-1.1.1.text">
+                      <text font-size="16" x="0" y="0" transform="translate(0, 671.94) scale(1, -1) translate(354.7, 24.96) scale(1, -1)" fill-opacity="1" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="normal" stroke-opacity="1">
+                      <tspan x="0" id="graphics-plot-1-xlab-1.1.1.tspan.1" dy="0">Months</tspan>
+                    </text>
+                    </g>
+                  </g>
+                </g>
+              <title>Label Months</title>
+                <desc>Label Months</desc>
+              </g>
+              <g id="graphics-plot-1-ylab-1.1">
+                <g stroke-width="0.1" id="graphics-plot-1-ylab-1.1.1">
+                  <g id="graphics-plot-1-ylab-1.1.1.scale">
+                    <g id="graphics-plot-1-ylab-1.1.1.text">
+                      <text font-size="16" x="0" y="0" fill-opacity="1" transform="translate(0, 671.94) scale(1, -1) translate(17.28, 345.57) scale(1, -1) rotate(-90)" fill="rgb(0,0,0)" text-anchor="middle" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" font-style="normal" stroke="rgb(0,0,0)" font-weight="normal" stroke-opacity="1">
+                      <tspan x="0" id="graphics-plot-1-ylab-1.1.1.tspan.1" dy="0">Ozone</tspan>
+                    </text>
+                    </g>
+                  </g>
+                </g>
+              <title>Label Ozone</title>
+                <desc>Label Ozone</desc>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+<circle fill="white" r="23.485000000000003" cx="536.8000000000001" id="drilldown" cy="634.7460000000001" stroke="rgb(0, 0, 0)" onmousedown="drill(evt)" stroke-width="1.0"/>
+  <circle fill="silver" r="23.485000000000003" cx="603.9" id="restore" cy="634.7460000000001" stroke="rgb(0, 0, 0)" onmousedown="drill(evt)" stroke-width="1.0"/>
+  <iveo:paper top-margin="1.0 inch" width="8.5 inch" right-margin="0.5 inch" orientation="portrait" left-margin="0.75 inch" bottom-margin="0.6 inch" height="11.0 inch" name="Custom paper size"/>
+  <daisy:layers>
+    <daisy:layerItem print="on" display="on" enabledInViewer="on" lock="off" speak="on" emboss="on" name="Default"/>
+    <daisy:layerItem print="on" display="on" enabledInViewer="on" lock="off" speak="on" emboss="off" name="Print"/>
+    <daisy:layerItem print="off" display="on" enabledInViewer="on" lock="off" speak="on" emboss="on" name="Emboss"/>
+    <daisy:layerItem print="off" display="on" enabledInViewer="on" lock="off" speak="on" emboss="on" name="Braille"/>
+    <daisy:layerItem print="on" display="on" enabledInViewer="on" lock="off" speak="on" emboss="on" name="OnLayer"/>
+    <daisy:layerItem print="off" display="off" enabledInViewer="on" lock="off" speak="off" emboss="off" name="OffLayer"/>
+  </daisy:layers>
+  <title>5 boxplots for Boxplots for Ozone</title>
+  <desc>5 boxplots for Months 5, 6, 7, 8, 9</desc>
+</svg>

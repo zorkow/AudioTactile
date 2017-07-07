@@ -1,0 +1,397 @@
+<circuit xmlns:sre="http://www.chemaccess.org/sre-schema">
+  <sre:annotations>
+    <sre:annotation speech="Anode" speech2="Negative side of voltage source">
+      <sre:active>path3193</sre:active>
+      <sre:position>9</sre:position>
+      <sre:parents>
+        <sre:grouped>C1</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Cathode" speech2="Positive side of voltage source">
+      <sre:active>path3195</sre:active>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>C1</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the anode" speech2="Wire from anode to resistors 1, 2, 3">
+      <sre:active>path3197</sre:active>
+      <sre:position>8</sre:position>
+      <sre:parents>
+        <sre:grouped>C1</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the cathode" speech2="Wire from cathode to resistors 1, 2, 3">
+      <sre:active>path3199</sre:active>
+      <sre:position>2</sre:position>
+      <sre:parents>
+        <sre:grouped>C1</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the anode" speech2="Wire from anode to resistors 1, 2, 3
+">
+      <sre:active>path3201a</sre:active>
+      <sre:position>7</sre:position>
+      <sre:parents>
+        <sre:grouped>C1</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the cathode" speech2="Wire from cathode to resistors 1, 2, 3">
+      <sre:active>path3243a</sre:active>
+      <sre:position>3</sre:position>
+      <sre:parents>
+        <sre:grouped>C1</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the anode" speech2="Wire from anode to resistor 1">
+      <sre:active>path3251</sre:active>
+      <sre:position>6</sre:position>
+      <sre:parents>
+        <sre:grouped>C1</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Resistor 1" speech2="Resistor closest to voltage source.">
+      <sre:active>path3253</sre:active>
+      <sre:position>5</sre:position>
+      <sre:parents>
+        <sre:grouped>C1</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the cathode" speech2="Wire from cathode to resistor 1">
+      <sre:active>path3255</sre:active>
+      <sre:position>4</sre:position>
+      <sre:parents>
+        <sre:grouped>C1</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Circuit 1" speech2="Circuit 1 with power source and one resistor">
+      <sre:grouped>C1</sre:grouped>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>top</sre:grouped>
+      </sre:parents>
+      <sre:children>
+        <sre:active>path3193</sre:active>
+        <sre:active>path3195</sre:active>
+        <sre:active>path3197</sre:active>
+        <sre:active>path3199</sre:active>
+        <sre:active>path3201a</sre:active>
+        <sre:active>path3243a</sre:active>
+        <sre:active>path3251</sre:active>
+        <sre:active>path3253</sre:active>
+        <sre:active>path3255</sre:active>
+      </sre:children>
+      <sre:component>
+        <sre:active>path3193</sre:active>
+        <sre:active>path3195</sre:active>
+        <sre:active>path3197</sre:active>
+        <sre:active>path3199</sre:active>
+        <sre:active>path3201a</sre:active>
+        <sre:active>path3243a</sre:active>
+        <sre:active>path3251</sre:active>
+        <sre:active>path3253</sre:active>
+        <sre:active>path3255</sre:active>
+      </sre:component>
+    </sre:annotation>
+    <sre:annotation speech="Anode" speech2="Negative side of voltage source">
+      <sre:active>path3193</sre:active>
+      <sre:position>11</sre:position>
+      <sre:parents>
+        <sre:grouped>C2</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Cathode" speech2="Positive side of voltage source">
+      <sre:active>path3195</sre:active>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>C2</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the anode" speech2="Wire from anode to resistors 1, 2, 3">
+      <sre:active>path3197</sre:active>
+      <sre:position>10</sre:position>
+      <sre:parents>
+        <sre:grouped>C2</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the cathode" speech2="Wire from cathode to resistors 1, 2, 3">
+      <sre:active>path3199</sre:active>
+      <sre:position>2</sre:position>
+      <sre:parents>
+        <sre:grouped>C2</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the anode" speech2="Wire from anode to resistors 1, 2, 3
+">
+      <sre:active>path3201a</sre:active>
+      <sre:position>9</sre:position>
+      <sre:parents>
+        <sre:grouped>C2</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the anode" speech2="Wire from anode to resistors 2, 3">
+      <sre:active>path3201b</sre:active>
+      <sre:position>8</sre:position>
+      <sre:parents>
+        <sre:grouped>C2</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the cathode" speech2="Wire from cathode to resistors 1, 2, 3">
+      <sre:active>path3243a</sre:active>
+      <sre:position>3</sre:position>
+      <sre:parents>
+        <sre:grouped>C2</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the cathode" speech2="Wire from cathode to resistors 2, 3">
+      <sre:active>path3243b</sre:active>
+      <sre:position>4</sre:position>
+      <sre:parents>
+        <sre:grouped>C2</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the anode" speech2="Wire from anode to resistor 2">
+      <sre:active>path3245</sre:active>
+      <sre:position>7</sre:position>
+      <sre:parents>
+        <sre:grouped>C2</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Resistor 2" speech2="Resistor second closest to voltage source.">
+      <sre:active>path3247</sre:active>
+      <sre:position>6</sre:position>
+      <sre:parents>
+        <sre:grouped>C2</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the cathode" speech2="Wire from cathode to resistor 2">
+      <sre:active>path3249</sre:active>
+      <sre:position>5</sre:position>
+      <sre:parents>
+        <sre:grouped>C2</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Circuit 2" speech2="Circuit 2 with power source and one resistor">
+      <sre:grouped>C2</sre:grouped>
+      <sre:position>2</sre:position>
+      <sre:parents>
+        <sre:grouped>top</sre:grouped>
+      </sre:parents>
+      <sre:children>
+        <sre:active>path3193</sre:active>
+        <sre:active>path3195</sre:active>
+        <sre:active>path3197</sre:active>
+        <sre:active>path3199</sre:active>
+        <sre:active>path3201a</sre:active>
+        <sre:active>path3201b</sre:active>
+        <sre:active>path3243a</sre:active>
+        <sre:active>path3243b</sre:active>
+        <sre:active>path3245</sre:active>
+        <sre:active>path3247</sre:active>
+        <sre:active>path3249</sre:active>
+      </sre:children>
+      <sre:component>
+        <sre:active>path3193</sre:active>
+        <sre:active>path3195</sre:active>
+        <sre:active>path3197</sre:active>
+        <sre:active>path3199</sre:active>
+        <sre:active>path3201a</sre:active>
+        <sre:active>path3201b</sre:active>
+        <sre:active>path3243a</sre:active>
+        <sre:active>path3243b</sre:active>
+        <sre:active>path3245</sre:active>
+        <sre:active>path3247</sre:active>
+        <sre:active>path3249</sre:active>
+      </sre:component>
+    </sre:annotation>
+    <sre:annotation speech="Anode" speech2="Negative side of voltage source">
+      <sre:active>path3193</sre:active>
+      <sre:position>13</sre:position>
+      <sre:parents>
+        <sre:grouped>C3</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Cathode" speech2="Positive side of voltage source">
+      <sre:active>path3195</sre:active>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>C3</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the anode" speech2="Wire from anode to resistors 1, 2, 3">
+      <sre:active>path3197</sre:active>
+      <sre:position>12</sre:position>
+      <sre:parents>
+        <sre:grouped>C3</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the cathode" speech2="Wire from cathode to resistors 1, 2, 3">
+      <sre:active>path3199</sre:active>
+      <sre:position>2</sre:position>
+      <sre:parents>
+        <sre:grouped>C3</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the anode" speech2="Wire from anode to resistors 1, 2, 3
+">
+      <sre:active>path3201a</sre:active>
+      <sre:position>11</sre:position>
+      <sre:parents>
+        <sre:grouped>C3</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the anode" speech2="Wire from anode to resistors 2, 3">
+      <sre:active>path3201b</sre:active>
+      <sre:position>10</sre:position>
+      <sre:parents>
+        <sre:grouped>C3</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the anode" speech2="Wire from anode to resistor 3">
+      <sre:active>path3201c</sre:active>
+      <sre:position>9</sre:position>
+      <sre:parents>
+        <sre:grouped>C3</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the anode" speech2="Wire from anode to resistor 3">
+      <sre:active>path3215</sre:active>
+      <sre:position>8</sre:position>
+      <sre:parents>
+        <sre:grouped>C3</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Resistor 3" speech2="Resistor third closest to voltage source">
+      <sre:active>path3217</sre:active>
+      <sre:position>7</sre:position>
+      <sre:parents>
+        <sre:grouped>C3</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the cathode" speech2="Wire from cathode to resistor 3">
+      <sre:active>path3219</sre:active>
+      <sre:position>6</sre:position>
+      <sre:parents>
+        <sre:grouped>C3</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the cathode" speech2="Wire from cathode to resistors 1, 2, 3">
+      <sre:active>path3243a</sre:active>
+      <sre:position>3</sre:position>
+      <sre:parents>
+        <sre:grouped>C3</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the cathode" speech2="Wire from cathode to resistors 2, 3">
+      <sre:active>path3243b</sre:active>
+      <sre:position>4</sre:position>
+      <sre:parents>
+        <sre:grouped>C3</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to the cathode" speech2="Wire from cathode to resistor 3">
+      <sre:active>path3243c</sre:active>
+      <sre:position>5</sre:position>
+      <sre:parents>
+        <sre:grouped>C3</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Circuit 3" speech2="Circuit 3 with power source and one resistor">
+      <sre:grouped>C3</sre:grouped>
+      <sre:position>3</sre:position>
+      <sre:parents>
+        <sre:grouped>top</sre:grouped>
+      </sre:parents>
+      <sre:children>
+        <sre:active>path3193</sre:active>
+        <sre:active>path3195</sre:active>
+        <sre:active>path3197</sre:active>
+        <sre:active>path3199</sre:active>
+        <sre:active>path3201a</sre:active>
+        <sre:active>path3201b</sre:active>
+        <sre:active>path3201c</sre:active>
+        <sre:active>path3215</sre:active>
+        <sre:active>path3217</sre:active>
+        <sre:active>path3219</sre:active>
+        <sre:active>path3243a</sre:active>
+        <sre:active>path3243b</sre:active>
+        <sre:active>path3243c</sre:active>
+      </sre:children>
+      <sre:component>
+        <sre:active>path3193</sre:active>
+        <sre:active>path3195</sre:active>
+        <sre:active>path3197</sre:active>
+        <sre:active>path3199</sre:active>
+        <sre:active>path3201a</sre:active>
+        <sre:active>path3201b</sre:active>
+        <sre:active>path3201c</sre:active>
+        <sre:active>path3215</sre:active>
+        <sre:active>path3217</sre:active>
+        <sre:active>path3219</sre:active>
+        <sre:active>path3243a</sre:active>
+        <sre:active>path3243b</sre:active>
+        <sre:active>path3243c</sre:active>
+      </sre:component>
+    </sre:annotation>
+    <sre:annotation speech="Anode" speech2="Negative side of voltage source">
+      <sre:active>path3193</sre:active>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>C4</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Cathode" speech2="Positive side of voltage source">
+      <sre:active>path3195</sre:active>
+      <sre:position>2</sre:position>
+      <sre:parents>
+        <sre:grouped>C4</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Voltage source" speech2="undefined">
+      <sre:grouped>C4</sre:grouped>
+      <sre:position>4</sre:position>
+      <sre:parents>
+        <sre:grouped>top</sre:grouped>
+      </sre:parents>
+      <sre:children>
+        <sre:active>path3193</sre:active>
+        <sre:active>path3195</sre:active>
+      </sre:children>
+      <sre:component>
+        <sre:active>path3193</sre:active>
+        <sre:active>path3195</sre:active>
+      </sre:component>
+    </sre:annotation>
+    <sre:annotation speech="Parallel circuits with three resistors" speech2="Circuit consisting of three sub-circuits with three parallel resistors">
+      <sre:grouped>top</sre:grouped>
+      <sre:position>1</sre:position>
+      <sre:children>
+        <sre:grouped>C1</sre:grouped>
+        <sre:grouped>C2</sre:grouped>
+        <sre:grouped>C3</sre:grouped>
+        <sre:grouped>C4</sre:grouped>
+      </sre:children>
+      <sre:component>
+        <sre:active>path3193</sre:active>
+        <sre:active>path3195</sre:active>
+        <sre:active>path3197</sre:active>
+        <sre:active>path3199</sre:active>
+        <sre:active>path3201a</sre:active>
+        <sre:active>path3201b</sre:active>
+        <sre:active>path3201c</sre:active>
+        <sre:active>path3215</sre:active>
+        <sre:active>path3217</sre:active>
+        <sre:active>path3219</sre:active>
+        <sre:active>path3243a</sre:active>
+        <sre:active>path3243b</sre:active>
+        <sre:active>path3243c</sre:active>
+        <sre:active>path3245</sre:active>
+        <sre:active>path3247</sre:active>
+        <sre:active>path3249</sre:active>
+        <sre:active>path3251</sre:active>
+        <sre:active>path3253</sre:active>
+        <sre:active>path3255</sre:active>
+      </sre:component>
+    </sre:annotation>
+  </sre:annotations>
+</circuit>

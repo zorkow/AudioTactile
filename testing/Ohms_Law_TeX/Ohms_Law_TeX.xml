@@ -1,0 +1,50 @@
+<circuit xmlns:sre="http://www.chemaccess.org/sre-schema">
+  <sre:annotations>
+    <sre:annotation speech="Wire connected to anode" speech2="Wire connecting resistor to anode">
+      <sre:active>surface1a</sre:active>
+      <sre:position>4</sre:position>
+      <sre:parents>
+        <sre:grouped>GR1</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Wire connected to cathode." speech2="Wire from cathode to resistor.">
+      <sre:active>surface1b</sre:active>
+      <sre:position>2</sre:position>
+      <sre:parents>
+        <sre:grouped>GR1</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Power source" speech2="
+">
+      <sre:active>powersource</sre:active>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>GR1</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Resistor R" speech2="
+">
+      <sre:active>resistor</sre:active>
+      <sre:position>3</sre:position>
+      <sre:parents>
+        <sre:grouped>GR1</sre:grouped>
+      </sre:parents>
+    </sre:annotation>
+    <sre:annotation speech="Single circuit" speech2="Single circuit with powersource and 1 resistor.">
+      <sre:grouped>GR1</sre:grouped>
+      <sre:position>1</sre:position>
+      <sre:children>
+        <sre:active>surface1a</sre:active>
+        <sre:active>surface1b</sre:active>
+        <sre:active>powersource</sre:active>
+        <sre:active>resistor</sre:active>
+      </sre:children>
+      <sre:component>
+        <sre:active>surface1a</sre:active>
+        <sre:active>surface1b</sre:active>
+        <sre:active>powersource</sre:active>
+        <sre:active>resistor</sre:active>
+      </sre:component>
+    </sre:annotation>
+  </sre:annotations>
+</circuit>

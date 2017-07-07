@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Created with Inkscape (http://www.inkscape.org/) --><svg xmlns="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:daisy="http://www.daisy.org/z3986/2005/" xmlns:iveo="http://viewplus.com/iveo" contentScriptType="text/ecmascript" zoomAndPan="magnify" contentStyleType="text/css" id="svg3297" sodipodi:docname="Parallel circuit.svg" version="1.0" width="189.31" sodipodi:version="0.32" preserveAspectRatio="xMidYMid meet" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" height="134.4101">
+  <g id="C4" onmousedown="register(evt)" class="atomset" opacity="0.0">
+    <rect x="9.451492" width="31.190903" id="C4r" height="10.720246000000003" y="51.433502" visibility="visible"/>
+    <title>Voltage source</title>
+  </g>
+  <defs id="defs3299">
+    <inkscape:perspective inkscape:vp_x="0 : 526.18109 : 1" id="perspective3305" sodipodi:type="inkscape:persp3d" inkscape:vp_z="744.09448 : 526.18109 : 1" inkscape:persp3d-origin="372.04724 : 350.78739 : 1" inkscape:vp_y="0 : 1000 : 0"/>
+  </defs>
+  <sodipodi:namedview objecttolerance="10" bordercolor="#666666" inkscape:window-height="701" inkscape:zoom="1.4" id="base" gridtolerance="10000" inkscape:current-layer="layer1" inkscape:window-y="51" inkscape:cy="120" inkscape:window-x="752" inkscape:cx="146.42857" showgrid="false" guidetolerance="10" inkscape:pageopacity="0.0" inkscape:document-units="px" inkscape:pageshadow="2" inkscape:window-width="640" borderopacity="1.0" pagecolor="#ffffff"/>
+  <metadata id="metadata3302">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g inkscape:groupmode="layer" id="layer1" style="stroke:#000000;" inkscape:label="Layer 1">
+    <g id="path3197">
+      <polyline style="fill:none;fill-rule:evenodd;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" points="206.62705,461.41293 206.62705,420.34182" transform="translate(-181.06072,-408.27237)"/>
+      <polygon id="path3197r" opacity="0.0" points="23.56633,10.069458 27.56633,10.069458 27.56633,55.140564 23.56633,55.140564 23.56633,10.069458"/>
+      <title>Wire connected to the anode</title>
+      <desc>Wire from anode to resistors 1, 2, 3</desc>
+    </g>
+    <g id="path3199">
+      <polyline style="fill:none;fill-rule:evenodd;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" points="206.62705,503.33943 206.62705,468.6393" transform="translate(-181.06072,-408.27237)"/>
+      <polygon id="path3199r" opacity="0.0" points="23.56633,58.366943 27.56633,58.366943 27.56633,97.06705 23.56633,97.06705 23.56633,58.366943"/>
+      <title>Wire connected to the cathode</title>
+      <desc>Wire from cathode to resistors 1, 2, 3</desc>
+    </g>
+    <g id="path3193">
+      <polyline style="fill:none;fill-rule:evenodd;stroke-width:2.90297914;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" points="192.51221,461.70588 219.70311,461.70588" transform="translate(-181.06072,-408.27237)"/>
+      <polygon id="path3193r" opacity="0.0" points="9.451492,51.433502 40.642395,51.433502 40.642395,55.433502 9.451492,55.433502 9.451492,51.433502"/>
+      <title>Anode</title>
+      <desc>Negative side of voltage source</desc>
+    </g>
+    <g id="path3195">
+      <polyline style="fill:none;fill-rule:evenodd;stroke-width:2.85464668;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" points="197.38267,468.42611 214.66633,468.42611" transform="translate(-181.06072,-408.27237)"/>
+      <polygon id="path3195r" opacity="0.0" points="14.32196,58.153748 35.60562,58.153748 35.60562,62.153748 14.32196,62.153748 14.32196,58.153748"/>
+      <title>Cathode</title>
+      <desc>Positive side of voltage source</desc>
+    </g>
+    <g id="path3201a">
+      <polyline style="fill:none;fill-rule:evenodd;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" points="205.12714,419.77274 264.16522,419.77274" transform="translate(-181.06072,-408.27237)"/>
+      <polygon id="path3201ar" opacity="0.0" points="22.066422,9.500366 85.10451,9.500366 85.10451,13.500366 22.066422,13.500366 22.066422,9.500366"/>
+      <title>Wire connected to the anode</title>
+      <desc>Wire from anode to resistors 1, 2, 3 </desc>
+    </g>
+    <g id="path3201b">
+      <polyline style="fill:none;fill-rule:evenodd;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" points="264.16522,419.77274 306.59162,419.77274" transform="translate(-181.06072,-408.27237)"/>
+      <polygon id="path3201br" opacity="0.0" points="81.10451,9.500366 127.5309,9.500366 127.5309,13.500366 81.10451,13.500366 81.10451,9.500366"/>
+      <title>Wire connected to the anode</title>
+      <desc>Wire from anode to resistors 2, 3</desc>
+    </g>
+    <g id="path3201c">
+      <polyline style="fill:none;fill-rule:evenodd;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" points="306.59162,419.77274 351.63663,419.77274" transform="translate(-181.06072,-408.27237)"/>
+      <polygon id="path3201cr" opacity="0.0" points="123.5309,9.500366 172.57591,9.500366 172.57591,13.500366 123.5309,13.500366 123.5309,9.500366"/>
+      <title>Wire connected to the anode</title>
+      <desc>Wire from anode to resistor 3</desc>
+    </g>
+    <g id="path3215">
+      <polyline style="fill:none;fill-rule:evenodd;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" points="350.2381,420.49971 350.2381,446.32915" transform="translate(-181.06072,-408.27237)"/>
+      <polygon id="path3215r" opacity="0.0" points="167.17738,10.227325 171.17738,10.227325 171.17738,40.056793 167.17738,40.056793 167.17738,10.227325"/>
+      <title>Wire connected to the anode</title>
+      <desc>Wire from anode to resistor 3</desc>
+    </g>
+    <g id="path3217">
+      <polyline sodipodi:nodetypes="ccccccccc" style="fill:none;fill-rule:evenodd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" transform="translate(-181.06072,-408.27237)" points="350.36129,445.31149 359.86786,449.03234 342.24767,453.75366 359.78741,458.45342 342.13104,463.18443 359.5469,467.85099 341.28131,472.74524 359.69128,477.67818 349.80339,480.32763"/>
+      <polygon id="path3217r" opacity="0.0" points="169.30058,37.039124 178.80714,40.75998 178.63057,69.40582 168.74266,72.05527 160.2206,64.47287 161.18697,45.481293 169.30058,37.039124"/>
+      <title>Resistor 3</title>
+      <desc>Resistor third closest to voltage source</desc>
+    </g>
+    <g id="path3219">
+      <polyline style="fill:none;fill-rule:evenodd;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" points="349.99068,479.23069 349.99068,504.83833" transform="translate(-181.06072,-408.27237)"/>
+      <polygon id="path3219r" opacity="0.0" points="166.92998,68.95831 170.92998,68.95831 170.92998,98.56595 166.92998,98.56595 166.92998,68.95831"/>
+      <title>Wire connected to the cathode</title>
+      <desc>Wire from cathode to resistor 3</desc>
+    </g>
+    <g id="path3243a">
+      <polyline style="fill:none;fill-rule:evenodd;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" points="204.95955,503.52588  263.9178,503.52588" transform="translate(-181.06072,-408.27237)"/>
+      <polygon id="path3243ar" opacity="0.0" points="21.898834,93.25351 84.85707,93.25351 84.85707,97.25351 21.898834,97.25351 21.898834,93.25351"/>
+      <title>Wire connected to the cathode</title>
+      <desc>Wire from cathode to resistors 1, 2, 3</desc>
+    </g>
+    <g id="path3243b">
+      <polyline style="fill:none;fill-rule:evenodd;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" points="263.9178,503.52588 306.3442,503.52588" transform="translate(-181.06072,-408.27237)"/>
+      <polygon id="path3243br" opacity="0.0" points="80.85707,93.25351 127.28349,93.25351 127.28349,97.25351 80.85707,97.25351 80.85707,93.25351"/>
+      <title>Wire connected to the cathode</title>
+      <desc>Wire from cathode to resistors 2, 3</desc>
+    </g>
+    <g id="path3243c">
+      <polyline style="fill:none;fill-rule:evenodd;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" points="306.3442,503.52588 351.46904,503.52588" transform="translate(-181.06072,-408.27237)"/>
+      <polygon id="path3243cr" opacity="0.0" points="123.28349,93.25351 172.40834,93.25351 172.40834,97.25351 123.28349,97.25351 123.28349,93.25351"/>
+      <title>Wire connected to the cathode</title>
+      <desc>Wire from cathode to resistor 3</desc>
+    </g>
+    <g id="path3245">
+      <polyline style="fill:none;fill-rule:evenodd;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" points="306.59162,419.90665 306.59162,445.73609" transform="translate(-181.06072,-408.27237)"/>
+      <polygon id="path3245r" opacity="0.0" points="123.5309,9.634277 127.5309,9.634277 127.5309,39.463715 123.5309,39.463715 123.5309,9.634277"/>
+      <title>Wire connected to the anode</title>
+      <desc>Wire from anode to resistor 2</desc>
+    </g>
+    <g id="path3247">
+      <polyline sodipodi:nodetypes="ccccccccc" style="fill:none;fill-rule:evenodd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" transform="translate(-181.06072,-408.27237)" points="306.71481,444.71843 316.22138,448.43928 298.60119,453.1606 316.14093,457.86036 298.48456,462.59137 315.90042,467.25793 297.63483,472.15218 316.0448,477.08512 306.15691,479.73457"/>
+      <polygon id="path3247r" opacity="0.0" points="125.6541,36.446075 135.16066,40.1669 134.98409,68.812744 125.09621,71.46219 116.57411,63.87982 117.54048,44.888245 125.6541,36.446075"/>
+      <title>Resistor 2</title>
+      <desc>Resistor second closest to voltage source.</desc>
+    </g>
+    <g id="path3249">
+      <polyline style="fill:none;fill-rule:evenodd;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" points="306.3442,478.63763 306.3442,504.24527" transform="translate(-181.06072,-408.27237)"/>
+      <polygon id="path3249r" opacity="0.0" points="123.28349,68.365265 127.28349,68.365265 127.28349,97.9729 123.28349,97.9729 123.28349,68.365265"/>
+      <title>Wire connected to the cathode</title>
+      <desc>Wire from cathode to resistor 2</desc>
+    </g>
+    <g id="path3251">
+      <polyline style="fill:none;fill-rule:evenodd;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" points="264.16522,420.61375 264.16522,446.44319" transform="translate(-181.06072,-408.27237)"/>
+      <polygon id="path3251r" opacity="0.0" points="81.10451,10.34137 85.10451,10.34137 85.10451,40.170807 81.10451,40.170807 81.10451,10.34137"/>
+      <title>Wire connected to the anode</title>
+      <desc>Wire from anode to resistor 1</desc>
+    </g>
+    <g id="path3253">
+      <polyline sodipodi:nodetypes="ccccccccc" style="fill:none;fill-rule:evenodd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" transform="translate(-181.06072,-408.27237)" points="264.28841,445.42553 273.79498,449.14638 256.17479,453.8677 273.71453,458.56746 256.05816,463.29847 273.47402,467.96503 255.20843,472.85928 273.6184,477.79222 263.73051,480.44167"/>
+      <polygon id="path3253r" opacity="0.0" points="83.22771,37.153168 92.73427,40.874023 92.55769,69.51984 82.669785,72.16931 74.14772,64.586914 75.11409,45.595337 83.22771,37.153168"/>
+      <title>Resistor 1</title>
+      <desc>Resistor closest to voltage source.</desc>
+    </g>
+    <g id="path3255">
+      <polyline style="fill:none;fill-rule:evenodd;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" points="263.9178,479.34473 263.9178,504.95237" transform="translate(-181.06072,-408.27237)"/>
+      <polygon id="path3255r" opacity="0.0" points="80.85707,69.07236 84.85707,69.07236 84.85707,98.67999 80.85707,98.67999 80.85707,69.07236"/>
+      <title>Wire connected to the cathode</title>
+      <desc>Wire from cathode to resistor 1</desc>
+    </g>
+  </g>
+<circle fill="white" r="6.625850000000001" cx="151.448" id="drilldown" cy="113.1918" stroke="rgb(0, 0, 0)" onmousedown="drill(evt)" stroke-width="1.0"/>
+  <circle fill="silver" r="6.625850000000001" cx="170.37900000000002" id="restore" cy="113.1918" stroke="rgb(0, 0, 0)" onmousedown="drill(evt)" stroke-width="1.0"/>
+  <iveo:paper top-margin="1.0 inch" width="8.5 inch" right-margin="0.6 inch" orientation="landscape" left-margin="0.75 inch" bottom-margin="0.5 inch" height="11.0 inch" name="Custom paper size"/>
+  <daisy:layers>
+    <daisy:layerItem print="on" display="on" enabledInViewer="on" lock="off" speak="on" emboss="on" name="Default"/>
+    <daisy:layerItem print="on" display="on" enabledInViewer="on" lock="off" speak="on" emboss="off" name="Print"/>
+    <daisy:layerItem print="off" display="on" enabledInViewer="on" lock="off" speak="on" emboss="on" name="Emboss"/>
+    <daisy:layerItem print="off" display="on" enabledInViewer="on" lock="off" speak="on" emboss="on" name="Braille"/>
+    <daisy:layerItem print="on" display="on" enabledInViewer="on" lock="off" speak="on" emboss="on" name="OnLayer"/>
+    <daisy:layerItem print="off" display="off" enabledInViewer="on" lock="off" speak="off" emboss="off" name="OffLayer"/>
+  </daisy:layers>
+  <title>Parallel circuits with three resistors</title>
+  <desc>Circuit consisting of three sub-circuits with three parallel resistors</desc>
+</svg>
